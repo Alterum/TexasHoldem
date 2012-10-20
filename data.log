@@ -1,9 +1,1 @@
 GameServer start...ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
-Connection open. Socket[addr=/127.0.0.1,port=51649,localport=8880] projecttu.Server.Connection@60e128
-Connection open. Socket[addr=/127.0.0.1,port=51651,localport=8880] projecttu.Server.Connection@297ffb
-Connection name: name1
-Connection name: name2
-Socket emergency closed! Connection name: name1
-java.net.SocketException: Connection reset
-Socket closed! Connection name: name1
-Thread[name1,5,] is dead and was removed from Active connections
