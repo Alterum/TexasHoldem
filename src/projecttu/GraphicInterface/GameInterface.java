@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import projecttu.Server.ServerListener;
 
 
-
 public class GameInterface {
 	public static void main (String[] args) {
 		EventQueue.invokeLater(new Runnable()
