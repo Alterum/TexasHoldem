@@ -13,11 +13,11 @@ import projecttu.Gamelogic.PokerTable;
 public class PokerGame {
 	public PokerGame(ServerSocket s) throws IOException {
 		new Revision(online, log);
-		log.log("GameServer start..."+s);
+		log.log("GameServer start: "+s);
 		PokerTable t = new PokerTable();
 		PlayHoldem plh = new PlayHoldem(t);
 		new TableViewer(plh);
-		maps.put(t, plh);
+		activeGameTables.put(t, plh);
 		
 		while(true) {
 			Socket incoming = s.accept(); // blocked
@@ -25,17 +25,17 @@ public class PokerGame {
 			PokerTable table = null;
 			PlayHoldem play = null;
 			
-			for(PokerTable tble : maps.keySet())
+			for(PokerTable tble : activeGameTables.keySet())
 				if(!tble.isMaxPlayersForTheTable()) {
 					table = tble;
-					play = maps.get(tble);
+					play = activeGameTables.get(tble);
 				}
 					
 			if(table == null) {
 				table = new PokerTable();
 				play = new PlayHoldem(table);
 				new TableViewer(play);
-				maps.put(table, play);	
+				activeGameTables.put(table, play);	
 			}
 			
 			try {
@@ -51,7 +51,7 @@ public class PokerGame {
 	private ActiveConnections online = 
 			new ActiveConnections();
 	private Logger log = new Logger("data.log");
-	private Map<PokerTable, PlayHoldem> maps =
+	private Map<PokerTable, PlayHoldem> activeGameTables =
 			new HashMap<PokerTable, PlayHoldem>();
 }
 
@@ -73,6 +73,12 @@ class Revision extends Thread {
 						c.removePlayerFromTable();
 						itr.remove();
 					}
+				}
+				try {
+					sleep(1000);
+				} catch (InterruptedException e) {
+					log.log("Revision: " + e.toString());
+					e.printStackTrace();
 				}
 			}
 		}
