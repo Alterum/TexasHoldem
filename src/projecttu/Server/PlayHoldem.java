@@ -176,34 +176,18 @@ public class PlayHoldem {
 		HashMap<String, String> map = new HashMap<String, String>();
 		
 		// PlayerInfo
-		map.put("playerName", name);
-		map.put("playerStatus", Integer.toString(table.getPlayer(name).getStatus()));
-		map.put("playerBank", Integer.toString(table.getPlayer(name).getScore()));
-		String playerCards = "";
-		for(String card : table.getPlayer(name).getHand())
-			playerCards += card+" "; 
-		map.put("playerCards", playerCards);
-		map.put("playerBet", Integer.toString(table.getPlayer(name).getBet()));
-		
+		setPlayerInfo(name, map);
 		
 		//OpponentsInfo
-		String oppName="oppName";
-		String oppCards="oppCards";
-		String oppBank ="oppBank";
-		String oppBet ="oppBet";
-		int index = 1;
-		for(Player player : table.getPlayers()) {
-			if(player.getName() == name)
-				continue;
-			map.put(oppName+index, player.getName());
-			map.put(oppCards+index, player.getHand()[0]+" "+player.getHand()[1]);
-			map.put(oppBank+index, Integer.toString(player.getScore()));
-			map.put(oppBet+index, Integer.toString(player.getBet()));
-			index++;
-		}
-		
+		setOpponentsInfo(name, map);
 		
 		//TableInfo ready
+		setTableInfo(map);
+		
+		return map;
+	}
+	
+	private void setTableInfo(HashMap<String, String> map) {
 		String cards="";
 		if(currentRound == 1){ // 3 cards visible
 			cards += "BB BB "+table.getCardsOnTable()[2] + " "+
@@ -225,9 +209,37 @@ public class PlayHoldem {
 		map.put("bankInRound", Integer.toString(table.getBankInRound()));
 		map.put("currentRound", Integer.toString(currentRound));
 		
-		return map;
+	}
+
+	private void setPlayerInfo(String name, HashMap<String, String> map) {
+		map.put("playerName", name);
+		map.put("playerStatus", Integer.toString(table.getPlayer(name).getStatus()));
+		map.put("playerBank", Integer.toString(table.getPlayer(name).getScore()));
+		String playerCards = "";
+		for(String card : table.getPlayer(name).getHand())
+			playerCards += card+" "; 
+		map.put("playerCards", playerCards);
+		map.put("playerBet", Integer.toString(table.getPlayer(name).getBet()));
 	}
 	
+	private void setOpponentsInfo(String name, HashMap<String, String> map) {
+		String oppName="oppName";
+		String oppCards="oppCards";
+		String oppBank ="oppBank";
+		String oppBet ="oppBet";
+		int index = 1;
+		for(Player player : table.getPlayers()) {
+			if(player.getName() == name)
+				continue;
+			map.put(oppName+index, player.getName());
+			map.put(oppCards+index, player.getHand()[0]+" "+player.getHand()[1]);
+			map.put(oppBank+index, Integer.toString(player.getScore()));
+			map.put(oppBet+index, Integer.toString(player.getBet()));
+			index++;
+		}
+		
+	}
+
 	public HashMap<String, Boolean> convertAccessButtons(String name) {
 		String[] bttnsNames =
 			{"play", "call", "raise", "fold", "check", "newGame"};

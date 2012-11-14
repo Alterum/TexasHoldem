@@ -92,6 +92,7 @@ public class Connection implements Runnable {
 						OutputObject inObj = (OutputObject) ois.readObject();
 						play.setInputData(inObj);
 					} catch (ClassNotFoundException e) {
+						log.log("Server: ClassNotFoundException: "+e);
 						e.printStackTrace();
 					}
 				}
@@ -121,6 +122,7 @@ public class Connection implements Runnable {
 			try {
 				nm = in.readLine();  // Blocked
 			} catch (IOException e) {
+				log.log("Server: not get name "+nm);
 				e.printStackTrace();
 			}
 			System.out.println(nm);

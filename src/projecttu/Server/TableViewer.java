@@ -43,6 +43,7 @@ public class TableViewer implements Runnable {
 //		table.setReady(false);	
 	}
 	
+	// ?????????????
 	public void checkNewGame() {
 		ArrayList<Player> players = table.getPlayers();
 		boolean flag = true;

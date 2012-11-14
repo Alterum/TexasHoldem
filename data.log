@@ -1,1 +1,9 @@
 GameServer start...ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
+Connection open. Socket[addr=/127.0.0.1,port=44053,localport=8880] projecttu.Server.Connection@abab54
+Connection open. Socket[addr=/127.0.0.1,port=44054,localport=8880] projecttu.Server.Connection@a10ea2
+Connection name: jawi
+Connection name: jawi2
+Socket emergency closed! Connection name: jawi2
+java.io.EOFException
+Socket closed! Connection name: jawi2
+Thread[jawi2,5,] is dead and was removed from Active connections
