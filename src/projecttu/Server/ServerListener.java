@@ -33,16 +33,14 @@ public class ServerListener implements Runnable{
 	
 	@Override
 	public void run() {
-		waitServerResponseForStartGame();
+		waitResponseForStartGame();
 		dataExchangeWithServer();
 	}
 	
 	private void dataExchangeWithServer() {
 		while(true) {
 			waitDataFromServer();
-			
 			prepareOutput();
-			
 			sendDataToServer();
 		}
 		
@@ -83,7 +81,7 @@ public class ServerListener implements Runnable{
 		
 	}
 
-	private void waitServerResponseForStartGame() {
+	private void waitResponseForStartGame() {
 		try {
 			while(true) {
 				String str = in.readLine();
@@ -129,21 +127,8 @@ public class ServerListener implements Runnable{
 		}
 	}
 	
-//	public void send(OutputToServer out) {
-//		try {
-//			for(String key : out.getActions().keySet())
-//				System.out.println(out+" "+key+" "+out.getActions(key));
-//			System.out.println(out+" "+out.hashCode());
-//			oos.writeObject(out);
-//			oos.flush();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}	
-//	}
 	public void send(String str) {
 		System.out.println(str);
-//			oos.writeChars(out);
-//			oos.flush();
 		out.println(str);	
 	}
 	
@@ -205,21 +190,10 @@ public class ServerListener implements Runnable{
 		return parser;
 	}
 	
-//	public OutputToClient get() {
-//		return input;
-//	}
-	
-//	public void set(OutputToClient out) {
-//		input = out;
-//	}
-	
-//	private OutputToClient input = null;
-//	private Thread thread;
 	private BufferedReader in;
 	private PrintWriter out;
 	private ObjectInputStream ois;
 	private ObjectOutputStream oos;
 	private Socket socket;
-//	private OutputToServer output = null;
 	private ClientParser parser;
 }
