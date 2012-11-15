@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import projecttu.Gamelogic.Player;
 
-public class TableViewer implements Runnable {
-	public TableViewer(PlayHoldem play) {
-		table = play;
+public class GameViewer implements Runnable {
+	public GameViewer(PlayHoldem play) {
+		game = play;
 		
 		Thread thread = new Thread(this);
 		thread.start();
@@ -17,11 +17,11 @@ public class TableViewer implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		while(true) {
-			if(!table.isStartGame())
+			if(!game.isStartGame())
 				checkStartGame();
 			checkNewGame();
 			try {
-				Thread.sleep(90);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -30,14 +30,14 @@ public class TableViewer implements Runnable {
 	}
 	
 	public void checkStartGame() {
-		ArrayList<Player> players = table.getPlayers();
+		ArrayList<Player> players = game.getPlayers();
 		boolean flag = true;
 		for(Player player : players)
 			if(player.getStatus() < 0)
 				flag = false;
 		if(flag && players.size() > 1) {
-			table.setStart(true);
-			table.startGame();
+			game.setStart(true);
+			game.startGame();
 //			notifyAll();
 		}
 //		table.setReady(false);	
@@ -45,18 +45,18 @@ public class TableViewer implements Runnable {
 	
 	// ?????????????
 	public void checkNewGame() {
-		ArrayList<Player> players = table.getPlayers();
+		ArrayList<Player> players = game.getPlayers();
 		boolean flag = true;
 		for(Player player : players)
 			if(player.getStatus() != -5)
 				flag = false;
 		if(flag && players.size() > 1) {
-			table.startGame();
+			game.startGame();
 //			notifyAll();
 		}
 		
 //		table.setReady(false);	
 	}
 
-	private PlayHoldem table;
+	private PlayHoldem game;
 }

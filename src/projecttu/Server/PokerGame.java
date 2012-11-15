@@ -17,7 +17,7 @@ public class PokerGame {
 		
 		PokerTable t = new PokerTable();
 		PlayHoldem plh = new PlayHoldem(t);
-		new TableViewer(plh);
+		new GameViewer(plh);
 		activeGameTables.put(t, plh);
 		
 		while(true) {
@@ -35,7 +35,7 @@ public class PokerGame {
 			if(table == null) {
 				table = new PokerTable();
 				play = new PlayHoldem(table);
-				new TableViewer(play);
+				new GameViewer(play);
 				activeGameTables.put(table, play);	
 			}
 			
