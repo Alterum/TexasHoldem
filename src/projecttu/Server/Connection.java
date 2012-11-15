@@ -67,16 +67,8 @@ public class Connection implements Runnable {
 	private void gameProcess() {
 		try {
 			while(true) {
-				String s = in.readLine(); // Blocked, waiting request on start Game 
-	
-				if(s.equals("start"))
-					player.setStatus(1);
-				else if(s.equals("observer"))
-					player.setStatus(0);
-				else if(s.equals("exit")) {
-					play.removePlayerFromTheTable(player);
+				if(!isPlayerReadyToPlay(in.readLine()))
 					return;
-				}
 				
 				while (!play.isStartGame()) {
 					try {
@@ -121,6 +113,18 @@ public class Connection implements Runnable {
 		
 	}
 
+	private boolean isPlayerReadyToPlay(String input) {
+		if(input.equals("start")) {
+			player.setStatus(1);
+			return true;
+		}
+		else if(input.equals("observer")) {
+			player.setStatus(0);
+			return true;
+		}
+		return false;
+	}
+	
 	private void getInputName() {
 		while(true) {
 			String nm = null;
