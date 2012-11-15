@@ -22,6 +22,7 @@ public class ServerListener implements Runnable{
 	public ServerListener(String addr, int port) {
 		
 		connectToServer(addr, port);
+		getIO();
 		parser = new ClientParser();
 	}
 	
@@ -39,16 +40,13 @@ public class ServerListener implements Runnable{
 	@Override
 	public void run() {
 		waitServerResponseForStartGame();
+		dataExchangeWithServer();
+	}
+	
+	private void dataExchangeWithServer() {
 		while(true) {
-			try {
-				OutputObject obj = (OutputObject) ois.readObject(); // blocked
-				System.out.println(obj);
-				parser.parserInputObject(obj);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			waitDataFromServer();
+			
 			while(true) {
 				if(parser.isRequest())
 					break;
@@ -59,16 +57,35 @@ public class ServerListener implements Runnable{
 					e.printStackTrace();
 				}
 			}
+			
 			System.out.println("after: "+parser.isRequest());
-			try {
-				oos.writeObject(parser.getOutputObject());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			sendDataToServer();
 		}
+		
 	}
-	
+
+	private void sendDataToServer() {
+		try {
+			oos.writeObject(parser.getOutputObject());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	private void waitDataFromServer() {
+		try {
+			OutputObject obj = (OutputObject) ois.readObject(); // blocked
+			System.out.println(obj);
+			parser.parserInputObject(obj);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	private void waitServerResponseForStartGame() {
 		try {
 			while(true) {
@@ -91,9 +108,12 @@ public class ServerListener implements Runnable{
 		try {
 			socket = new Socket(addr, port);
 		} catch( IOException e ) {
-			System.out.println("Sry - server pole n�htav :(((");
+			System.out.println("Sry - Server not response: "+e);
 			return;
-		}
+		}	
+	}
+	
+	public void getIO() {
 		try {
 			System.out.println("socket = " + socket);
 			
