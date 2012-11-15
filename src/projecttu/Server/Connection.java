@@ -26,14 +26,14 @@ public class Connection implements Runnable {
 	private ObjectOutputStream oos;
 	private Thread thread;
 	private Logger log;
-	private PlayHoldem play;
+	private PlayHoldem game;
 	private Player player;
 	
 	public Connection(Socket socket, Logger log,
 			PlayHoldem play) throws IOException {
 		incoming = socket;
 		this.log = log;
-		this.play = play;
+		this.game = play;
 		
 		log.log("Connection open. "+incoming+" "+this);
 		
@@ -59,7 +59,7 @@ public class Connection implements Runnable {
 			log.log("Connection name: "+name);
 			thread.setName(name);
 			player = new Player(name);
-			play.addPlayerToTheTable(player);
+			game.addPlayerToTheTable(player);
 			
 			gameProcess();
 	}
@@ -68,33 +68,10 @@ public class Connection implements Runnable {
 		try {
 			while(true) {
 				if(!isPlayerReadyToPlay(in.readLine()))
-					return;
-				
-				while (!play.isStartGame()) {
-					try {
-						Thread.sleep(200);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				
-				out.println("startPlay");
-				
-				while(true) {
-					OutputObject outObj = play.getOutputData(name);
-					oos.writeObject(outObj);
-					
-					try {
-						OutputObject inObj = (OutputObject) ois.readObject();
-						play.setInputData(inObj);
-					} catch (ClassNotFoundException e) {
-						log.log("Server: ClassNotFoundException: "+e);
-						e.printStackTrace();
-					}
-				}
+					return;			
+				waitingForOtherPlayers();
+				clientServerProcessExchangeData();
 			}
-			
-			
 		} 
 		catch (IOException e) {
 			try {
@@ -123,6 +100,43 @@ public class Connection implements Runnable {
 			return true;
 		}
 		return false;
+	}
+	
+	private void clientServerProcessExchangeData() throws IOException {
+		while(true) {
+			OutputObject outObj = game.getOutputData(name);
+			try { oos.writeObject(outObj); }
+			catch (IOException e1) {
+				log.log("Server: IOExceptio for Write Output Object: "+e1);
+				incoming.close();
+				e1.printStackTrace();
+			}
+			
+			try {
+				OutputObject inObj = (OutputObject) ois.readObject();
+				game.setInputData(inObj);
+			} catch (ClassNotFoundException e) {
+				log.log("Server: ClassNotFoundException: "+e);
+				e.printStackTrace();
+			} catch (IOException e) {
+				log.log("Server: IOException for Read Output Object: "+e);
+				incoming.close();
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+	private void waitingForOtherPlayers() {
+		while (!game.isStartGame()) {
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		out.println("startPlay");
 	}
 	
 	private void getInputName() {
@@ -155,8 +169,8 @@ public class Connection implements Runnable {
 	}
 
 	public void removePlayerFromTable() {
-		play.removePlayerFromTheTable(
-				play.getPlayer(name));
+		game.removePlayerFromTheTable(
+				game.getPlayer(name));
 	}
 	
 	public Thread getThread() {
@@ -168,7 +182,7 @@ public class Connection implements Runnable {
 	}
 	
 	private synchronized String setName(String str) throws IOException {
-		if(play.getPlayer(str) != null && !str.equals(""))
+		if(game.getPlayer(str) != null && !str.equals(""))
 			return null;
 		else
 			return str;

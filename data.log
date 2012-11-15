@@ -1,9 +1,6 @@
 GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
-Connection open. Socket[addr=/127.0.0.1,port=45066,localport=8880] projecttu.Server.Connection@12b523c
-Connection open. Socket[addr=/127.0.0.1,port=45067,localport=8880] projecttu.Server.Connection@1cfd41a
-Connection name: pl1
-Connection name: pl2
-Socket emergency closed! Connection name: pl1
-java.io.EOFException
-Socket closed! Connection name: pl1
-Thread[pl1,5,] is dead and was removed from Active connections
+Connection open. Socket[addr=/127.0.0.1,port=45085,localport=8880] projecttu.Server.Connection@5d4a62
+Connection name: pasd
+Connection open. Socket[addr=/127.0.0.1,port=45086,localport=8880] projecttu.Server.Connection@182f3da
+Connection name: asfdvv
+Server: IOException for Read Output Object: java.io.EOFException
