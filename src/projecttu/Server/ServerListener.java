@@ -38,18 +38,7 @@ public class ServerListener implements Runnable{
 	
 	@Override
 	public void run() {
-		try {
-			while(true) {
-			String str = in.readLine();
-			if(str.equals("startPlay"))
-				break;
-			}
-			System.out.println("Server access on");
-//			parser.setVisibleButton(); /// Perenesti v parser polu4it array s pravom dostupa
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		waitServerResponseForStartGame();
 		while(true) {
 			try {
 				OutputObject obj = (OutputObject) ois.readObject(); // blocked
@@ -80,11 +69,29 @@ public class ServerListener implements Runnable{
 		}
 	}
 	
+	private void waitServerResponseForStartGame() {
+		try {
+			while(true) {
+				String str = in.readLine();
+				if(str.equals("startPlay"))
+					break;
+			}
+			
+			System.out.println("Server access on");
+			
+			try { Thread.sleep(200); }
+			catch (InterruptedException e) { e.printStackTrace(); }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	private void connectToServer(String addr, int port) {
 		try {
 			socket = new Socket(addr, port);
 		} catch( IOException e ) {
-			System.out.println("Sry - server pole nähtav :(((");
+			System.out.println("Sry - server pole nï¿½htav :(((");
 			return;
 		}
 		try {

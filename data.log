@@ -1,6 +1,6 @@
 GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
-Connection open. Socket[addr=/127.0.0.1,port=45085,localport=8880] projecttu.Server.Connection@5d4a62
-Connection name: pasd
-Connection open. Socket[addr=/127.0.0.1,port=45086,localport=8880] projecttu.Server.Connection@182f3da
-Connection name: asfdvv
+Connection open. Socket[addr=/127.0.0.1,port=45122,localport=8880] projecttu.Server.Connection@89848d
+Connection name: pdsf
+Connection open. Socket[addr=/127.0.0.1,port=45125,localport=8880] projecttu.Server.Connection@162a60a
+Connection name: vcxkd
 Server: IOException for Read Output Object: java.io.EOFException
