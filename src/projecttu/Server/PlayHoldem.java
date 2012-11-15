@@ -23,15 +23,11 @@ public class PlayHoldem {
 		System.out.println("getOutputData before "+Thread.currentThread().getName());
 		
 		// BRED
-		int READYSTART = -5;
-		if(table.getPlayer(name).getStatus() == READYSTART)
+		int READY_TO_START = -5;
+		if(table.getPlayer(name).getStatus() == READY_TO_START)
 			waitNewGame();
 		
-		try {
-			smphr.acquire();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		waitInQueue();
 		
 		HashMap<String, Boolean> map2 = convertAccessButtons(name);
 		HashMap<String, String> map1 = convertInfo(name);
@@ -42,12 +38,19 @@ public class PlayHoldem {
 		return output;
 	}
 	
+	private void waitInQueue() {
+		try {
+			smphr.acquire();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}	
+	}
+
 	private void waitNewGame() {
 		while(!newGame) {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -66,19 +69,16 @@ public class PlayHoldem {
 		
 		Player player = table.getPlayer(name);
 		
-		
-		
-		
 		player.setScore(player.getScore()-bet);
 		player.setBet(player.getBet()+bet);
 		player.setStatus(status);
 		
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(100);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		table.setBankInRound(table.getBankInRound()+bet);
 		
