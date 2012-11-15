@@ -26,12 +26,6 @@ public class ServerListener implements Runnable{
 		parser = new ClientParser();
 	}
 	
-//	public void startListener() {
-//		thread = new Thread(new Listener(
-//		ois, this));
-//		thread.start();
-//	}
-	
 	public void startListen() {
 		Thread thread = new Thread(this);
 		thread.start();
@@ -47,21 +41,24 @@ public class ServerListener implements Runnable{
 		while(true) {
 			waitDataFromServer();
 			
-			while(true) {
-				if(parser.isRequest())
-					break;
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			prepareOutput();
 			
-			System.out.println("after: "+parser.isRequest());
 			sendDataToServer();
 		}
 		
+	}
+
+	private void prepareOutput() {
+		while(true) {
+			if(parser.isRequest())
+				break;
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}		
+		System.out.println("after: "+parser.isRequest());	
 	}
 
 	private void sendDataToServer() {
