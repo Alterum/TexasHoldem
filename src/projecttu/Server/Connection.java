@@ -37,21 +37,10 @@ public class Connection implements Runnable {
 		
 		log.log("Connection open. "+incoming+" "+this);
 		
-		in = new BufferedReader(
-				new InputStreamReader(
-						incoming.getInputStream()));
-		out =  new PrintWriter(
-				new BufferedWriter(
-						new OutputStreamWriter(
-								incoming.getOutputStream())), true);
-		
-		ois = new ObjectInputStream(incoming.getInputStream());
-	    oos = new ObjectOutputStream(incoming.getOutputStream());
-		
-		thread = new Thread(this);
-		thread.start();
+		setIO();
+		start();
 	}
-		
+
 	public void run() {
 //			out.println("Welcome to PokerGame");
 			getInputName();
@@ -64,13 +53,31 @@ public class Connection implements Runnable {
 			gameProcess();
 	}
 	
+	private void start() {
+		thread = new Thread(this);
+		thread.start();	
+	}
+	
+	private void setIO() throws IOException {
+		in = new BufferedReader(
+				new InputStreamReader(
+						incoming.getInputStream()));
+		out =  new PrintWriter(
+				new BufferedWriter(
+						new OutputStreamWriter(
+								incoming.getOutputStream())), true);
+		
+		ois = new ObjectInputStream(incoming.getInputStream());
+	    oos = new ObjectOutputStream(incoming.getOutputStream());
+	}
+	
 	private void gameProcess() {
 		try {
 			while(true) {
 				if(!isPlayerReadyToPlay(in.readLine()))
 					return;			
 				waitingForOtherPlayers();
-				clientServerProcessExchangeData();
+				processDataExchange();
 			}
 		} 
 		catch (IOException e) {
@@ -102,27 +109,48 @@ public class Connection implements Runnable {
 		return false;
 	}
 	
-	private void clientServerProcessExchangeData() throws IOException {
+	private void processDataExchange() throws IOException {
 		while(true) {
-			OutputObject outObj = game.getOutputData(name);
-			try { oos.writeObject(outObj); }
-			catch (IOException e1) {
-				log.log("Server: IOExceptio for Write Output Object: "+e1);
+			sendDataToClient();
+			prepareOutputData(getDataFromClient());
+		}
+		
+	}
+
+	private void prepareOutputData(OutputObject data) {
+		game.setInputData(data);
+		
+	}
+
+	private OutputObject getDataFromClient() {
+		OutputObject data = null;
+		try {
+			data = (OutputObject) ois.readObject();
+		} catch (ClassNotFoundException e) {
+			log.log("Server: ClassNotFoundException: "+e);
+			e.printStackTrace();
+		} catch (IOException e) {
+			log.log("Server: IOException for Read Output Object: "+e);
+			try {
 				incoming.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
-			try {
-				OutputObject inObj = (OutputObject) ois.readObject();
-				game.setInputData(inObj);
-			} catch (ClassNotFoundException e) {
-				log.log("Server: ClassNotFoundException: "+e);
-				e.printStackTrace();
-			} catch (IOException e) {
-				log.log("Server: IOException for Read Output Object: "+e);
-				incoming.close();
-				e.printStackTrace();
-			}
+			e.printStackTrace();
+		}
+		return data;
+		
+	}
+
+	private void sendDataToClient() {
+		OutputObject data = game.getOutputData(name);
+		try { oos.writeObject(data); }
+		catch (IOException e1) {
+			log.log("Server: IOExceptio for Write Output Object: "+e1);
+			try { incoming.close();}
+			catch (IOException e) {e.printStackTrace();}
+			e1.printStackTrace();
 		}
 		
 	}

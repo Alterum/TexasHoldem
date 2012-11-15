@@ -174,14 +174,11 @@ public class PlayHoldem {
 	
 	public synchronized HashMap<String, String> convertInfo(String name) {
 		HashMap<String, String> map = new HashMap<String, String>();
-		
-		// PlayerInfo
+
 		setPlayerInfo(name, map);
-		
-		//OpponentsInfo
+
 		setOpponentsInfo(name, map);
-		
-		//TableInfo ready
+
 		setTableInfo(map);
 		
 		return map;

@@ -14,6 +14,7 @@ public class PokerGame {
 	public PokerGame(ServerSocket s) throws IOException {
 		new Revision(online, log);
 		log.log("GameServer start: "+s);
+		
 		PokerTable t = new PokerTable();
 		PlayHoldem plh = new PlayHoldem(t);
 		new TableViewer(plh);
