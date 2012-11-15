@@ -22,19 +22,14 @@ public class PlayHoldem {
 		
 		System.out.println("getOutputData before "+Thread.currentThread().getName());
 		
-		if(table.getPlayer(name).getStatus() == -5)
-			while(!newGame) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+		// BRED
+		int READYSTART = -5;
+		if(table.getPlayer(name).getStatus() == READYSTART)
+			waitNewGame();
+		
 		try {
 			smphr.acquire();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -44,16 +39,21 @@ public class PlayHoldem {
 		output = new OutputToClient(map1, map2);
 
 		System.out.println("getoutputData after "+Thread.currentThread().getName());
-//		try {
-//			Thread.sleep(200);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-////		newGame = false;
 		return output;
 	}
 	
+	private void waitNewGame() {
+		while(!newGame) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
 	public void setInputData(OutputObject obj) {
 		
 		OutputToServer input = (OutputToServer) obj;
