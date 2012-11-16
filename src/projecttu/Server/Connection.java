@@ -111,7 +111,8 @@ public class Connection implements Runnable {
 	private void processDataExchange() throws IOException {
 		while(true) {
 			sendDataToClient();
-			prepareOutputData(getDataFromClient());
+			prepareOutputData(
+					getDataFromClient());
 		}
 		
 	}
@@ -130,12 +131,6 @@ public class Connection implements Runnable {
 			e.printStackTrace();
 		} catch (IOException e) {
 			log.log("Server: IOException for Read Output Object: "+e);
-			try {
-				incoming.close();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 			e.printStackTrace();
 		}
 		return data;

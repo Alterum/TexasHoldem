@@ -20,14 +20,14 @@ public class BusinessProcess {
 	
 	public OutputObject getOutputData(String name) {
 		
-		System.out.println("getOutputData before "+Thread.currentThread().getName());
-		
-		// BRED
+		// BRED vynesti v connection
 		int READY_TO_START = -5;
 		if(table.getPlayer(name).getStatus() == READY_TO_START)
 			waitNewGame();
-		
 		waitInQueue();
+		
+		
+		System.out.println("getOutputData before "+Thread.currentThread().getName());
 		
 		HashMap<String, Boolean> map2 = convertAccessButtons(name);
 		HashMap<String, String> map1 = convertInfo(name);
@@ -101,6 +101,8 @@ public class BusinessProcess {
 		for(String s : bankInRound.keySet())
 			System.out.println("after: "+s + " sum bet in round: "+bankInRound.get(s));
 //		
+		
+		// vynesti v connection
 		smphr.release();
 		
 	}
@@ -152,7 +154,7 @@ public class BusinessProcess {
 			// function set Players to SmallBlind and BigBlind
 			table.selectSmallAndBigBlinds();
 			
-			// Create Semaphore
+			// Create Semaphore vynesti v connection
 			smphr = new Semaphore(1, true);
 			
 			int index = 0;
@@ -303,9 +305,9 @@ public class BusinessProcess {
 	private ServerParser parser;
 	private int currentRound;
 	private OutputObject output;
-	private boolean startToGame = false;
-	private boolean newGame = false;
+	private boolean startToGame = false; // ?? connection
+	private boolean newGame = false; // ?? connection
 	private PokerTable table;
-	private Semaphore smphr;
+	private Semaphore smphr; // connection
 
 }
