@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import projecttu.Gamelogic.Player;
 
-public class GameViewer implements Runnable {
-	public GameViewer(BussinesProcess play) {
+public class BusinessKeeper implements Runnable {
+	public BusinessKeeper(BusinessProcess play) {
 		game = play;
 		
 		Thread thread = new Thread(this);
@@ -58,5 +58,5 @@ public class GameViewer implements Runnable {
 //		table.setReady(false);	
 	}
 
-	private BussinesProcess game;
+	private BusinessProcess game;
 }

@@ -12,8 +12,8 @@ import projecttu.OutputObject.OutputToClient;
 import projecttu.OutputObject.OutputToServer;
 import projecttu.OutputObject.ServerParser;
 
-public class BussinesProcess {
-	public BussinesProcess(PokerTable table) {
+public class BusinessProcess {
+	public BusinessProcess(PokerTable table) {
 		this.table = table;
 		parser = new ServerParser(table);
 	}

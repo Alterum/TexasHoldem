@@ -26,11 +26,11 @@ public class Connection implements Runnable {
 	private ObjectOutputStream oos;
 	private Thread thread;
 	private Logger log;
-	private BussinesProcess game;
+	private BusinessProcess game;
 	private Player player;
 	
 	public Connection(Socket socket, Logger log,
-			BussinesProcess play) throws IOException {
+			BusinessProcess play) throws IOException {
 		incoming = socket;
 		this.log = log;
 		this.game = play;
@@ -147,8 +147,6 @@ public class Connection implements Runnable {
 		try { oos.writeObject(data); }
 		catch (IOException e1) {
 			log.log("Server: IOExceptio for Write Output Object: "+e1);
-			try { incoming.close();}
-			catch (IOException e) {e.printStackTrace();}
 			e1.printStackTrace();
 		}
 		
