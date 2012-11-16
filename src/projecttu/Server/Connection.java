@@ -26,11 +26,11 @@ public class Connection implements Runnable {
 	private ObjectOutputStream oos;
 	private Thread thread;
 	private Logger log;
-	private PlayHoldem game;
+	private BussinesProcess game;
 	private Player player;
 	
 	public Connection(Socket socket, Logger log,
-			PlayHoldem play) throws IOException {
+			BussinesProcess play) throws IOException {
 		incoming = socket;
 		this.log = log;
 		this.game = play;
@@ -42,7 +42,6 @@ public class Connection implements Runnable {
 	}
 
 	public void run() {
-//			out.println("Welcome to PokerGame");
 			getInputName();
 			
 			log.log("Connection name: "+name);

@@ -16,7 +16,7 @@ public class PokerGame {
 		log.log("GameServer start: "+s);
 		
 		PokerTable t = new PokerTable();
-		PlayHoldem plh = new PlayHoldem(t);
+		BussinesProcess plh = new BussinesProcess(t);
 		new GameViewer(plh);
 		activeGameTables.put(t, plh);
 		
@@ -24,7 +24,7 @@ public class PokerGame {
 			Socket incoming = s.accept(); // blocked
 			
 			PokerTable table = null;
-			PlayHoldem play = null;
+			BussinesProcess play = null;
 			
 			for(PokerTable tble : activeGameTables.keySet())
 				if(!tble.isMaxPlayersForTheTable()) {
@@ -34,7 +34,7 @@ public class PokerGame {
 					
 			if(table == null) {
 				table = new PokerTable();
-				play = new PlayHoldem(table);
+				play = new BussinesProcess(table);
 				new GameViewer(play);
 				activeGameTables.put(table, play);	
 			}
@@ -52,8 +52,8 @@ public class PokerGame {
 	private ActiveConnections online = 
 			new ActiveConnections();
 	private Logger log = new Logger("data.log");
-	private Map<PokerTable, PlayHoldem> activeGameTables =
-			new HashMap<PokerTable, PlayHoldem>();
+	private Map<PokerTable, BussinesProcess> activeGameTables =
+			new HashMap<PokerTable, BussinesProcess>();
 }
 
 class Revision extends Thread {
