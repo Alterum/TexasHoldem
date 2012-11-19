@@ -13,8 +13,7 @@ import java.net.Socket;
 import projecttu.OutputObject.ClientParser;
 import projecttu.OutputObject.OutputObject;
 import projecttu.OutputObject.OutputToClient;
-import projecttu.OutputObject.OutputToServer;
-import projecttu.OutputObject.ServerParser;
+
 
 public class ServerListener implements Runnable{
 	public ServerListener(String addr, int port) {
