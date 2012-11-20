@@ -38,21 +38,20 @@ public class JDBCPostgresqlExample {
  
 		try {
 			connection = DriverManager.getConnection(
-					"jdbc:postgresql://127.0.0.1:5432/holdem", "joker",
+					"jdbc:postgresql://127.0.0.1:5432/testh", "joker",
 					"holdem76");
  
 		} catch (SQLException e) {
 			System.out.println("Connection Failed! Check output console");
 			e.printStackTrace();
-			return;
 		}
  
 		if (connection != null) {
 			System.out.println("You made it, take control your database now!");
 			state = connection.createStatement();
-			set = state.executeQuery("SELECT VERSION();");
-			if (set.next()) {
-                System.out.println(set.getString(1));
+			set = state.executeQuery("SELECT * FROM people");
+			while (set.next()) {
+                System.out.println(set.getString(3));
             }
 			System.out.println(connection.getCatalog());
 		} else {
