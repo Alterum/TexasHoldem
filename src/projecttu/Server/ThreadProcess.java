@@ -9,6 +9,7 @@ public class ThreadProcess {
 	private DataParserOnServerSide parser;
 	private DBDriver db;
 //	private ThreadGate gate;
+	private Observer viewer;
 	private BusinessProcess process;
 	
 	private Player player;
@@ -29,6 +30,27 @@ public class ThreadProcess {
 			return false;
 		waitingForOtherPlayers();
 		return true;
+	}
+	
+	private boolean isPlayerReadyToPlay(String input) {
+		if(input.equals("start")) {
+			player.setStatus(1);
+			return true;
+		}
+		else if(input.equals("observer")) {
+			player.setStatus(0);
+			return true;
+		}
+		return false;
+	}
+	
+	private void waitingForOtherPlayers() {
+		viewer.done();
+		try {
+			wait();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public OutputObject getResponse(OutputObject info) {
@@ -57,34 +79,6 @@ public class ThreadProcess {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	private boolean isPlayerReadyToPlay(String input) {
-		if(input.equals("start")) {
-			player.setStatus(1);
-			return true;
-		}
-		else if(input.equals("observer")) {
-			player.setStatus(0);
-			return true;
-		}
-		return false;
-	}
-	
-	private void waitingForOtherPlayers() {
-		while (!isStartGame()) {
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	// Observer thread sobirajuwii infu
-	public boolean isStartGame() {
-		return startToGame;
-	}
-	
 
 	public synchronized boolean removePlayerFromTheTable() {
 		return table.removePlayer(player);

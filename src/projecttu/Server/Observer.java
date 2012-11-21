@@ -12,26 +12,43 @@ public class Observer implements Runnable {
 	
 	@Override
 	public void run() {
+		waitAllPlayers();
+		waitHarvestAllInfo();
+	}
+	
+	private void waitAllPlayers() {
+		try {
+			Thread.sleep(100);
+			if(values >= 2) {
+				values = 0;
+				Thread.sleep(60000);
+				notifyAll();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void waitHarvestAllInfo() {
 		while(true) {
 			if(values >= count) {
 				values = 0;
 				notifyAll();
 			}
-
+	
 			try {
-				Thread.sleep(200);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
 	}
-	
-	synchronized void setValue() {
+
+	synchronized void done() {
 		values++;
 	}
 	
-	void setCount(int x) {
+	synchronized void setCountConnections(int x) {
 		count = x;
 	}
 

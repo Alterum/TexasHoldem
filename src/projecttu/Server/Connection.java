@@ -214,5 +214,15 @@ public class Connection implements Runnable {
 	public String getName() {
 		return name;
 	}
+
+	public void close() {
+		// TODO delete Player from the table
+		
+		try {
+			incoming.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
