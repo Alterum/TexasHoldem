@@ -255,23 +255,23 @@ public class BusinessProcess {
 		return map; 
 	}
 	
-	public boolean isStartGame() {
-		return startToGame;
-	}
+//	public boolean isStartGame() {
+//		return startToGame;
+//	}
 	
 	public void setStart(boolean flag) {
 		startToGame = flag;
 	}
 	
-	public synchronized boolean addPlayerToTheTable(Player player) {
-		return table.addPlayer(player);
-	}
-	public synchronized Player getPlayer(String name) {
-		return table.getPlayer(name);
-	}
-	public synchronized boolean removePlayerFromTheTable(Player player) {
-		return table.removePlayer(player);
-	}
+//	public synchronized boolean addPlayerToTheTable(Player player) {
+//		return table.addPlayer(player);
+//	}
+//	public synchronized Player getPlayer(String name) {
+//		return table.getPlayer(name);
+//	}
+//	public synchronized boolean removePlayerFromTheTable(Player player) {
+//		return table.removePlayer(player);
+//	}
 	public synchronized ArrayList<Player> getPlayers() {
 		return table.getPlayers();
 	}

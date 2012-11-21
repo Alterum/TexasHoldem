@@ -28,7 +28,7 @@ public class Connection implements Runnable {
 	private Thread thread;
 	private Logger log;
 //	private BusinessProcess game;
-	private Player player;
+//	private Player player;
 	private ThreadProcess server;
 	
 	public Connection(Socket socket, Logger log,
@@ -44,22 +44,50 @@ public class Connection implements Runnable {
 		setIO();
 		start();
 	}
-
-	public void run() {
-			getInputName();
-			
-			log.log("Connection name: "+name);
-			thread.setName(name);
-			player = new Player(name);
-			game.addPlayerToTheTable(player);
-			
-			gameProcess();
-	}
 	
 	private void start() {
 		thread = new Thread(this);
 		thread.start();	
 	}
+	
+	public void run() {
+		while(true)
+			try {
+				if(getInputName(server.getPlayerName(in.readLine())))
+					break;
+			} catch (IOException e2) {
+				e2.printStackTrace();
+			}
+		
+		log.log("Connection name: "+name);
+		thread.setName(name);
+//			player = new Player(name);
+//			game.addPlayerToTheTable(player);
+		server.prepareGameProcess(name);
+		try {
+			if(server.startGameProcess(
+					in.readLine()))
+				out.println("startPlay");
+			else
+				return;
+			
+			processDataExchange();
+		} catch (IOException e) {
+			try {
+				incoming.close();
+				log.log( "Socket emergency closed! Connection name: "+name+"\r\n"+e );
+			} catch (IOException e1) {
+				log.log( "Socket not closed!\r\n"+e1);
+			}
+		} finally {
+			try {
+				log.log( "Socket closed! Connection name: "+name);
+				incoming.close();
+			} catch(IOException e) {}
+		}
+	}
+	
+
 	
 	private void setIO() throws IOException {
 		in = new BufferedReader(
@@ -74,43 +102,57 @@ public class Connection implements Runnable {
 	    oos = new ObjectOutputStream(incoming.getOutputStream());
 	}
 	
-	private void gameProcess() {
-		try {
-			while(true) {
-				if(!isPlayerReadyToPlay(in.readLine()))
-					return;			
-				waitingForOtherPlayers();
-				processDataExchange();
-			}
-		} 
-		catch (IOException e) {
-			try {
-				incoming.close();
-				log.log( "Socket emergency closed! Connection name: "+name+"\r\n"+e );
-			} catch (IOException e1) {
-				log.log( "Socket not closed!\r\n"+e1);
-			}
+	private boolean getInputName(String in) {
+		if(in == null) {
+			System.out.println("incorect");
+			out.println("false");
+			return false;
 		}
-		finally {
-			try {
-				log.log( "Socket closed! Connection name: "+name);
-				incoming.close();
-			} catch(IOException e) {}
+		else {
+			System.out.println("correct");
+			out.println("true");
+			name = in;
+			return true;
 		}
-		
 	}
+	
+//	private void gameProcess() {
+//		try {
+//			while(true) {
+//				if(!isPlayerReadyToPlay(in.readLine()))
+//					return;			
+//				waitingForOtherPlayers();
+//				processDataExchange();
+//			}
+//		} 
+//		catch (IOException e) {
+//			try {
+//				incoming.close();
+//				log.log( "Socket emergency closed! Connection name: "+name+"\r\n"+e );
+//			} catch (IOException e1) {
+//				log.log( "Socket not closed!\r\n"+e1);
+//			}
+//		}
+//		finally {
+//			try {
+//				log.log( "Socket closed! Connection name: "+name);
+//				incoming.close();
+//			} catch(IOException e) {}
+//		}
+//		
+//	}
 
-	private boolean isPlayerReadyToPlay(String input) {
-		if(input.equals("start")) {
-			player.setStatus(1);
-			return true;
-		}
-		else if(input.equals("observer")) {
-			player.setStatus(0);
-			return true;
-		}
-		return false;
-	}
+//	private boolean isPlayerReadyToPlay(String input) {
+//		if(input.equals("start")) {
+//			player.setStatus(1);
+//			return true;
+//		}
+//		else if(input.equals("observer")) {
+//			player.setStatus(0);
+//			return true;
+//		}
+//		return false;
+//	}
 	
 	private void processDataExchange() throws IOException {
 		while(true) {
@@ -146,51 +188,24 @@ public class Connection implements Runnable {
 		
 	}
 
-	private void waitingForOtherPlayers() {
-		while (!game.isStartGame()) {
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		out.println("startPlay");
-	}
+//	private void waitingForOtherPlayers() {
+//		while (!game.isStartGame()) {
+//			try {
+//				Thread.sleep(200);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		out.println("startPlay");
+//	}
 	
-	private void getInputName() {
-		while(true) {
-			String nm = null;
-			try {
-				nm = in.readLine();  // Blocked
-			} catch (IOException e) {
-				log.log("Server: not get name "+nm);
-				e.printStackTrace();
-			}
-			System.out.println(nm);
-			try {
-				if(setName(nm) == null) {
-					System.out.println("incorect");
-					out.println("false");
-					continue;
-				}
-				else {
-					System.out.println("correct");
-					out.println("true");
-					name = nm;
-					break;
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	}
+	
 
-	public void removePlayerFromTable() {
-		game.removePlayerFromTheTable(
-				game.getPlayer(name));
-	}
+//	public void removePlayerFromTable() {
+//		game.removePlayerFromTheTable(
+//				game.getPlayer(name));
+//	}
 	
 	public Thread getThread() {
 		return thread;
@@ -200,10 +215,4 @@ public class Connection implements Runnable {
 		return name;
 	}
 	
-	private synchronized String setName(String str) throws IOException {
-		if(game.getPlayer(str) != null && !str.equals(""))
-			return null;
-		else
-			return str;
-	}
 }
