@@ -92,7 +92,11 @@ public class ThreadProcess {
 //	}
 
 	public synchronized String getPlayerName(String name) {
-		return table.getPlayer(name).toString();
+		Player p = table.getPlayer(name);
+		if(p != null)
+			return null;
+		else
+			return name;
 	}
 	
 
