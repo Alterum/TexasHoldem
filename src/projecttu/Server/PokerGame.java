@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import projecttu.Gamelogic.PokerTable;
@@ -15,33 +16,35 @@ public class PokerGame {
 		new Revision(online, log);
 		log.log("GameServer start: "+s);
 		
-		PokerTable t = new PokerTable();
-		BusinessProcess plh = new BusinessProcess(t);
-		new BusinessKeeper(plh);
-		activeGameTables.put(t, plh);
+//		PokerTable t = new PokerTable();
+//		BusinessProcess plh = new BusinessProcess(t);
+//		new BusinessKeeper(plh);
+		activeGameTables.put(new PokerTable(), new Observer());
 		
 		while(true) {
 			Socket incoming = s.accept(); // blocked
 			
 			PokerTable table = null;
-			BusinessProcess play = null;
+			Observer viewer = null;
+//			BusinessProcess play = null;
 			
 			for(PokerTable tble : activeGameTables.keySet())
 				if(!tble.isMaxPlayersForTheTable()) {
 					table = tble;
-					play = activeGameTables.get(tble);
+					viewer = activeGameTables.get(tble);
+//					play = activeGameTables.get(tble);
 				}
 					
 			if(table == null) {
 				table = new PokerTable();
-				play = new BusinessProcess(table);
-				new BusinessKeeper(play);
-				activeGameTables.put(table, play);	
+//				play = new BusinessProcess(table);
+//				new BusinessKeeper(play);
+				activeGameTables.put(table, viewer);	
 			}
 			
 			try {
 				online.addConnection(new Connection(
-						incoming, log, play));
+						incoming, log, table, viewer));
 			} catch(IOException e) {
 				log.log("Socket emergency has benn closed! "+incoming+"\r\n"+e);
 				incoming.close();
@@ -52,8 +55,8 @@ public class PokerGame {
 	private ActiveConnections online = 
 			new ActiveConnections();
 	private Logger log = new Logger("data.log");
-	private Map<PokerTable, BusinessProcess> activeGameTables =
-			new HashMap<PokerTable, BusinessProcess>();
+	private Map<PokerTable, Observer> activeGameTables =
+			new HashMap<PokerTable, Observer>();
 }
 
 class Revision extends Thread {
@@ -71,7 +74,7 @@ class Revision extends Thread {
 					Connection c = itr.next();
 					if( !c.getThread().isAlive() ) {
 						log.log(c.getThread()+" is dead and was removed from Active connections");
-						c.removePlayerFromTable();
+						c.close();
 						itr.remove();
 					}
 				}

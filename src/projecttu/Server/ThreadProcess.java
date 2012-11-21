@@ -15,8 +15,9 @@ public class ThreadProcess {
 	private Player player;
 	private PokerTable table;
 	
-	ThreadProcess(PokerTable table) {
+	ThreadProcess(PokerTable table, Observer observer) {
 		this.table = table;
+		viewer = observer;
 	}
 
 	public void prepareGameProcess(String name) {

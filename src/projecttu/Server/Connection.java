@@ -32,12 +32,12 @@ public class Connection implements Runnable {
 	private ThreadProcess server;
 	
 	public Connection(Socket socket, Logger log,
-			PokerTable play) throws IOException {
+			PokerTable play, Observer observer) throws IOException {
 		incoming = socket;
 		this.log = log;
 //		this.game = play;
 		
-		server = new ThreadProcess(play);
+		server = new ThreadProcess(play, observer);
 		
 		log.log("Connection open. "+incoming+" "+this);
 		
