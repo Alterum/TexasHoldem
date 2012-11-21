@@ -42,6 +42,8 @@ public class PokerGame {
 				activeGameTables.put(table, viewer);	
 			}
 			
+			viewer.start();
+			
 			try {
 				online.addConnection(new Connection(
 						incoming, log, table, viewer));

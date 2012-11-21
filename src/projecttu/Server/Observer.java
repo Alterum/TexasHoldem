@@ -6,6 +6,10 @@ public class Observer implements Runnable {
 	
 	
 	Observer() {
+		values = 0;
+	}
+	
+	void start() {
 		Thread thread = new Thread(this);
 		thread.start();
 	}
@@ -17,15 +21,18 @@ public class Observer implements Runnable {
 	}
 	
 	private void waitAllPlayers() {
-		try {
-			Thread.sleep(100);
-			if(values >= 2) {
-				values = 0;
-				Thread.sleep(60000);
-				notifyAll();
+		while(true) {
+			try {
+				Thread.sleep(100);
+				if(values >= 2) {
+					Thread.sleep(60000);
+					count = values;
+					values = 0;
+					notifyAll();
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
 
