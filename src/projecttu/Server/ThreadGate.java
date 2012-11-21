@@ -1,16 +1,13 @@
 package projecttu.Server;
 
 import projecttu.Gamelogic.PokerTable;
+import projecttu.OutputObject.OutputObject;
 
 public class ThreadGate {
 	BusinessProcess process;
-	ConstructOutData constructor =
-			new ConstructOutData();
-	Connection connection;
-	
-	ThreadGate() {
-		process = new BusinessProcess(
-				new PokerTable());
+	OutputObject data;
+	ThreadGate(BusinessProcess bp) {
+		process = bp;
 	}
 	
 	public void start() {
@@ -18,18 +15,24 @@ public class ThreadGate {
 		semaphoreOn(); // ????
 		
 		process.design(); // v design ras4ety i info iz DB
+		data = process.getOutput();
 		
 		semaphoreOff(); // ???
 		
-		connection.setOutput(
-				constructor.newOutData());
-		
-		
-		
 	}
 	
-	void setConnection(Connection con) {
-		connection = con;
+	private void semaphoreOff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void semaphoreOn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public OutputObject getOutputData() {
+		return data;
 	}
 
 }

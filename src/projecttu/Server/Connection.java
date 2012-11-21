@@ -13,6 +13,7 @@ import java.net.SocketException;
 
 
 import projecttu.Gamelogic.Player;
+import projecttu.Gamelogic.PokerTable;
 import projecttu.OutputObject.OutputObject;
 import projecttu.OutputObject.OutputToServer;
 
@@ -26,14 +27,17 @@ public class Connection implements Runnable {
 	private ObjectOutputStream oos;
 	private Thread thread;
 	private Logger log;
-	private BusinessProcess game;
+//	private BusinessProcess game;
 	private Player player;
+	private ThreadProcess server;
 	
 	public Connection(Socket socket, Logger log,
-			BusinessProcess play) throws IOException {
+			PokerTable play) throws IOException {
 		incoming = socket;
 		this.log = log;
-		this.game = play;
+//		this.game = play;
+		
+		server = new ThreadProcess(play);
 		
 		log.log("Connection open. "+incoming+" "+this);
 		
@@ -110,15 +114,10 @@ public class Connection implements Runnable {
 	
 	private void processDataExchange() throws IOException {
 		while(true) {
-			sendDataToClient();
-			prepareOutputData(
-					getDataFromClient());
+			sendDataToClient(
+					server.getResponse(
+							getDataFromClient()));
 		}
-		
-	}
-
-	private void prepareOutputData(OutputObject data) {
-		game.setInputData(data);
 		
 	}
 
@@ -137,8 +136,8 @@ public class Connection implements Runnable {
 		
 	}
 
-	private void sendDataToClient() {
-		OutputObject data = game.getOutputData(name);
+	private void sendDataToClient(OutputObject data) {
+//		OutputObject data = game.getOutputData(name);
 		try { oos.writeObject(data); }
 		catch (IOException e1) {
 			log.log("Server: IOExceptio for Write Output Object: "+e1);

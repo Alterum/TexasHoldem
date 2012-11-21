@@ -13,30 +13,13 @@ import projecttu.OutputObject.OutputToServer;
 import projecttu.OutputObject.ServerParser;
 
 public class BusinessProcess {
-	public BusinessProcess(PokerTable table) {
+	public BusinessProcess(PokerTable table, DBDriver driver) {
+		db = driver;
 		this.table = table;
 		parser = new ServerParser(table);
 	}
 	
-	public OutputObject getOutputData(String name) {
-		
-		// BRED vynesti v connection
-		int READY_TO_START = -5;
-		if(table.getPlayer(name).getStatus() == READY_TO_START)
-			waitNewGame();
-		waitInQueue();
-		
-		
-		System.out.println("getOutputData before "+Thread.currentThread().getName());
-		
-		HashMap<String, Boolean> map2 = convertAccessButtons(name);
-		HashMap<String, String> map1 = convertInfo(name);
-		
-		output = new OutputToClient(map1, map2);
-
-		System.out.println("getoutputData after "+Thread.currentThread().getName());
-		return output;
-	}
+	
 	
 	private void waitInQueue() {
 		try {
@@ -67,6 +50,7 @@ public class BusinessProcess {
 		
 		String name = input.toString();
 		
+		//From db
 		Player player = table.getPlayer(name);
 		
 		player.setScore(player.getScore()-bet);
@@ -309,6 +293,56 @@ public class BusinessProcess {
 	private boolean newGame = false; // ?? connection
 	private PokerTable table;
 	private Semaphore smphr; // connection
+	
+	private DBDriver db;
+	private ConstructOutData constructor;
+	
+	public void design() {
+		getDataFromDB();
+		calculate();
+		constructOutData();
+		
+	}
+	
+public OutputObject getOutputData(String name) {
+		
+		// BRED DLJA nA4ala  novoj igry
+		int READY_TO_START = -5;
+		if(table.getPlayer(name).getStatus() == READY_TO_START)
+			waitNewGame();
+		waitInQueue();
+		
+		
+//		System.out.println("getOutputData before "+Thread.currentThread().getName());
+		
+		HashMap<String, Boolean> map2 = convertAccessButtons(name);
+		HashMap<String, String> map1 = convertInfo(name);
+		
+		output = new OutputToClient(map1, map2);
+
+		System.out.println("getoutputData after "+Thread.currentThread().getName());
+		return output;
+	}
+
+	private void calculate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void constructOutData() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void getDataFromDB() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public OutputObject getOutput() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
 	
