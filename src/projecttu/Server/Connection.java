@@ -32,7 +32,7 @@ public class Connection implements Runnable {
 	private ThreadProcess server;
 	
 	public Connection(Socket socket, Logger log,
-			PokerTable play, Observer observer) throws IOException {
+			PokerTable play, Status observer) throws IOException {
 		incoming = socket;
 		this.log = log;
 //		this.game = play;

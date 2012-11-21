@@ -9,13 +9,13 @@ public class ThreadProcess {
 	private DataParserOnServerSide parser;
 	private DBDriver db;
 //	private ThreadGate gate;
-	private Observer viewer;
+	private Status viewer;
 	private BusinessProcess process;
 	
 	private Player player;
 	private PokerTable table;
 	
-	ThreadProcess(PokerTable table, Observer observer) {
+	ThreadProcess(PokerTable table, Status observer) {
 		this.table = table;
 		viewer = observer;
 	}
@@ -46,11 +46,13 @@ public class ThreadProcess {
 	}
 	
 	private void waitingForOtherPlayers() {
-		viewer.done();
-		try {
-			wait();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		synchronized(viewer) {
+			viewer.done();
+			try {
+				viewer.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

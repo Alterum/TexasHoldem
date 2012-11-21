@@ -1,11 +1,12 @@
 package projecttu.Server;
 
 public class Observer implements Runnable {
-	int values;
-	int count;
-	
+	private int values;
+	private int count;
+	private Status status;
 	
 	Observer() {
+		status = new Status();
 		values = 0;
 	}
 	
@@ -23,12 +24,11 @@ public class Observer implements Runnable {
 	private void waitAllPlayers() {
 		while(true) {
 			try {
-				Thread.sleep(100);
-				if(values >= 2) {
-					Thread.sleep(60000);
-					count = values;
-					values = 0;
-					notifyAll();
+				Thread.sleep(300);
+				synchronized(status) {
+					if(status.ready()) {
+						status.notifyAll();
+					}
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -38,11 +38,11 @@ public class Observer implements Runnable {
 
 	private void waitHarvestAllInfo() {
 		while(true) {
-			if(values >= count) {
-				values = 0;
-				notifyAll();
+			synchronized(status) {
+				if(status.ready()) {
+					status.notifyAll();
+				}
 			}
-	
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
@@ -57,6 +57,10 @@ public class Observer implements Runnable {
 	
 	synchronized void setCountConnections(int x) {
 		count = x;
+	}
+	
+	Status getStatus() {
+		return status;
 	}
 
 }
