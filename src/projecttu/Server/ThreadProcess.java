@@ -30,17 +30,18 @@ public class ThreadProcess {
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
 		table = status.getNewTable();
+		process = new BusinessProcess(table, db);
 		
 		synchronized(table) {
 			table.addPlayer(player);
-		}
-		
+		}	
 	}
 	
 	public boolean startGameProcess(String readLine) {
 		if(!isPlayerReadyToPlay(readLine))
 			return false;
 		waitingForOtherPlayers();
+		// table.selectSmallAndBigBlinds(); nado vynesti v status
 		return true;
 	}
 	
@@ -67,42 +68,18 @@ public class ThreadProcess {
 		}
 	}
 	
-	public boolean getResponse(OutputObject info) {
-		
-		semaphoreOn(); // ????
-		
-		process = new BusinessProcess(table, db);
-		
-		process.design(); // v design ras4ety i info iz DB
-		OutputObject data = process.getOutputData(player.getName());
-		
-		semaphoreOff(); // ???
-		
-		
+	public OutputObject output() {
+		return process.getOutputData(player.getName());
+	}
+	
+	public boolean input(OutputObject info) {
+
+		process.setInputData(info);
 		return true;
-	}
-
-
-	private void semaphoreOff() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void semaphoreOn() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public synchronized boolean removePlayerFromTheTable() {
 		return table.removePlayer(player);
-	}	
-//	public synchronized Player getPlayer(String name) {
-//		return table.getPlayer(name);
-//	}
-
-	public OutputObject getOuptutData() {
-		return process.getOutputData(player.getName());
-	}
-	
+	}		
 
 }

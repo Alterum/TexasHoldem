@@ -123,9 +123,9 @@ public class Connection implements Runnable {
 	private void processDataExchange() throws IOException {
 		while(true) {
 			sendDataToClient(
-					server.getOuptutData());
+					server.output());
 			
-			if(!server.getResponse(
+			if(!server.input(
 					getDataFromClient()))
 				return;
 		}	
