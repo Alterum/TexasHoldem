@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 public class PokerServer {
-	private static final int port = 8880;
+	private static final int port = 8907;
 	
 	public static void main(String[] args) {
 		try

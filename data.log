@@ -1,5 +1,5 @@
-GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
-Connection open. Socket[addr=/127.0.0.1,port=49411,localport=8880] projecttu.Server.Connection@190efa8
+GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+Connection open. Socket[addr=/127.0.0.1,port=2877,localport=8907] projecttu.Server.Connection@a62fc3
+Connection open. Socket[addr=/127.0.0.1,port=2878,localport=8907] projecttu.Server.Connection@60aeb0
 Connection name: player1
-Connection open. Socket[addr=/127.0.0.1,port=49422,localport=8880] projecttu.Server.Connection@3492fc
 Connection name: player2

@@ -155,6 +155,8 @@ public class Connection implements Runnable {
 //	}
 	
 	private void processDataExchange() throws IOException {
+		System.out.println("processDataExchange " + Thread.currentThread());
+		
 		while(true) {
 			sendDataToClient(
 					server.getResponse(

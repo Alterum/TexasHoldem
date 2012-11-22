@@ -54,6 +54,8 @@ public class ThreadProcess {
 				e.printStackTrace();
 			}
 		}
+		
+		System.out.println("exit from WAIT");
 	}
 	
 	public OutputObject getResponse(OutputObject info) {
