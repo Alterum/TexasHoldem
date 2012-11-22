@@ -1,3 +1,4 @@
-Connection open. Socket[addr=/127.0.0.1,port=37614,localport=8880] projecttu.Server.Connection@136d1d7
-InputName for Thread[Thread-4,5,main] corect
-Connection name: player3
+Connection open. Socket[addr=/127.0.0.1,port=37616,localport=8880] projecttu.Server.Connection@19e099InputName for Thread[Thread-2,5,main] corect
+Connection name: pl2
+DeDefaulDeDefault
+Socket closed! Connection name: pl1

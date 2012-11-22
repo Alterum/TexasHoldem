@@ -61,7 +61,7 @@ public class ThreadProcess {
 	
 	private void waitingForOtherPlayers() {
 		synchronized(status) {
-			status.ready();
+			status.readyToPlay();
 			
 			System.out.println(Thread.currentThread()+": Before Wait waitingForOtherPlayers");
 			

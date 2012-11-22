@@ -19,15 +19,11 @@ public class Status {
 	
 	void readyToPlay() {
 		readyPlayers++;
+		System.out.println(Thread.currentThread()+": in Status ready players: "+readyPlayers);
 	}
 	
 	void readyToNewGame() {
 		readyNewGame++;
-	}
-	
-	void resetReadyPlayers() {
-		readyPlayers = 0;
-		
 	}
 	
 	void readyToDeal() {
@@ -35,13 +31,15 @@ public class Status {
 	}
 	
 	void resetReadyPlayersToDeal() {
-		readyToDeal = 0;
-		
+		readyToDeal = 0;	
 	}
 	
 	void resetReadyPlayersToNewGame() {
-		readyNewGame = 0;
-		
+		readyNewGame = 0;	
+	}
+	
+	void resetReadyPlayers() {
+		readyPlayers = 0;
 	}
 	
 	synchronized boolean isAllReadyToDeal() {
