@@ -1,3 +1,1 @@
 GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8880]
-Thread[player1,5,] is dead and was removed from Active connections
-Thread[player2,5,] is dead and was removed from Active connections

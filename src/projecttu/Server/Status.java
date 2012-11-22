@@ -45,19 +45,19 @@ public class Status {
 	}
 	
 	synchronized boolean isAllReadyToDeal() {
-		if(readyToDeal == allPlayers)
+		if(readyToDeal >= allPlayers)
 			return true;
 		return false;
 	}
 	
 	synchronized boolean isAllReadyToNewGame() {
-		if(readyNewGame == allPlayers)
+		if(readyNewGame >= allPlayers)
 			return true;
 		return false;
 	}
 	
 	synchronized boolean ready() {
-		if(readyPlayers == allPlayers) {
+		if(readyPlayers >= allPlayers) {
 			readyPlayers = 0;
 			table.dealCardsToPlayers();
 			return true;

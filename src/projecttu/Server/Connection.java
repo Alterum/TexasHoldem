@@ -122,12 +122,22 @@ public class Connection implements Runnable {
 	
 	private void processDataExchange() throws IOException {
 		while(true) {
-			sendDataToClient(
-					server.output());
 			
-			if(!server.input(
-					getDataFromClient()))
+			OutputObject obj1 = server.output();
+			log.log(obj1.toString());
+			
+			sendDataToClient(obj1
+					);
+			
+			OutputObject obj2 = getDataFromClient();
+			log.log(obj1.toString());
+			if(!server.input(obj2
+					))
 				return;
+			
+			
+			
+			
 		}	
 	}
 

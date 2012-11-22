@@ -62,11 +62,16 @@ public class ThreadProcess {
 	private void waitingForOtherPlayers() {
 		synchronized(status) {
 			status.ready();
+			
+			System.out.println(Thread.currentThread()+": Before Wait waitingForOtherPlayers");
+			
 			try {
 				status.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
+			System.out.println(Thread.currentThread()+": After Wait waitingForOtherPlayers");
 		}
 	}
 	
