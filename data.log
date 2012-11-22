@@ -1,11 +1,11 @@
 GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
-Connection open. Socket[addr=/127.0.0.1,port=2877,localport=8907] projecttu.Server.Connection@a62fc3
-Connection open. Socket[addr=/127.0.0.1,port=2878,localport=8907] projecttu.Server.Connection@60aeb0
-Connection name: player1
-Connection name: player2
+Connection open. Socket[addr=/127.0.0.1,port=1876,localport=8907] projecttu.Server.Connection@665753
+Connection open. Socket[addr=/127.0.0.1,port=1881,localport=8907] projecttu.Server.Connection@52fe85
+Connection name: asdasd
+Connection name: sdfsdf
 Server: IOException for Read Output Object: java.net.SocketException: Connection reset
-Socket closed! Connection name: player2
-Thread[player2,5,] is dead and was removed from Active connections
+Socket closed! Connection name: asdasd
+Thread[asdasd,5,] is dead and was removed from Active connections
 Server: IOException for Read Output Object: java.net.SocketException: Connection reset
-Socket closed! Connection name: player1
-Thread[player1,5,] is dead and was removed from Active connections
+Socket closed! Connection name: sdfsdf
+Thread[sdfsdf,5,] is dead and was removed from Active connections

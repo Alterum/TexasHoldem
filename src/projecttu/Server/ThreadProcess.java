@@ -22,6 +22,7 @@ public class ThreadProcess {
 	ThreadProcess(PokerTable table, Status observer) {
 		this.table = table;
 		viewer = observer;
+		process = new BusinessProcess(table, new DBDriver());
 	}
 
 	public void prepareGameProcess(String name) {
@@ -62,20 +63,14 @@ public class ThreadProcess {
 		System.out.println("exit from WAIT");
 	}
 	
-	public OutputObject getResponse(OutputObject info) {
+	public void getResponse(OutputObject info) {
 		parser.setData(info); // wait
 		
-		semaphoreOn(); // ????
+		//process.design(); // v design ras4ety i info iz DB
+		//data = process.getOutputData(player.getName());
+			process.setInputData(info);
 		
-		process = new BusinessProcess(table, db);
-		
-		process.design(); // v design ras4ety i info iz DB
-		OutputObject data = process.getOutputData(player.getName());
-		
-		semaphoreOff(); // ???
-		
-		
-		return data;
+		System.out.println("Data getResponse() after process "+Thread.currentThread());
 	}
 
 
@@ -111,9 +106,19 @@ public class ThreadProcess {
 		int READY_TO_START = -5;
 		if(player.getStatus() == READY_TO_START)
 			waitNewGame();
-		waitInQueue();
+		//waitInQueue();
 		
-		return process.getOutputData(player.getName());
+		System.out.println("Player name: "+player.getName());
+		
+		OutputObject obj = null;
+		
+		try{
+			obj = process.getOutputData(player.getName());
+		} catch(NullPointerException e) {
+			e.printStackTrace();
+		}
+		
+		return obj;
 	}
 	
 	private void waitInQueue() {

@@ -87,7 +87,7 @@ public class BusinessProcess {
 //		
 		
 		// vynesti v connection
-		smphr.release();
+//		smphr.release();
 		
 	}
 	
@@ -139,7 +139,7 @@ public class BusinessProcess {
 			table.selectSmallAndBigBlinds();
 			
 			// Create Semaphore vynesti v connection
-			smphr = new Semaphore(1, true);
+//			smphr = new Semaphore(1, true);
 			
 			int index = 0;
 			for(Player player : table.getPlayers()) {
@@ -199,6 +199,9 @@ public class BusinessProcess {
 		map.put("playerStatus", Integer.toString(table.getPlayer(name).getStatus()));
 		map.put("playerBank", Integer.toString(table.getPlayer(name).getScore()));
 		String playerCards = "";
+		
+		System.out.println("BProcess: setPlayerInfo: table: "+table+" player: "+table.getPlayer(name)+" hand: "+table.getPlayer(name).getHand());
+		
 		for(String card : table.getPlayer(name).getHand())
 			playerCards += card+" "; 
 		map.put("playerCards", playerCards);
