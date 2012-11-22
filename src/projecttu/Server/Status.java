@@ -8,10 +8,13 @@ public class Status {
 	private int readyNewGame = 0;
 	private int readyToDeal = 0;
 	private int allPlayers = 2; // need to change
+	private ServerProcess process;
 	private PokerTable table;
 	
 	Status() {
 		table = new PokerTable();
+		process = new ServerProcess(
+				new BusinessProcess(table, new DBDriver()));
 	}
 	
 	void setAmountPlayers(int x) {
@@ -80,6 +83,6 @@ public class Status {
 	}
 
 	public ServerProcess getProcess() {
-		return new ServerProcess(new BusinessProcess(table, new DBDriver()));
+		return process;
 	}
 }
