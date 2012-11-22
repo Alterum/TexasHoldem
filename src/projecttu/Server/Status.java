@@ -78,4 +78,8 @@ public class Status {
 			readyPlayers = 0;
 		}
 	}
+
+	public BusinessProcess getProcess() {
+		return new BusinessProcess(table, new DBDriver());
+	}
 }

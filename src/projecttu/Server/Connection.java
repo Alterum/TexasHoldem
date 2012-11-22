@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.concurrent.Semaphore;
 
 
 import projecttu.Gamelogic.Player;
@@ -28,6 +29,8 @@ public class Connection implements Runnable {
 	private Thread thread;
 	private Logger log;
 	private ThreadProcess server;
+	private final Semaphore available=
+			new Semaphore(1, true);
 	
 	public Connection(Socket socket, PokerTable table,
 			Status status) throws IOException {
@@ -122,14 +125,14 @@ public class Connection implements Runnable {
 	
 	private void processDataExchange() throws IOException {
 		while(true) {
-
+			
 			sendDataToClient(
 					server.output());
 			
 			if(!server.input(
 					getDataFromClient()))
-				return;	
-		}	
+				return;
+		}
 	}
 
 	private OutputObject getDataFromClient() {

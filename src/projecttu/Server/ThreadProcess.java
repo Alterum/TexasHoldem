@@ -16,9 +16,6 @@ public class ThreadProcess {
 	private Player player;
 	private PokerTable table;
 	
-	private final Semaphore available=
-			new Semaphore(1);
-	
 	ThreadProcess(PokerTable table, Status observer) {
 		this.table = table;
 		status = observer;
@@ -35,7 +32,7 @@ public class ThreadProcess {
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
 		table = status.getNewTable();
-		process = new BusinessProcess(table, db);
+		process = status.getProcess();
 		
 		System.out.println(table);
 		

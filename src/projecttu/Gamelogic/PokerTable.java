@@ -7,6 +7,12 @@ import java.util.Iterator;
 
 public class PokerTable {
 	public PokerTable() {
+		loadTable();
+		deck.shuffle();
+		dealCardsToTheTable(5);
+	}
+	
+	private void loadTable() {
 		count++;
 		name = "Table #"+count;
 		deck = new Deck();
@@ -17,10 +23,8 @@ public class PokerTable {
 		bank = 0;
 		small = 0;
 		bankInRound = 0;
-		deck.shuffle();
-		dealCardsToTheTable(5);
 	}
-	
+
 	public String toString() {
 		return name;
 	}
