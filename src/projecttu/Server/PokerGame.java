@@ -41,7 +41,7 @@ public class PokerGame {
 			
 			try {
 				online.addConnection(new Connection(
-						incoming, log, table, viewer.getStatus()));
+						incoming, table, viewer.getStatus()));
 			} catch(IOException e) {
 				log.log("Socket emergency has benn closed! "+incoming+"\r\n"+e);
 				incoming.close();

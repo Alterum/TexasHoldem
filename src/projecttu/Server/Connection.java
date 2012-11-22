@@ -29,18 +29,30 @@ public class Connection implements Runnable {
 	private Logger log;
 	private ThreadProcess server;
 	
-	public Connection(Socket socket, Logger log,
-			PokerTable play, Status observer) throws IOException {
+	public Connection(Socket socket, PokerTable table,
+			Status status) throws IOException {
 		incoming = socket;
-		this.log = log;
-//		this.game = play;
+		this.log = new Logger("connection.log");
 		
-		server = new ThreadProcess(play, observer);
+		server = new ThreadProcess(table, status);
 		
 		log.log("Connection open. "+incoming+" "+this);
 		
 		setIO();
 		start();
+	}
+	
+	private void setIO() throws IOException {
+		in = new BufferedReader(
+				new InputStreamReader(
+						incoming.getInputStream()));
+		out =  new PrintWriter(
+				new BufferedWriter(
+						new OutputStreamWriter(
+								incoming.getOutputStream())), true);
+		
+		ois = new ObjectInputStream(incoming.getInputStream());
+	    oos = new ObjectOutputStream(incoming.getOutputStream());
 	}
 	
 	private void start() {
@@ -49,19 +61,14 @@ public class Connection implements Runnable {
 	}
 	
 	public void run() {
-		while(true)
-			try {
-				if(getInputName(server.getPlayerName(in.readLine())))
-					break;
-			} catch (IOException e2) {
-				e2.printStackTrace();
-			}
+		
+		getPlayerName();
 		
 		log.log("Connection name: "+name);
+		
 		thread.setName(name);
-//			player = new Player(name);
-//			game.addPlayerToTheTable(player);
 		server.prepareGameProcess(name);
+		
 		try {
 			if(server.startGameProcess(
 					in.readLine()))
@@ -86,72 +93,32 @@ public class Connection implements Runnable {
 		}
 	}
 	
-
-	
-	private void setIO() throws IOException {
-		in = new BufferedReader(
-				new InputStreamReader(
-						incoming.getInputStream()));
-		out =  new PrintWriter(
-				new BufferedWriter(
-						new OutputStreamWriter(
-								incoming.getOutputStream())), true);
+	private void getPlayerName() {
+		while(true) {
+			try {
+				if(getInputName(server.getPlayerName(in.readLine()))){
+					out.println("true");
+					break;
+				} else
+					out.println("false");
+			} catch (IOException e2) {
+				e2.printStackTrace();
+			}
+		}
 		
-		ois = new ObjectInputStream(incoming.getInputStream());
-	    oos = new ObjectOutputStream(incoming.getOutputStream());
 	}
-	
+
 	private boolean getInputName(String in) {
 		if(in == null) {
-			System.out.println("incorect");
-			out.println("false");
+			log.log("InputName for "+Thread.currentThread()+" incorect");
 			return false;
 		}
 		else {
-			System.out.println("correct");
-			out.println("true");
+			log.log("InputName for "+Thread.currentThread()+" corect");
 			name = in;
 			return true;
 		}
 	}
-	
-//	private void gameProcess() {
-//		try {
-//			while(true) {
-//				if(!isPlayerReadyToPlay(in.readLine()))
-//					return;			
-//				waitingForOtherPlayers();
-//				processDataExchange();
-//			}
-//		} 
-//		catch (IOException e) {
-//			try {
-//				incoming.close();
-//				log.log( "Socket emergency closed! Connection name: "+name+"\r\n"+e );
-//			} catch (IOException e1) {
-//				log.log( "Socket not closed!\r\n"+e1);
-//			}
-//		}
-//		finally {
-//			try {
-//				log.log( "Socket closed! Connection name: "+name);
-//				incoming.close();
-//			} catch(IOException e) {}
-//		}
-//		
-//	}
-
-//	private boolean isPlayerReadyToPlay(String input) {
-//		if(input.equals("start")) {
-//			player.setStatus(1);
-//			return true;
-//		}
-//		else if(input.equals("observer")) {
-//			player.setStatus(0);
-//			return true;
-//		}
-//		return false;
-//	}
 	
 	private void processDataExchange() throws IOException {
 		while(true) {
@@ -161,8 +128,7 @@ public class Connection implements Runnable {
 			if(!server.getResponse(
 					getDataFromClient()))
 				return;
-		}
-		
+		}	
 	}
 
 	private OutputObject getDataFromClient() {
@@ -181,33 +147,12 @@ public class Connection implements Runnable {
 	}
 
 	private void sendDataToClient(OutputObject data) {
-//		OutputObject data = game.getOutputData(name);
 		try { oos.writeObject(data); }
 		catch (IOException e1) {
 			log.log("Server: IOExceptio for Write Output Object: "+e1);
 			e1.printStackTrace();
-		}
-		
+		}	
 	}
-
-//	private void waitingForOtherPlayers() {
-//		while (!game.isStartGame()) {
-//			try {
-//				Thread.sleep(200);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//		out.println("startPlay");
-//	}
-	
-	
-
-//	public void removePlayerFromTable() {
-//		game.removePlayerFromTheTable(
-//				game.getPlayer(name));
-//	}
 	
 	public Thread getThread() {
 		return thread;
@@ -218,8 +163,6 @@ public class Connection implements Runnable {
 	}
 
 	public void close() {
-		// TODO delete Player from the table
-		
 		try {
 			incoming.close();
 		} catch (IOException e) {
