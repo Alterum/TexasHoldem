@@ -22,7 +22,11 @@ public class ThreadProcess {
 
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
-		addPlayerToTheTable();
+		
+		synchronized(table) {
+			table.addPlayer(player);
+			
+		}
 		
 	}
 	
@@ -47,7 +51,7 @@ public class ThreadProcess {
 	
 	private void waitingForOtherPlayers() {
 		synchronized(viewer) {
-			viewer.done();
+			viewer.ready();
 			try {
 				viewer.wait();
 			} catch (InterruptedException e) {
@@ -56,8 +60,7 @@ public class ThreadProcess {
 		}
 	}
 	
-	public OutputObject getResponse(OutputObject info) {
-		parser.setData(info); // wait
+	public boolean getResponse(OutputObject info) {
 		
 		semaphoreOn(); // ????
 		
@@ -69,7 +72,7 @@ public class ThreadProcess {
 		semaphoreOff(); // ???
 		
 		
-		return data;
+		return true;
 	}
 
 
@@ -86,9 +89,6 @@ public class ThreadProcess {
 	public synchronized boolean removePlayerFromTheTable() {
 		return table.removePlayer(player);
 	}	
-	public synchronized boolean addPlayerToTheTable() {
-		return table.addPlayer(player);
-	}
 //	public synchronized Player getPlayer(String name) {
 //		return table.getPlayer(name);
 //	}
@@ -99,6 +99,10 @@ public class ThreadProcess {
 			return null;
 		else
 			return name;
+	}
+
+	public OutputObject getOuptutData() {
+		return process.getOutputData(player.getName());
 	}
 	
 

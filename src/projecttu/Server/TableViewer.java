@@ -3,10 +3,12 @@ package projecttu.Server;
 import java.util.ArrayList;
 
 import projecttu.Gamelogic.Player;
+import projecttu.Gamelogic.PokerTable;
 
-public class BusinessKeeper implements Runnable {
-	public BusinessKeeper(BusinessProcess play) {
-		game = play;
+public class TableViewer implements Runnable {
+	PokerTable table;
+	
+	public TableViewer(BusinessProcess play) {
 		
 		Thread thread = new Thread(this);
 		thread.start();
@@ -57,6 +59,13 @@ public class BusinessKeeper implements Runnable {
 //		
 ////		table.setReady(false);	
 //	}
+	
+	void setTable(PokerTable table) {
+		this.table = table;
+	}
+	
+	PokerTable getTable() {
+		return table;
+	}
 
-	private BusinessProcess game;
 }

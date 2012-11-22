@@ -72,6 +72,7 @@ public class Connection implements Runnable {
 				return;
 			
 			processDataExchange();
+			
 		} catch (IOException e) {
 			try {
 				incoming.close();
@@ -157,8 +158,11 @@ public class Connection implements Runnable {
 	private void processDataExchange() throws IOException {
 		while(true) {
 			sendDataToClient(
-					server.getResponse(
-							getDataFromClient()));
+					server.getOuptutData());
+			
+			if(!server.getResponse(
+					getDataFromClient()))
+				return;
 		}
 		
 	}

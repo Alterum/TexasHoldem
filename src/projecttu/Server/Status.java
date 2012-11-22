@@ -1,18 +1,57 @@
 package projecttu.Server;
 
+import projecttu.Gamelogic.PokerTable;
+
 public class Status {
-	private int count = 0;
+	private int readyPlayers = 0;
+	private int readyNewGame = 0;
+	private int allPlayers;
+	private PokerTable table;
 	
-	public synchronized boolean ready() {
-		if(count == 2) {
-			count = 0;
+	synchronized boolean ready() {
+		if(readyPlayers == 2) {
+			readyPlayers = 0;
 			return true;
 		}
 		return false;
 	}
 	
-	public synchronized void done() {
-		count++;
+	synchronized void done() {
+		readyPlayers++;
 	}
 
+	PokerTable getNewTable() {
+		return table;
+	}
+	
+	void newTable() {
+		if(readyPlayers == allPlayers) {
+			table = new PokerTable();
+			readyPlayers = 0;
+		}
+	}
+	
+	void setAmountPlayers(int x) {
+		allPlayers = x;
+	}
+
+	void resetReadyPlayers() {
+		readyPlayers = 0;
+		
+	}
+
+	synchronized boolean isAllReadyToNewGame() {
+		if(readyNewGame == allPlayers)
+			return true;
+		return false;
+	}
+
+	void resetReadyPlayersToNewGame() {
+		readyNewGame = 0;
+		
+	}
+	
+	void readyToNewGame() {
+		readyNewGame++;
+	}
 }

@@ -132,7 +132,7 @@ public class BusinessProcess {
 	}
 	
 	public synchronized void startGame() {
-			table.newGame();
+//			table.newGame();
 			
 			System.out.println("NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME ");
 			// function set Players to SmallBlind and BigBlind

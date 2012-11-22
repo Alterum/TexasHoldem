@@ -13,6 +13,10 @@ public class PokerTable {
 		players = new ArrayList<Player>();
 		cardsOnTable = new ArrayList<String[]>();
 //		players.add(new Player("Dealer"));
+		currentBet = 0;
+		bank = 0;
+		small = 0;
+		bankInRound = 0;
 	}
 	
 	public String toString() {
@@ -37,17 +41,17 @@ public class PokerTable {
 		return cardsOnTable.get(0);
 	}
 	
-	public void newGame() {
-		deck = new Deck();
-		deck.shuffle();
-		cardsOnTable = new ArrayList<String[]>();
-		activePlayers = new ArrayList<Player>();
-//		activePlayers.addAll(players);
-		currentBet = 0;
-		bank = 0;
-		small = 0;
-		bankInRound = 0;
-	}
+//	public void newGame() {
+//		deck = new Deck();
+//		deck.shuffle();
+//		cardsOnTable = new ArrayList<String[]>();
+//		activePlayers = new ArrayList<Player>();
+////		activePlayers.addAll(players);
+//		currentBet = 0;
+//		bank = 0;
+//		small = 0;
+//		bankInRound = 0;
+//	}
 	
 	public void setToSmallBlind(Player small) {
 		smallBlind = small;
