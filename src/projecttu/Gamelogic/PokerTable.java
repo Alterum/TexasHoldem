@@ -12,11 +12,11 @@ public class PokerTable {
 		deck = new Deck();
 		players = new ArrayList<Player>();
 		cardsOnTable = new ArrayList<String[]>();
-//		players.add(new Player("Dealer"));
 		currentBet = 0;
 		bank = 0;
 		small = 0;
 		bankInRound = 0;
+		dealCardsToTheTable(5);
 	}
 	
 	public String toString() {

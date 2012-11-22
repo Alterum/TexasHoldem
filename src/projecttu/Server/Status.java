@@ -27,7 +27,6 @@ public class Status {
 	void newTable() {
 		if(readyPlayers == allPlayers) {
 			table = new PokerTable();
-			table.dealCardsToTheTable(5);
 			readyPlayers = 0;
 		}
 	}
