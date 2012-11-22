@@ -16,9 +16,6 @@ public class PokerGame {
 		new Revision(online, log);
 		log.log("GameServer start: "+s);
 		
-//		PokerTable t = new PokerTable();
-//		BusinessProcess plh = new BusinessProcess(t);
-//		new BusinessKeeper(plh);
 		activeGameTables.put(new PokerTable(), new Observer());
 		
 		while(true) {
@@ -26,19 +23,17 @@ public class PokerGame {
 			
 			PokerTable table = null;
 			Observer viewer = null;
-//			BusinessProcess play = null;
 			
 			for(PokerTable tble : activeGameTables.keySet())
 				if(!tble.isMaxPlayersForTheTable()) {
 					table = tble;
 					viewer = activeGameTables.get(tble);
-//					play = activeGameTables.get(tble);
 				}
-					
+			
+			
 			if(table == null) {
 				table = new PokerTable();
-//				play = new BusinessProcess(table);
-//				new BusinessKeeper(play);
+				viewer = new Observer();
 				activeGameTables.put(table, viewer);	
 			}
 			

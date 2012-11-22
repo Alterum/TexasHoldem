@@ -27,8 +27,6 @@ public class Connection implements Runnable {
 	private ObjectOutputStream oos;
 	private Thread thread;
 	private Logger log;
-//	private BusinessProcess game;
-//	private Player player;
 	private ThreadProcess server;
 	
 	public Connection(Socket socket, Logger log,
