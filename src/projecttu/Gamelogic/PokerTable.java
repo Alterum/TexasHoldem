@@ -16,6 +16,7 @@ public class PokerTable {
 		bank = 0;
 		small = 0;
 		bankInRound = 0;
+		deck.shuffle();
 		dealCardsToTheTable(5);
 	}
 	

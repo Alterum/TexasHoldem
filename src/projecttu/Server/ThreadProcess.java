@@ -1,5 +1,7 @@
 package projecttu.Server;
 
+import java.util.concurrent.Semaphore;
+
 import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
 import projecttu.OutputObject.OutputObject;
@@ -13,6 +15,9 @@ public class ThreadProcess {
 	
 	private Player player;
 	private PokerTable table;
+	
+	private final Semaphore available=
+			new Semaphore(1);
 	
 	ThreadProcess(PokerTable table, Status observer) {
 		this.table = table;
@@ -76,12 +81,25 @@ public class ThreadProcess {
 	}
 	
 	public OutputObject output() {
+		
 		return process.getOutputData(player.getName());
 	}
 	
 	public boolean input(OutputObject info) {
-
-		process.setInputData(info);
+		
+		synchronized(process) {
+			process.setInputData(info);
+		}
+		
+//		try {
+//			available.acquire();
+//			process.setInputData(info);
+//			available.release();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
 		return true;
 	}
 
