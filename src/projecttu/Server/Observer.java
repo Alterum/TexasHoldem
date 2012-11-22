@@ -30,6 +30,10 @@ public class Observer implements Runnable {
 						status.notifyAll();
 						status.resetReadyPlayersToNewGame();
 					}
+					if(status.isAllReadyToDeal()){
+						status.notifyAll();
+						status.resetReadyPlayersToDeal();
+					}
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -42,8 +46,7 @@ public class Observer implements Runnable {
 	}
 
 	public void newGame() {
-		status.newTable();
-		
+		status.newTable();	
 	}
 
 }

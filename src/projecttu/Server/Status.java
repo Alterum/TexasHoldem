@@ -5,21 +5,66 @@ import projecttu.Gamelogic.PokerTable;
 public class Status {
 	private int readyPlayers = 0;
 	private int readyNewGame = 0;
-	private int allPlayers;
+	private int readyToDeal = 0;
+	private int allPlayers = 2; // need to change
 	private PokerTable table;
 	
+	Status() {
+		table = new PokerTable();
+	}
+	
+	void setAmountPlayers(int x) {
+		allPlayers = x;
+	}
+	
+	void readyToPlay() {
+		readyPlayers++;
+	}
+	
+	void readyToNewGame() {
+		readyNewGame++;
+	}
+	
+	void resetReadyPlayers() {
+		readyPlayers = 0;
+		
+	}
+	
+	void readyToDeal() {
+		readyToDeal++;
+	}
+	
+	void resetReadyPlayersToDeal() {
+		readyToDeal = 0;
+		
+	}
+	
+	void resetReadyPlayersToNewGame() {
+		readyNewGame = 0;
+		
+	}
+	
+	synchronized boolean isAllReadyToDeal() {
+		if(readyToDeal == allPlayers)
+			return true;
+		return false;
+	}
+	
+	synchronized boolean isAllReadyToNewGame() {
+		if(readyNewGame == allPlayers)
+			return true;
+		return false;
+	}
+	
 	synchronized boolean ready() {
-		if(readyPlayers == 2) {
+		if(readyPlayers == allPlayers) {
 			readyPlayers = 0;
+			table.dealCardsToPlayers();
 			return true;
 		}
 		return false;
 	}
 	
-	synchronized void done() {
-		readyPlayers++;
-	}
-
 	PokerTable getNewTable() {
 		return table;
 	}
@@ -29,29 +74,5 @@ public class Status {
 			table = new PokerTable();
 			readyPlayers = 0;
 		}
-	}
-	
-	void setAmountPlayers(int x) {
-		allPlayers = x;
-	}
-
-	void resetReadyPlayers() {
-		readyPlayers = 0;
-		
-	}
-
-	synchronized boolean isAllReadyToNewGame() {
-		if(readyNewGame == allPlayers)
-			return true;
-		return false;
-	}
-
-	void resetReadyPlayersToNewGame() {
-		readyNewGame = 0;
-		
-	}
-	
-	void readyToNewGame() {
-		readyNewGame++;
 	}
 }

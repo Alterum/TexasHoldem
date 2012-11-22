@@ -32,6 +32,8 @@ public class ThreadProcess {
 		table = status.getNewTable();
 		process = new BusinessProcess(table, db);
 		
+		System.out.println(table);
+		
 		synchronized(table) {
 			table.addPlayer(player);
 		}	

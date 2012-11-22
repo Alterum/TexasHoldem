@@ -37,7 +37,6 @@ public class PokerGame {
 				activeGameTables.put(table, viewer);	
 			}
 			
-			viewer.newGame(); // create new table
 			viewer.start();
 			
 			try {
