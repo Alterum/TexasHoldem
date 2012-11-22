@@ -6,10 +6,9 @@ import projecttu.OutputObject.OutputObject;
 
 public class ThreadProcess {
 	
-	private DataParserOnServerSide parser;
 	private DBDriver db;
-//	private ThreadGate gate;
-	private Status viewer;
+
+	private Status status;
 	private BusinessProcess process;
 	
 	private Player player;
@@ -17,15 +16,23 @@ public class ThreadProcess {
 	
 	ThreadProcess(PokerTable table, Status observer) {
 		this.table = table;
-		viewer = observer;
+		status = observer;
+	}
+	
+	public synchronized String getPlayerName(String name) {
+		Player p = table.getPlayer(name);
+		if(p != null)
+			return null;
+		else
+			return name;
 	}
 
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
+		table = status.getNewTable();
 		
 		synchronized(table) {
 			table.addPlayer(player);
-			
 		}
 		
 	}
@@ -50,10 +57,10 @@ public class ThreadProcess {
 	}
 	
 	private void waitingForOtherPlayers() {
-		synchronized(viewer) {
-			viewer.ready();
+		synchronized(status) {
+			status.ready();
 			try {
-				viewer.wait();
+				status.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -92,14 +99,6 @@ public class ThreadProcess {
 //	public synchronized Player getPlayer(String name) {
 //		return table.getPlayer(name);
 //	}
-
-	public synchronized String getPlayerName(String name) {
-		Player p = table.getPlayer(name);
-		if(p != null)
-			return null;
-		else
-			return name;
-	}
 
 	public OutputObject getOuptutData() {
 		return process.getOutputData(player.getName());

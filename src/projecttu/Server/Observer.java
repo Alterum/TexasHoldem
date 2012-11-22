@@ -41,4 +41,9 @@ public class Observer implements Runnable {
 		return status;
 	}
 
+	public void newGame() {
+		status.newTable();
+		
+	}
+
 }
