@@ -12,12 +12,6 @@ public class ThreadGate {
 	
 	public void start() {
 		
-		semaphoreOn(); // ????
-		
-		process.design(); // v design ras4ety i info iz DB
-		data = process.getOutput();
-		
-		semaphoreOff(); // ???
 		
 	}
 	
