@@ -15,4 +15,9 @@ public class Status {
 		count++;
 	}
 
+	public boolean isNewGame() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

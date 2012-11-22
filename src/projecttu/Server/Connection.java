@@ -158,9 +158,9 @@ public class Connection implements Runnable {
 		System.out.println("processDataExchange " + Thread.currentThread());
 		
 		while(true) {
-			sendDataToClient(
-					server.getResponse(
-							getDataFromClient()));
+			sendDataToClient();
+			server.getResponse(
+					getDataFromClient());
 		}
 		
 	}
@@ -180,8 +180,10 @@ public class Connection implements Runnable {
 		
 	}
 
-	private void sendDataToClient(OutputObject data) {
+	private void sendDataToClient() {
 //		OutputObject data = game.getOutputData(name);
+		OutputObject data = server.getOutputData();
+		
 		try { oos.writeObject(data); }
 		catch (IOException e1) {
 			log.log("Server: IOExceptio for Write Output Object: "+e1);

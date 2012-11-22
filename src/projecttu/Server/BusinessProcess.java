@@ -21,24 +21,24 @@ public class BusinessProcess {
 	
 	
 	
-	private void waitInQueue() {
-		try {
-			smphr.acquire();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}	
-	}
-
-	private void waitNewGame() {
-		while(!newGame) {
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	}
+//	private void waitInQueue() {
+//		try {
+//			smphr.acquire();
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}	
+//	}
+//
+//	private void waitNewGame() {
+//		while(!newGame) {
+//			try {
+//				Thread.sleep(100);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//	}
 
 	public void setInputData(OutputObject obj) {
 		
@@ -307,10 +307,10 @@ public class BusinessProcess {
 public OutputObject getOutputData(String name) {
 		
 		// BRED DLJA nA4ala  novoj igry
-		int READY_TO_START = -5;
-		if(table.getPlayer(name).getStatus() == READY_TO_START)
-			waitNewGame();
-		waitInQueue();
+//		int READY_TO_START = -5;
+//		if(table.getPlayer(name).getStatus() == READY_TO_START)
+//			waitNewGame();
+//		waitInQueue();
 		
 		
 //		System.out.println("getOutputData before "+Thread.currentThread().getName());
