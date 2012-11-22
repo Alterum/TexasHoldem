@@ -1,5 +1,6 @@
 package projecttu.Server;
 
+import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
 
 public class Status {
@@ -57,7 +58,11 @@ public class Status {
 	synchronized boolean ready() {
 		if(readyPlayers >= allPlayers) {
 			readyPlayers = 0;
+			
+			for(Player player : table.getPlayers())
+				table.setActivePlayer(player);
 			table.dealCardsToPlayers();
+			
 			return true;
 		}
 		return false;

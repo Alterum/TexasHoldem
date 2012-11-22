@@ -198,7 +198,10 @@ public class BusinessProcess {
 	}
 	
 	public void compareBets(String name, int bet) {
-		bankInRound.put(name, bankInRound.get(name)+bet);
+		if (bankInRound.get(name) != null)
+			bankInRound.put(name, bankInRound.get(name)+bet);
+		else
+			bankInRound.put(name, bet);
 		int playerBet = bankInRound.get(name);
 		boolean flag = true;
 		int bank = 0;
@@ -237,32 +240,32 @@ public class BusinessProcess {
 		}
 	}
 	
-	public synchronized void startGame() {
-//			table.newGame();
-			
-			System.out.println("NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME ");
-			// function set Players to SmallBlind and BigBlind
-			table.selectSmallAndBigBlinds();
-			
-			// Create Semaphore vynesti v connection
-			smphr = new Semaphore(1, true);
-			
-			int index = 0;
-			for(Player player : table.getPlayers()) {
-				player.setStatus(1);
-				table.setActivePlayer(index++, player);
-				player.setStatus(1);
-				player.setBet(0);
-				bankInRound.put(player.getName(), player.getBet());
-				System.out.println("TablePlayerSTRAT "+player.getName());
-			}
-			
-			table.dealCardsToPlayers();
-			table.dealCardsToTheTable(5);
-			table.getWinCombination();
-
-			currentRound = 0;
-	}
+//	public synchronized void startGame() {
+////			table.newGame();
+//			
+//			System.out.println("NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME ");
+//			// function set Players to SmallBlind and BigBlind
+//			table.selectSmallAndBigBlinds();
+//			
+//			// Create Semaphore vynesti v connection
+//			smphr = new Semaphore(1, true);
+//			
+//			int index = 0;
+//			for(Player player : table.getPlayers()) {
+//				player.setStatus(1);
+//				table.setActivePlayer(index++, player);
+//				player.setStatus(1);
+//				player.setBet(0);
+//				bankInRound.put(player.getName(), player.getBet());
+//				System.out.println("TablePlayerSTRAT "+player.getName());
+//			}
+//			
+//			table.dealCardsToPlayers();
+//			table.dealCardsToTheTable(5);
+//			table.getWinCombination();
+//
+//			currentRound = 0;
+//	}
 	
 //	public boolean isStartGame() {
 //		return startToGame;

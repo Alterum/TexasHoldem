@@ -11,6 +11,7 @@ public class PokerTable {
 		name = "Table #"+count;
 		deck = new Deck();
 		players = new ArrayList<Player>();
+		activePlayers = new ArrayList<Player>();
 		cardsOnTable = new ArrayList<String[]>();
 		currentBet = 0;
 		bank = 0;
@@ -110,8 +111,12 @@ public class PokerTable {
 		return null;
 	}
 	
-	public void setActivePlayer(int i, Player player) {
-		activePlayers.add(i, player);
+//	public void setActivePlayer(int i, Player player) {
+//		activePlayers.add(i, player);
+//	}
+	
+	public void setActivePlayer(Player player) {
+		activePlayers.add(player);
 	}
 	
 	public ArrayList<Player> getActivePlayers() {
