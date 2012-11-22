@@ -79,7 +79,7 @@ public class Status {
 		}
 	}
 
-	public BusinessProcess getProcess() {
-		return new BusinessProcess(table, new DBDriver());
+	public ServerProcess getProcess() {
+		return new ServerProcess(new BusinessProcess(table, new DBDriver()));
 	}
 }

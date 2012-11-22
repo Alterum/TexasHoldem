@@ -29,8 +29,6 @@ public class Connection implements Runnable {
 	private Thread thread;
 	private Logger log;
 	private ThreadProcess server;
-	private final Semaphore available=
-			new Semaphore(1, true);
 	
 	public Connection(Socket socket, PokerTable table,
 			Status status) throws IOException {

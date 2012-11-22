@@ -11,7 +11,7 @@ public class ThreadProcess {
 	private DBDriver db;
 
 	private Status status;
-	private BusinessProcess process;
+	private ServerProcess process;
 	
 	private Player player;
 	private PokerTable table;
@@ -79,23 +79,12 @@ public class ThreadProcess {
 	
 	public OutputObject output() {
 		
-		return process.getOutputData(player.getName());
+		return process.get(player.getName());
 	}
 	
 	public boolean input(OutputObject info) {
 		
-		synchronized(process) {
-			process.setInputData(info);
-		}
-		
-//		try {
-//			available.acquire();
-//			process.setInputData(info);
-//			available.release();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		process.set(info);
 		
 		return true;
 	}
