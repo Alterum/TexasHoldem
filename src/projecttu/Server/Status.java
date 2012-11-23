@@ -6,7 +6,7 @@ import projecttu.Gamelogic.PokerTable;
 public class Status {
 	private int readyPlayers = 0;
 	private int readyNewGame = 0;
-	private int readyToDeal = 0;
+	private int readyToNextRound = 0;
 	private int allPlayers = 2; // need to change
 	private ServerProcess process;
 	private PokerTable table;
@@ -30,12 +30,13 @@ public class Status {
 		readyNewGame++;
 	}
 	
-	void readyToDeal() {
-		readyToDeal++;
+	void readyToNextRound() {
+		readyToNextRound++;
+		System.out.println(Thread.currentThread()+": in Status ready to next round: "+readyPlayers);
 	}
 	
-	void resetReadyPlayersToDeal() {
-		readyToDeal = 0;	
+	void ressetAllReadyToNextRound() {
+		readyToNextRound = 0;	
 	}
 	
 	void resetReadyPlayersToNewGame() {
@@ -46,8 +47,8 @@ public class Status {
 		readyPlayers = 0;
 	}
 	
-	synchronized boolean isAllReadyToDeal() {
-		if(readyToDeal >= allPlayers)
+	synchronized boolean isAllReadyToNextRound() {
+		if(readyToNextRound >= allPlayers)
 			return true;
 		return false;
 	}

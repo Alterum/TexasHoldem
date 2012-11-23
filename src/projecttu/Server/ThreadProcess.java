@@ -1,7 +1,5 @@
 package projecttu.Server;
 
-import java.util.concurrent.Semaphore;
-
 import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
 import projecttu.OutputObject.OutputObject;
@@ -85,6 +83,16 @@ public class ThreadProcess {
 	public boolean input(OutputObject info) {
 		
 		process.set(info);
+		
+		synchronized(status) {
+			status.readyToNextRound();
+			
+			try {
+				status.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		return true;
 	}

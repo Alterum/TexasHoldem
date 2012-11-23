@@ -30,9 +30,9 @@ public class Observer implements Runnable {
 						status.notifyAll();
 						status.resetReadyPlayersToNewGame();
 					}
-					if(status.isAllReadyToDeal()){
+					if(status.isAllReadyToNextRound()){
 						status.notifyAll();
-						status.resetReadyPlayersToDeal();
+						status.ressetAllReadyToNextRound();
 					}
 				}
 			} catch (InterruptedException e) {

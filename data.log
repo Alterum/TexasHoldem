@@ -3,3 +3,11 @@
 [ 2012/11/23 10:12:31 ] Thread[player1,5,] is dead and was removed from Active connections
 [ 2012/11/23 12:27:51 ] GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2012/11/23 12:28:55 ] Thread[player2,5,] is dead and was removed from Active connections
+[ 2012/11/23 12:59:19 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/11/23 12:59:48 ] Thread[Thread-0,5,main]: Thread[player2,5,] is dead and was removed from Active connections
+[ 2012/11/23 12:59:54 ] Thread[Thread-0,5,main]: Thread[player1,5,] is dead and was removed from Active connections
+[ 2012/11/23 13:03:21 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/11/23 13:03:46 ] Thread[Thread-0,5,main]: Thread[player23,5,] is dead and was removed from Active connections
+[ 2012/11/23 13:03:53 ] Thread[Thread-0,5,main]: Thread[player1,5,] is dead and was removed from Active connections
+[ 2012/11/23 13:06:57 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/11/23 13:08:35 ] Thread[Thread-0,5,main]: Thread[player1,5,] is dead and was removed from Active connections
