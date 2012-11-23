@@ -1,5 +1,9 @@
 package projecttu.Gamelogic;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class TestPoker {
 
 	/**
@@ -74,10 +78,6 @@ public class TestPoker {
 		p1.setBet(10); // small blind
 		p2.setBet(20); // big blind
 		//uravnivanija
-		
-		
-		
-		
 		
 		
 		

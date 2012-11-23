@@ -15,10 +15,22 @@ import javax.swing.JLabel;
 
 import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
+import projecttu.Server.Logger;
 
-public class ClientParser implements Parser {
+public class ClientParser implements Parser {	
+
+	private int status;
+	private int bet;
+	private String name;
+	private boolean on = false;
+	private OutputObject output = null;
+	private OutputToClient input = null;
+	private HashMap<String, JButton> buttons = null;
+	private HashMap<String, JLabel> labels = null;
+	private Logger log;
+	
 	public ClientParser() {
-		
+		log = new Logger("client_parser.log");
 	}
 	
 	public void setChangingComponents(HashMap<String, JLabel> labels,
@@ -37,7 +49,6 @@ public class ClientParser implements Parser {
 	}
 	
 	public void requestNewGame() {
-		// TODO Auto-generated method stub
 		disabledButtons();
 		output = new OutputToServer(0, -5, name);
 		on = true;
@@ -48,10 +59,7 @@ public class ClientParser implements Parser {
 		output = new OutputToServer(raiseBet, status, name);
 		on = true;
 	}
-//	public void setObjectRequest(String query) {
-//		parserOutput(query);
-//		on = true;
-//	}
+
 	public boolean isRequest() {
 		return on;
 	}
@@ -59,7 +67,6 @@ public class ClientParser implements Parser {
 	public synchronized void parserInputObject(OutputObject obj) {
 		input = (OutputToClient) obj;
 		parserInput();
-//		input = null;
 	}
 	
 	private synchronized void parserInput() {
@@ -67,12 +74,7 @@ public class ClientParser implements Parser {
 		setInfoPanel();	
 		
 	}
-	
-	public void parserOutput(String query) {
-		
-	}
-	
-	
+
 	public void enabledButtons() {
 		HashMap<String, Boolean> access = input.getAccess();
 		for(String key : access.keySet())
@@ -87,7 +89,7 @@ public class ClientParser implements Parser {
 	public void setInfoPanel() {
 		HashMap<String, String> info = input.getInfo();
 		for(String key : info.keySet()) {
-			System.out.println(key);
+			log.log("Clietn "+name+" Input: "+key+" = "+info.get(key));
 			labels.get(key).setText(info.get(key));
 		}
 
@@ -121,16 +123,10 @@ public class ClientParser implements Parser {
 			}
 		}
 	}
-	
-//	private Box box;
-	private int status;
-	private int bet;
-	private String name;
-	private boolean on = false;
-	private OutputObject output = null;
-	private OutputToClient input = null;
-	private HashMap<String, JButton> buttons = null;
-	private HashMap<String, JLabel> labels = null;
-//	private String request = null;
-//	private String answer = null;
+
+	@Override
+	public void parserOutput(String query) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -1,3 +1,11 @@
-Connection open. Socket[addr=/127.0.0.1,port=37783,localport=8880] projecttu.Server.Connection@b0019f
-InputName for Thread[Thread-2,5,main] corect
-Connection name: pl1
+[ 2012/11/23 09:57:43 ] Connection open. Socket[addr=/127.0.0.1,port=64655,localport=8907] projecttu.Server.Connection@554bce4f
+[ 2012/11/23 09:57:54 ] InputName for Thread[Thread-2,5,main] corect
+[ 2012/11/23 09:57:54 ] Connection name: player1
+[ 2012/11/23 10:12:07 ] Connection open. Socket[addr=/127.0.0.1,port=64867,localport=8907] projecttu.Server.Connection@554bce4f
+[ 2012/11/23 10:12:12 ] Connection open. Socket[addr=/127.0.0.1,port=64868,localport=8907] projecttu.Server.Connection@3cb088f8
+[ 2012/11/23 10:12:15 ] InputName for Thread[Thread-4,5,main] corect
+[ 2012/11/23 10:12:15 ] Connection name: player1
+[ 2012/11/23 10:12:22 ] InputName for Thread[Thread-2,5,main] corect
+[ 2012/11/23 10:12:22 ] Connection name: player2
+[ 2012/11/23 10:12:30 ] Server: IOException for Read Output Object: java.net.SocketException: Connection reset
+[ 2012/11/23 10:12:30 ] Socket closed! Connection name: player1

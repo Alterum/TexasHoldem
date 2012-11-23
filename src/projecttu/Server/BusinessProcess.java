@@ -185,14 +185,14 @@ public class BusinessProcess {
 
 		int playerBet = bankInRound.get(name);
 		boolean flag = true;
-//		int bank = 0;
+		int bank = 0;
 		for(String key : bankInRound.keySet()) {
 			if(playerBet != bankInRound.get(key)) {
 				flag = false;
 				break;
 			}
 			playerBet = bankInRound.get(key);
-//			bank += playerBet;
+			bank += playerBet;
 		}
 		
 		if(flag) { // urovnjalis NEXT ROUND
@@ -200,7 +200,7 @@ public class BusinessProcess {
 			
 			isGameOver(name);
 			
-			table.setBank(table.getBankInRound());
+			table.setBank(table.getBankInRound()+bank);
 			table.setBankInRound(0);
 			
 			for(String key : bankInRound.keySet()) {
