@@ -1,0 +1,16 @@
+ERROR:  syntax error at or near "amt_sb"
+LINE 4:         amt_sb int,
+                ^
+NOTICE:  CREATE TABLE will create implicit sequence "cash_hand_summary_id_seq" for serial column "cash_hand_summary.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "cash_hand_summary_pkey" for table "cash_hand_summary"
+ERROR:  relation "cash_limit" does not exist
+NOTICE:  CREATE TABLE will create implicit sequence "live_cash_table_id_seq" for serial column "live_cash_table.id"
+NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "live_cash_table_pkey" for table "live_cash_table"
+ERROR:  relation "cash_hand_summary" does not exist
+ERROR:  relation "live_cash_table" does not exist
+NOTICE:  CREATE TABLE will create implicit sequence "cash_table_session_summary_id_seq" for serial column "cash_table_session_summary.id"
+ERROR:  relation "cash_limit" does not exist
+ERROR:  relation "cahs_hand_summary" does not exist
+ERROR:  syntax error at or near "enum_t_donk_action"
+LINE 122: enum_t_donk_action character varying(1), 
+

@@ -1,0 +1,3425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://forum.pokerenergy.ru/showthread.php?t=2256 -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	
+<meta name="generator" content="vBulletin 3.8.6">
+
+<meta name="keywords" content="poker tracker 4, pokertracker 4, pokertracker4, pt4, покер трекер 4, пт4,  PokerTracker 4 – Схема базы данных. (описание), покер форум, holdem manager, покер магазин, покерные принадлежности">
+<meta name="description" content=" PokerTracker 4 – Схема базы данных. (описание) PokerTracker4">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.6 CSS
+* Style: 'Poker Energy'; Style ID: 6
+*/
+@import url("clientscript/vbulletin_css/style-d696f65e-00006.css");
+</style>
+<link rel="stylesheet" type="text/css" href="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" async="" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/ga.js"></script><script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/yahoo-dom-event.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "vbstyle.ru/pokerenergy/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_menu.js"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="Форум о покерных программах RSS Feed" href="http://forum.pokerenergy.ru/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="Форум о покерных программах - PokerTracker4 - RSS Feed" href="http://forum.pokerenergy.ru/external.php?type=RSS2&forumids=38">
+	
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29592211-1']);
+  _gaq.push(['_setDomainName', 'pokerenergy.ru']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!-- Yandex.Metrika counter -->
+</head><body onload=""><div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter12907249 = new Ya.Metrika({id:12907249, enableAll: true, webvisor:true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/watch.js" type="text/javascript" defer="defer"></script>
+<noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/12907249" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript>
+<!-- /Yandex.Metrika counter -->
+	<title> PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах</title>
+	<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#tag_edit_list { list-style:none; margin:0px; padding:0px; }
+	#tag_edit_list li { float:left; display:block; width:200px; }
+	#tag_edit_list li.mine { font-weight:bold; }
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+
+
+<!-- logo -->
+<a name="top"></a>
+<div id="wrapper">
+
+<div id="body"><div id="body1"><div class="wrap">
+
+<div style="overflow:hidden;">
+	<div id="header-logo"><h1><a href="http://pokerenergy.ru/"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/logo.png" alt=""></a></h1></div>
+	<div id="header-slogan"></div>
+			<div id="header-login"><a href="http://pokerenergy.ru/login/">Вход</a></div>
+		<div id="header-register"><a href="http://pokerenergy.ru/login/">Регистрация</a></div>
+	</div>
+
+<div id="banner_replacement"></div>
+<!--LiveInternet counter--><script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) +  ";" +Math.random();</script><!--/LiveInternet-->
+
+<link rel="stylesheet" href="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/style-export.css" type="text/css">
+<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/jquery.min.js"></script>
+<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/script.js"></script>
+<div id="menu-blocker" onmouseover="menu_blocker_hover = 1; setTimeout(&#39;hide_menu_blocker()&#39;, 200);" onmouseout="menu_blocker_hover = 0;" style="top: 92px; left: 482px; display: block;"></div>
+<div id="menu" style="background-image: url(http://pokerenergy.ru/css/menu-bg.png); background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: repeat no-repeat;">
+	<table class="menuitem" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			
+					<td class="with-submenu" style="margin:0;padding:0;">
+						<a href="http://pokerenergy.ru/pokernie-programmi/" id="menu-pokernie-programmi" class="with-submenu-a">
+							<span class="with-submenu-span">Покерные программы</span>
+						</a>
+
+						<ul class="submenu" id="submenu-pokernie-programmi">
+							<li>
+								<a href="http://pokerenergy.ru/kalkulyatori-i-pomoshchniki/">Калькуляторы и помощники</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/cardrunners-ev-calculator/">CardRunners EV calculator</a></li>
+										<li><a href="http://pokerenergy.ru/table-ninja/">Table Ninja</a></li>
+										<li><a href="http://pokerenergy.ru/flopzilla/">Flopzilla</a></li>
+										<li><a href="http://pokerenergy.ru/poker-calculator-pro/">Poker Calculator Pro</a></li>
+										<li><a href="http://pokerenergy.ru/magic-holdem/">Magic Holdem</a></li>
+										<li><a href="http://pokerenergy.ru/tilt-breaker/">Tilt Breaker</a></li>
+										<li><a href="http://pokerenergy.ru/stud-indicator/">Stud Indicator</a></li>
+										<li><a href="http://pokerenergy.ru/omaha-indicator/">Omaha Indicator</a></li>
+										<li><a href="http://pokerenergy.ru/holdem-indicator/">Holdem Indicator</a></li>
+									</ul>
+							</li>
+							<li>
+								<a href="http://pokerenergy.ru/pokernie-kombayni/">Покерные комбайны</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/holdem-manager/">Holdem Manager 2</a></li>
+										<li><a href="http://pokerenergy.ru/pokertracker-4/">Poker Tracker 4</a></li>
+										<li><a href="http://pokerenergy.ru/true-ev/">True EV</a></li>
+									</ul>
+							</li>
+							<li>
+								<a href="http://pokerenergy.ru/poisk-luchshih-stolov/">Поиск лучших столов</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/table-shark/">Table Shark</a></li>
+										<li><a href="http://pokerenergy.ru/smart-buddy/">Smart Buddy</a></li>
+										<li><a href="http://pokerenergy.ru/table-scan-turbo/">Table Scan Turbo</a></li>
+									</ul>
+							</li>
+							<li>
+								<a href="http://pokerenergy.ru/instrumenti-sng-i-mtt/">Инструменты SNG и MTT</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/tournament-indicator/">Tournament Indicator</a></li>
+										<li><a href="http://pokerenergy.ru/sng-wizard/">SnG Wizard</a></li>
+										<li><a href="http://pokerenergy.ru/table-ninja/">Table Ninja</a></li>
+										<li><a href="http://pokerenergy.ru/tournament-shark/">Tournament Shark</a></li>
+										<li><a href="http://pokerenergy.ru/ace-poker-drills/">Ace Poker Drills</a></li>
+										<li><a href="http://pokerenergy.ru/sharkystrator/">Sharkystrator</a></li>
+									</ul>
+							</li>
+							<li>
+								<a href="http://pokerenergy.ru/drugie-programmi/">Другие программы</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/tiltbuster/">Tiltbuster</a></li>
+										<li><a href="http://pokerenergy.ru/tilt-breaker/">Tilt Breaker</a></li>
+										<li><a href="http://pokerenergy.ru/hand-history-grabber/">Hand History Grabber</a></li>
+										<li><a href="http://pokerenergy.ru/holdem-indicator/">Holdem Indicator</a></li>
+										<li><a href="http://pokerenergy.ru/party-tools/">Party Tools</a></li>
+									</ul>
+							</li>
+							<li class="submenu-links">
+								<a href="http://pokerenergy.ru/poker-hyde/">Не знаешь, что выбрать?</a>
+								<a style="float:right;color:#fff;" href="http://pokerenergy.ru/pokernie-programmi/">Все 41 покерная программа
+								</a>
+							</li>
+						</ul>
+					</td>
+					<td class="with-submenu" style="margin:0;padding:0;">
+						<a href="http://pokerenergy.ru/platnie-podpiski/" id="menu-platnie-podpiski" class="with-submenu-a" style="background-image: url(http://pokerenergy.ru/css/menu-arrow.png); color: rgb(84, 78, 56); text-decoration: initial; background-position: 15px 10px; background-repeat: no-repeat no-repeat;">
+							<span class="with-submenu-span">Платные подписки</span>
+						</a>
+
+						<ul class="submenu" id="submenu-platnie-podpiski" style="display: none;">
+							<li>
+								<a href="http://pokerenergy.ru/obuchenie-igre-i-trenirovki/">Обучение игре и тренировки</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/bluefirepokercom/">Bluefirepoker.com</a></li>
+										<li><a href="http://pokerenergy.ru/dragthebarcom/">Dragthebar</a></li>
+										<li><a href="http://pokerenergy.ru/sitngogrinders/">SitnGoGrinders</a></li>
+										<li><a href="http://pokerenergy.ru/cardrunners/">Cardrunners</a></li>
+										<li><a href="http://pokerenergy.ru/deucescracked/">DeucesCracked</a></li>
+										<li><a href="http://pokerenergy.ru/husng/">HUSNG</a></li>
+										<li><a href="http://pokerenergy.ru/poker-news-strategy/">Poker News Strategy</a></li>
+									</ul>
+							</li>
+							<li>
+								<a href="http://pokerenergy.ru/servisi-dlya-igrokov/">Сервисы для игроков</a>
+									<ul>
+										<li><a href="http://pokerenergy.ru/pokertableratings/">PokerTableRatings</a></li>
+										<li><a href="http://pokerenergy.ru/sharkscope/">Sharkscope</a></li>
+										<li><a href="http://pokerenergy.ru/poker-edge/">Poker Edge</a></li>
+										<li><a href="http://pokerenergy.ru/sharkystrator/">Sharkystrator</a></li>
+									</ul>
+							</li>
+							<li class="submenu-links">
+								<a href="http://pokerenergy.ru/poker-hyde/">Не знаешь, что выбрать?</a>
+								<a style="float:right;color:#fff;" href="http://pokerenergy.ru/platnie-podpiski/">Все 17 платных подписок
+								</a>
+							</li>
+						</ul>
+					</td>
+					<td class="without-submenu">
+						<a href="http://pokerenergy.ru/datamining/" class="without-submenu-a" title="Датамайнинг">
+							<span class="without-submenu-span">Датамайнинг</span>
+						</a>
+					</td>
+					<td class="without-submenu">
+						<a href="http://pokerenergy.ru/bezopasnost/" class="without-submenu-a" title="Антивирусы">
+							<span class="without-submenu-span">Антивирусы</span>
+						</a>
+					</td>			<td class="without-submenu"><a href="http://pokerenergy.ru/pokernie-programmi-besplatno/" class="without-submenu-a"><span class="without-submenu-span">Бесплатно</span></a></td>
+			<td class="without-submenu"><a href="http://forum.pokerenergy.ru/" class="without-submenu-a"><span class="without-submenu-span">Форум</span></a></td>
+		</tr>
+	</tbody></table>
+</div>
+  <!-- content table -->
+  <!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+
+  
+
+  
+<div id="navigation">
+  <form action="http://forum.pokerenergy.ru/search.php?do=process" method="post">
+    <input type="hidden" name="do" value="process">
+    <input type="hidden" name="quicksearch" value="1">
+    <input type="hidden" name="childforums" value="1">
+    <input type="hidden" name="exactname" value="1">
+    <input type="hidden" name="s" value="">
+    <input type="hidden" name="securitytoken" value="guest">
+    <div><input type="text" class="bginput" name="query" size="25" tabindex="1001" id="little-search-input"><input type="submit" class="button" value="" tabindex="1004"></div>
+  </form>
+
+  <div class="pe-navbit"><a href="http://pokerenergy.ru/">Главная</a> &#8594; <a href="http://forum.pokerenergy.ru/index.php" accesskey="1">Форум о покерных программах</a> 
+	&#8594; <a href="http://forum.pokerenergy.ru/forumdisplay.php?f=4">Обсуждение покерных программ</a>
+
+	&#8594; <a href="http://forum.pokerenergy.ru/forumdisplay.php?f=38">PokerTracker4</a>
+ &#8594; 
+	 PokerTracker 4 – Схема базы данных. (описание)
+</div>
+
+</div>
+
+<!-- nav buttons bar -->
+<div class="pe-navbar">
+  <table cellpadding="0" cellspacing="0" width="100%" border="0">
+    <tbody><tr>
+    
+      <td width="100%" id="pe-welcome">Добро пожаловать на форум о покерных программах</td>
+      <td nowrap="nowrap">
+        <!-- login form -->
+        <form action="http://forum.pokerenergy.ru/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+        <script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_md5.js"></script>
+        <input type="text" class="bginput" style="font-size: 11px" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="Имя" onfocus="if (this.value == &#39;Имя&#39;) this.value = &#39;&#39;;">
+        <input type="password" class="bginput" style="font-size: 11px" name="vb_login_password" id="navbar_password" size="10" tabindex="102" value="Пароль" onfocus="if (this.value == &#39;Пароль&#39;) this.value = &#39;&#39;;">
+        <label for="cb_cookieuser_navbar"><input type="checkbox" name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c"></label>
+        <input type="submit" class="button" value="Вход" tabindex="104" title="Введите ваше имя пользователя и пароль, чтобы войти, или нажмите кнопку &#39;Регистрация&#39;, чтобы зарегистрироваться." accesskey="s">
+        <input type="hidden" name="s" value="">
+        <input type="hidden" name="securitytoken" value="guest">
+        <input type="hidden" name="do" value="login">
+        <input type="hidden" name="vb_login_md5password">
+        <input type="hidden" name="vb_login_md5password_utf">
+        </form>
+        <!-- / login form -->
+      </td>
+      
+      <td class="vbmenu_control"><a href="http://forum.pokerenergy.ru/register.php" rel="nofollow">Регистрация</a></td>
+      
+    
+    </tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar -->
+
+
+
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display:none;margin-top:3px" align="left">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr>
+			<td class="thead">Поиск по форуму</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="http://forum.pokerenergy.ru/search.php?do=process" method="post">
+
+					<input type="hidden" name="do" value="process">
+					<input type="hidden" name="quicksearch" value="1">
+					<input type="hidden" name="childforums" value="1">
+					<input type="hidden" name="exactname" value="1">
+					<input type="hidden" name="s" value="">
+					<input type="hidden" name="securitytoken" value="guest">
+					<div><input type="text" class="bginput" name="query" size="25" tabindex="1001"><input type="submit" class="button" value="Вперёд" tabindex="1004"></div>
+					<div style="margin-top:10px">
+						<label for="rb_nb_sp0"><input type="radio" name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked">Отобразить темы</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input type="radio" name="showposts" value="1" id="rb_nb_sp1" tabindex="1003">Отображать сообщения</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/tags.php" rel="nofollow">Поиск по метке</a></td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php" accesskey="4" rel="nofollow">Расширенный поиск</a></td>
+		</tr>
+		
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+	
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none; position: absolute; z-index: 50;">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">К странице...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="">
+			<form action="http://forum.pokerenergy.ru/index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input type="text" class="bginput" id="pagenav_itxt" style="font-size:11px" size="4">
+				<input type="button" class="button" id="pagenav_ibtn" value="Вперёд">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+<script type="text/javascript">function repaview(uid){window.open('member.php?do=repaview&u='+uid,'Reputation','toolbar=no,scrollbars=yes,resizable=yes,width=600,height=420');return false;}</script>
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- toolbar -->
+<table class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center" style="border-bottom-width:0px">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td class="vbmenu_control" id="threadtools" nowrap="nowrap" style="cursor: pointer;">
+		<a href="http://forum.pokerenergy.ru/showthread.php?t=2256&nojs=1#goto_threadtools">Опции темы</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/menu_open.gif" border="0" title="" alt="">
+	</td>
+	
+	
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #5628 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5628" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5628" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5628"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:13
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5628&postcount=1" target="new" rel="nofollow" id="postcount5628" name="1"><strong>1</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5628">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5628", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5628_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5628" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5628">
+			
+			<b><div align="center"><font size="5"><font color="Navy">PokerTracker 4 – Схема базы данных.</font></font></div></b><br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">Введение. </font></font></b></div>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5628 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5628_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5628 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5628 --><!-- post #5629 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5629" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5629" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5629"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:15
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5629&postcount=2" target="new" rel="nofollow" id="postcount5629" name="2"><strong>2</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5629">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5629", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5629_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5629" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5629">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">cash_hand_player_combinations</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>flg_f_highcard</b> (булева) - Если на флопе у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_1pair</b> (булева) - Если на флопе у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_2pair</b> (булева) - Если на флопе у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_threeoak</b> (булева) - Если на флопе у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_straight</b> (булева) - Если на флопе у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_flush</b> (булева) - Если на флопе у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fullhouse</b> (булева) - Если на флопе у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fouroak</b> (булева) - Если на флопе у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_strflush</b> (булева) - Если на флопе у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_f_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на флопе (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_f_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на флопе (0 – нет кикера,1 - 11: 1 – топ кикер, 11 – самый слабый кикер).<br>
+<b>val_f_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на флопе (0, 1, 2).<br>
+<b>flg_f_gutshot_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «дырявый стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_straight_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «двухсторонний стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_2gutshot_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «двойной дырявый стрит-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_flush_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «флеш-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_wrap_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «многоаутовый стрит-дро» (омаха, например T965 на флопе 872), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_wrap_outs</b> (м. целое) - Количество аутов у многоаутового стрит-дро комбинации (омаха, например T965 на флопе 872 – 20 аутов).<br>
+<b>flg_f_bflush_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «бэк-дор флеш-дро» (3-х карточный флеш-дро), значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_bstraight_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «бэк-дор стрит-дро» (3-х карточный стрит-дро), значенье - True (истина), иначе - False (ложь)<br>
+<b>id_f_flush_draw_strength</b> (м. целое) - Идентификатор старшей карты игрока в флеш-дро на флопе (20 – 1, например: 20 - 7&#9827;A&#9827; на флопе T&#9824;4&#9827;8&#9827; или K&#9829;2&#9829; на флопе 4&#9830;A&#9829;9&#9829;, 1 - 2&#9827;5&#9829; на флопе K&#9827;9&#9827;3&#9827;).<br>
+<b>val_f_straight_draw_nut_outs</b> (м. целое) - Количество аутов на натсовый стрит у стрит-дро комбинации (например: 4 - 6&#9829;Q&#9824; на флопе T&#9824;K&#9824;J&#9830;).<br>
+<b>val_f_straight_draw_nonnut_outs</b> (м. целое) - Количество аутов на не натсовый стрит у стрит-дро комбинации (например: 8 - 9&#9824;4&#9829; на флопе 8&#9830;7&#9827;T&#9827;).<br>
+<b>flg_f_low_hand</b> (булева) - Если на флопе у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на флопе (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_f_nut_flush_blocker</b> (булева) - Если на флопе у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_low_draw</b> (булева) - Если на флопе у игрока есть дро на лоу комбинацию (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_low_draw_strength</b> (м. целое) - Флоп. Количество аутов для получения лоу комбинации на следующей улице.<br>
+<b>flg_t_highcard</b> (булева) - Если на торне у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_1pair</b> (булева) - Если на торне у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_2pair</b> (булева) - Если на торне у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_threeoak</b> (булева) - Если на торне у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_straight</b> (булева) - Если на торне у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_flush</b> (булева) - Если на торне у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fullhouse</b> (булева) - Если на торне у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fouroak</b> (булева) - Если на торне у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_strflush</b> (булева) - Если на торне у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_t_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на торне (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_t_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на торне (0 – нет кикера,1 - 10: 1 – топ кикер, 10 – самый слабый кикер).<br>
+<b>val_t_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на торне (0, 1, 2).<br>
+<b>flg_t_gutshot_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «дырявый стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_straight_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «двухсторонний стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_2gutshot_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «двойной дырявый стрит-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_flush_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «флеш-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_wrap_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «многоаутовый стрит-дро» (омаха, например T965 на борде 872А), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_wrap_outs</b> (м. целое) - Количество аутов у многоаутового стрит-дро комбинации (омаха, например T965 на борде 872А – 20 аутов).<br>
+<b>id_t_flush_draw_strength</b> (м. целое) - Идентификатор старшей карты игрока в флеш-дро на торне (20 – 1, например: 20 - 7&#9827;A&#9827; на борде T&#9824;4&#9827;8&#9827;7&#9830; или K&#9829;2&#9829; на борде 4&#9830;A&#9829;9&#9829;Q&#9824;, 1 - 2&#9827;5&#9829; на борде K&#9827;9&#9827;3&#9827;9&#9830;).<br>
+<b>val_t_straight_draw_nut_outs</b> (м. целое) - Количество аутов на натсовый стрит у стрит-дро комбинации (например: 4 - 6&#9829;Q&#9824; на борде T&#9824;K&#9824;J&#9830;2&#9827;.<br>
+<b>val_t_straight_draw_nonnut_outs</b> (м. целое) - Количество аутов на не натсовый стрит у стрит-дро комбинации (например: 8 - 9&#9824;4&#9829; на борде 8&#9830;7&#9827;T&#9827;A&#9824;).<br>
+<b>flg_t_low_hand</b> (булева) - Если на торне у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на торне (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_t_nut_flush_blocker</b> (булева) - Если на торне у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_low_draw</b> (булева) - Если на торне у игрока есть дро на лоу комбинацию (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_low_draw_strength</b> (м. целое) - Торн. Количество аутов для получения лоу комбинации на следующей улице.<br>
+<b>flg_r_highcard</b> (булева) - Если на ривере у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_1pair</b> (булева) - Если на ривере у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_2pair</b> (булева) - Если на ривере у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_threeoak</b> (булева) - Если на ривере у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_straight</b> (булева) - Если на ривере у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_flush</b> (булева) - Если на ривере у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fullhouse</b> (булева) - Если на ривере у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fouroak</b> (булева) - Если на ривере у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_strflush</b> (булева) - Если на ривере у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_r_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на ривере (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_r_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на ривере (0 – нет кикера,1 - 10: 1 – топ кикер, 10 – самый слабый кикер).<br>
+<b>val_r_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на ривере (0, 1, 2).<br>
+<b>flg_r_low_hand</b> (булева) - Если на ривере у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_r_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на ривере (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_r_nut_flush_blocker</b> (булева) - Если на ривере у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5629 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5629_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5629 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5629 --><!-- post #5630 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5630" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5630" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5630"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:53
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5630&postcount=3" target="new" rel="nofollow" id="postcount5630" name="3"><strong>3</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5630">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5630", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5630_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5630" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5630">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">cash_hand_player_statistics</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_player_real</b> (целое) - Идентификатор дополнительного ника игрока, который мы добавили к основному нику в поле "Aliased" (0 - &#8734; и соответствует идентификатору основного ника игрока).<br>
+<b>id_holecard</b> (м. целое) - Идентификатор карманных карт (1-169 для Холдема, 1-1820 для Омахи).<br>
+<b>id_limit</b> (м. целое) - Идентификатор лимита (1 - &#8734;).<br>
+<b>id_session</b> (целое) - Идентификатор сессии (1 - &#8734;).<br>
+<b>date_played</b> (дата, время) - Дата/время розыгрыша руки.<br>
+<b>position</b> (м. целое) - Позиция относительно баттона. 0 = баттон, 9 = малый блайнд, 8 = большой блайнд, 7 = UTG, 6 = UTG+1, 5 = UTG+2, 4 = MP, 3 = MP+1, 2 = MP+2, 1 = CO.<br>
+<b>cnt_players</b> (м. целое) - Количество игроков участвующих в розыгрыше (сданы карты) (2 - 10).<br>
+<b>cnt_p_raise</b> (м. целое) - Количество рейзов игрока на префлопе в данном розыгрыше.<br>
+<b>flg_p_first_raise</b> (булева) - Если игрок первым рейзанул на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_p_call</b> (м. целое) - Количество уравниваний игрока на префлопе в данном розыгрыше.<br>
+<b>flg_p_limp</b> (булева) - Если игрок на префлопе вошел в игру лимпом, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_fold</b> (булева) - Если игрок на префлопе сбросился, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_ccall</b> (булева) - Если игрок на префлопе колд-коллил, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_p_face_limpers</b> (м. целое) - Количество префлоп лимперов вошедших в банк до слова игрока.<br>
+<b>flg_vpip</b> (булева) - Если игрок на префлопе добровольно вложил деньги в банк (не блайнды), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_bet</b> (булева) - Если игрок ставил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_f_raise</b> (м. целое) - Количество рейзов игрока на флопе в данном розыгрыше.<br>
+<b>flg_f_first_raise</b> (булева) - Если игрок первым рейзанул на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_f_call</b> (м. целое) - Количество уравниваний игрока на флопе в данном розыгрыше.<br>
+<b>flg_f_check</b> (булева) - Если игрок чекнул на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_check_raise</b> (булева) - Если игрок чек/рейзил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fold</b> (булева) - Если игрок сбросился на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_saw</b> (булева) - Если игрок увидел флоп, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_bet</b> (булева) - Если игрок ставил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_t_raise</b> (м. целое) - Количество рейзов игрока на торне в данном розыгрыше.<br>
+<b>flg_t_first_raise</b> (булева) - Если игрок первым рейзанул на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_t_call</b> (м. целое) - Количество уравниваний игрока на торне в данном розыгрыше.<br>
+<b>flg_t_check</b> (булева) - Если игрок чекнул на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_check_raise</b> (булева) - Если игрок чек/рейзил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fold</b> (булева) - Если игрок сбросился на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_saw</b> (булева) - Если игрок увидел торн, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_bet</b> (булева) - Если игрок ставил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_r_raise</b> (м. целое) - Количество рейзов игрока на ривере в данном розыгрыше.<br>
+<b>flg_r_first_raise</b> (булева) - Если игрок первым рейзанул на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_r_call</b> (м. целое) - Количество уравниваний игрока на ривере в данном розыгрыше.<br>
+<b>flg_r_check</b> (булева) - Если игрок чекнул на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_check_raise</b> (булева) - Если игрок чек/рейзил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fold</b> (булева) - Если игрок сбросился на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_saw</b> (булева) - Если игрок увидел ривер, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_allin</b> (символ (1)) - Улица, на которой игрок пошел ва-банк. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не ходил - "N".<br>
+<b>enum_face_allin</b> (символ (1)) - Улица, на которой игрок оказался перед ва-банком. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не было - "N".<br>
+<b>enum_face_allin_action</b> (символ (1)) - Что игрок сделал, оказавшись перед ва-банком. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_blind_s</b> (булева) - Если игрок ставил малый блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_b</b> (булева) - Если игрок ставил большой блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_ds</b> (булева) - Если игрок ставил невынужденный малый блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_db</b> (булева) - Если игрок ставил невынужденный большой блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_sb_steal_fold</b> (булева) - Если игрок, находясь в позиции малого блайнда, сбросился на стилинг, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_bb_steal_fold</b> (булева) - Если игрок, находясь в позиции большого блайнда, сбросился на стилинг, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_def_opp</b> (булева) - Если игрок, находясь в позиции малого или большого блайнда, и столкнулся со стилингом, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_steal_att</b> (булева) - Если игрок, находясь в стилинговой позиции стилил, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_steal_opp</b> (булева) - Если у игрока была возможность стилинговать, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_k</b> (булева) - Если игрок поставил "мертвый" блайнд (блайнд который не идет в зачет ставки игрока), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_showdown</b> (булева) - Если игрок дошел до вскрытия, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_won_hand</b> (булева) - Если игрок выиграл розыгрыш (на вскрытии или до), значенье - True (истина), иначе - False (ложь).<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша.<br>
+<b>amt_expected_won</b> (десятичное) - Величина ожидаемого (эквити) выигрыша.<br>
+<b>val_equity</b> (десятичное) - Эквити руки в ва-банк ситуации.<br>
+<b>id_final_hand</b> (м. целое) - Идентификатор руки на вскрытии (0 - 314). Ссылается на таблицу "lookup_hand_ranks".<br>
+<b>id_final_hand_lo</b> (целое) - Идентификатор лоу комбинации на вскрытии.<br>
+<b>flg_showed</b> (булева) - Если игрок показал свою руку (добровольно), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_folded</b> (символ (1)) - Улица, на которой игрок сбросился. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не сбросился - "N".<br>
+<b>flg_p_face_raise</b> (булева) - Если игрок оказался перед префлоп рейзом противника, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet</b> (булева) - Если игрок 3-бетил на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_p_4bet</b> (булева) - Если игрок 4+-бетил на префлопе (4-бет, 5-бет и т.д.), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_p_squeeze</b> (булева) - Если игрок исполнял сквиз на префлопе, значенье - True (истина), иначе - False (ложь). Сквиз – ситуация, когда один из противников делает рейз один из последующих противников колд-коллит рейзера и Вы делаете 3-бет.<br>
+<b>flg_p_squeeze_opp</b> (булева) - Если игрок имел возможность сквизить на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_squeeze_def_opp</b> (булева) - Если игрок столкнулся со сквизом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_squeeze_action</b> (символ (1)) - Что игрок сделал, столкнувшись со сквизом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet</b> (булева) - Если игрок 3-бетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_4bet</b> (булева) - Если игрок 4+-бетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_cbet</b> (булева) - Если игрок контбетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet</b> (булева) - Если игрок 3-бетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_4bet</b> (булева) - Если игрок 4+-бетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_cbet</b> (булева) - Если игрок контбетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_float</b> (булева) - Если игрок флоатил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_float_opp</b> (булева) - Если игрок имел возможность флоатить (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_float_def_opp</b> (булева) - Если игрок столкнулся с флоатингом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_float_action</b> (символ (1)) - Что игрок сделал, столкнувшись с флоатингом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_donk</b> (булева) - Если игрок делал донк ставку (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_donk_opp</b> (булева) - Если игрок имел возможность сделать донк ставку (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_donk_def_opp</b> (булева) - Если игрок столкнулся с донк ставкой противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_donk_action</b> (символ (1)) - Что игрок сделал, столкнувшись с донк ставкой противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet</b> (булева) - Если игрок 3-бетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_4bet</b> (булева) - Если игрок 4+-бетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_cbet</b> (булева) - Если игрок контбетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_float</b> (булева) - Если игрок флоатил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_float_opp</b> (булева) - Если игрок имел возможность флоатить (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_float_def_opp</b> (булева) - Если игрок столкнулся с флоатингом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_float_action</b> (символ (1)) - Что игрок сделал, столкнувшись с флоатингом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_donk</b> (булева) - Если игрок делал донк ставку (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_donk_opp</b> (булева) - Если игрок имел возможность сделать донк ставку (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_donk_def_opp</b> (булева) - Если игрок столкнулся с донк ставкой противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_donk_action</b> (символ (1)) - Что игрок сделал, столкнувшись с донк ставкой противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>val_curr_conv</b> (десятичное) - Коэффициент перевода валюты в валюту USD.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+				<em>
+					
+						Последний раз редактировалось SS-24; 12.04.2012 в <span class="time">18:34</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5630 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5630_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5630 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5630 --><!-- post #5631 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5631" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5631" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5631"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:55
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5631&postcount=4" target="new" rel="nofollow" id="postcount5631" name="4"><strong>4</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5631">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5631", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5631_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5631" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5631">
+			
+			<b>seat</b> (м. целое) - Номер места игрока за столом (1 - 10)<br>
+<b>holecard_1</b> (м. целое) - - Первая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_2</b> (м. целое) - - Вторая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_3</b> (м. целое) - - Третья карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_4</b> (м. целое) - - Четвертая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>id_suits</b> (м. целое) - - Идентификатор мастности карманных карт в Омахе (0, 1 – 15).<br>
+<b>flg_hero</b> (булева) - Если игрок «Hero», значенье - True (истина), иначе - False (ложь)<br>
+<b>amt_before</b> (десятичное) - Размер стека игрока до начала розыгрыша.<br>
+<b>amt_blind</b> (десятичное) - Сумма поставленных игроком блайндов.<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_bet_p</b> (десятичное) - Общая сумма денег, поставленная игроком на префлопе.<br>
+<b>amt_bet_f</b> (десятичное) - Общая сумма денег, поставленная игроком на флопе.<br>
+<b>amt_bet_t</b> (десятичное) - Общая сумма денег, поставленная игроком на торне.<br>
+<b>amt_bet_r</b> (десятичное) - Общая сумма денег, поставленная игроком на ривере.<br>
+<b>amt_bet_ttl</b> (десятичное) - Общая сумма денег, поставленная игроком на всех улицах.<br>
+<b>id_action_p</b> (целое) - Идентификатор префлоп действий (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_f</b> (целое) - Идентификатор действий на флопе (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_t</b> (целое) - Идентификатор действий на торне (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_r</b> (целое) - Идентификатор действий на ривере (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>flg_p_open</b> (булева) - Если игрок первым поставил на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_open_opp</b> (булева) - Если у игрока была возможность поставить первым на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_first</b> (булева) - Если игрок должен действовать первым на флопе (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_open</b> (булева) - Если игрок первым поставил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_open_opp</b> (булева) - Если у игрока была возможность поставить первым на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_has_position</b> (булева) - Если игрок на флопе имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>flg_t_first</b> (булева) - Если игрок должен действовать первым на торне (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_open</b> (булева) - Если игрок первым поставил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_open_opp</b> (булева) - Если у игрока была возможность поставить первым на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_has_position</b> (булева) - Если игрок на торне имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>flg_r_first</b> (булева) - Если игрок должен действовать первым на ривере (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_open</b> (булева) - Если игрок первым поставил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_open_opp</b> (булева) - Если у игрока была возможность поставить первым на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_has_position</b> (булева) - Если игрок на ривере имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>amt_p_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на префлопе (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_p_raise_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания последнего рейза на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_raise_facing / размер банка).<br>
+<b>amt_p_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на префлопе (2бет может быть только один).<br>
+<b>val_p_2bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 2бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_2bet_facing / размер банка).<br>
+<b>amt_p_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на префлопе.<br>
+<b>val_p_3bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 3бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_3bet_facing / размер банка).<br>
+<b>amt_p_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на префлопе.<br>
+<b>val_p_4bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 4бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_4bet_facing / размер банка).<br>
+<b>amt_p_5bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 5бет противника на префлопе.<br>
+<b>val_p_5bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 4бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_5bet_facing / размер банка).<br>
+<b>val_p_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего префлоп рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_p_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого префлоп рейза (например: если игрок поставил малый блайнд – 1$ и когда до него дошел ход сделал рейз, поставив еще 5$, значение будет равно - 6) (первым префлоп рейзом в данном контексте считается рейз сделанный при первом слове игрока, это может быть и 3-бет, если перед словом игрока был рейз от противника).<br>
+<b>val_p_raise_made_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы вложенной игроком в банк на момент его первого префлоп рейза, к размеру банка на момент этого рейза (amt_p_raise_made/размер банка).<br>
+<b>amt_p_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ префлоп рейза (например: лимит, игрок уровнял рейз 4$, после этого был 3-бет 6$, и игрок сделал 4-бет 8$ (кэп), значение будет равно 8) (вторым+ префлоп рейзом в данном контексте считается рейз сделанный при втором+ слове игрока).<br>
+<b>val_p_raise_made_2_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы вложенной игроком в банк на момент его второго+ префлоп рейза, к размеру банка на момент его второго+ префлоп рейза (amt_p_raise_made_2/размер банка).<br>
+<b>amt_f_bet_facing</b> (десятичное) - Флоп, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_f_bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_f_bet_facing/размер банка).<br>
+<b>val_f_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора флопа: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_f_bet_made</b> (десятичное) - Размер ставки игрока на флопе.<br>
+<b>val_f_bet_made_pct</b> (десятичное) - Флоп, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_f_bet_made/размер банка).<br>
+<b>amt_f_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на флопе (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_f_raise_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания последнего рейза на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_f_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на флопе (2бет может быть только один).<br>
+<b>val_f_2bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 2бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_f_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на флопе.<br>
+<b>val_f_3bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 3бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_f_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на флопе.<br>
+<b>val_f_4bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 4бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_f_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего флоп рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_f_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на флопе (первым рейзом на флопе в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_f_raise_made_pct</b> (десятичное) - Флоп, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на флопе, к размеру банка на момент этого рейза (amt_f_raise_made/размер банка).<br>
+<b>amt_f_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на флопе (вторым+ рейзом на флопе в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_f_raise_made_2_pct</b> (десятичное) - Флоп, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на флопе, к размеру банка на момент этого второго+ рейза на флопе (amt_f_raise_made_2/размер банка).<br>
+<b>amt_t_bet_facing</b> (десятичное) - Торн, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_t_bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_t_bet_facing/размер банка).<br>
+<b>val_t_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора торна: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_t_bet_made</b> (десятичное) - Размер ставки игрока на торне.<br>
+<b>val_t_bet_made_pct</b> (десятичное) - Торн, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_t_bet_made/размер банка).<br>
+<b>amt_t_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на торне (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_t_raise_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания последнего рейза на торне, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_t_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на торне (2бет может быть только один).<br>
+<b>val_t_2bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 2бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_t_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на торне.<br>
+<b>val_t_3bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 3бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_t_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на торне.<br>
+<b>val_t_4bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 4бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_t_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего торн рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_t_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на торне (первым рейзом на торне в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_t_raise_made_pct</b> (десятичное) - Торн, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на торне, к размеру банка на момент этого рейза (amt_t_raise_made/размер банка).<br>
+<b>amt_t_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на торне (вторым+ рейзом на торне в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_t_raise_made_2_pct</b> (десятичное) - Торн, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на торне, к размеру банка на момент этого второго+ рейза (amt_t_raise_made_2/размер банка).<br>
+<b>amt_r_bet_facing</b> (десятичное) - Ривер, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_r_bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_r_bet_facing/размер банка).<br>
+<b>val_r_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора ривера: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_r_bet_made</b> (десятичное) - Размер ставки игрока на ривере.<br>
+<b>val_r_bet_made_pct</b> (десятичное) - Ривер, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_r_bet_made/размер банка).<br>
+<b>amt_r_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на ривере (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_r_raise_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания последнего рейза на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_r_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на ривере (2бет может быть только один).<br>
+<b>val_r_2bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 2бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_r_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на ривере.<br>
+<b>val_r_3bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 3бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_r_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на ривере.<br>
+<b>val_r_4bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 4бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_r_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего ривер рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_r_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на ривере (первым рейзом на флопе в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_r_raise_made_pct</b> (десятичное) - Ривер, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на ривере, к размеру банка на момент этого рейза (amt_r_raise_made/размер банка).<br>
+<b>amt_r_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на ривере (вторым+ рейзом на флопе в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_r_raise_made_2_pct</b> (десятичное) - Ривер, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на ривере, к размеру банка на момент этого второго+ рейза (amt_r_raise_made_2/размер банка).
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+				<em>
+					
+						Последний раз редактировалось SS-24; 12.04.2012 в <span class="time">18:35</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5631 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5631_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5631 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5631 --><!-- post #5632 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5632" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5632" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5632"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:57
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5632&postcount=5" target="new" rel="nofollow" id="postcount5632" name="5"><strong>5</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5632">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5632", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5632_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5632" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5632">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">cash_hand_histories</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>history</b> (текст) - Текст истории игры.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">cash_hand_summary</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_site</b> (м. целое) - Идентификатор покерной сети (100, 200 … 2400). Ссылается на таблицу "lookup_sites".<br>
+<b>id_limit</b> (м. целое) - Идентификатор лимита (1 - &#8734;).<br>
+<b>id_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+[B]hand_no (cимвол (32)) - Индивидуальный номер розыгрыша (например - 40666649398).<br>
+<b>date_played</b> (дата, время) - Дата и время розыгрыша.<br>
+<b>date_imported</b> (дата, время) - Дата и время импортирования розыгрыша в базу данных.<br>
+<b>cnt_players</b> (м. целое) - Количество игроков участвовавших в розыгрыше (сдавали карты) (2 - 10).<br>
+<b>cnt_players_f</b> (м. целое) - Количество игроков смотревших флоп (2 - 10).<br>
+<b>cnt_players_t</b> (м. целое) - Количество игроков смотревших торн (2 - 10).<br>
+<b>cnt_players_r</b> (м. целое) - Количество игроков смотревших ривер (2 - 10).<br>
+<b>amt_p_effective_stack</b> (десятичное) - Префлоп, эффективный стек. Размер самого маленького стека за столом.<br>
+<b>amt_f_effective_stack</b> (десятичное) - Флоп, эффективный стек. Размер самого маленького стека за столом среди игроков, увидевших флоп.<br>
+<b>amt_t_effective_stack</b> (десятичное) - Торн, эффективный стек. Размер самого маленького стека за столом среди игроков, увидевших торн.<br>
+<b>amt_r_effective_stack</b> (десятичное) - Ривер, эффективный стек. Размер самого маленького стека за столом среди игроков, увидевших ривер.<br>
+<b>amt_pot</b> (десятичное) - Размер банка.<br>
+<b>amt_rake</b> (десятичное) - Величина взятого рейка с банка.<br>
+<b>amt_mgr</b> (десятичное) - Соотношение величины взятого рейка с банка к количеству игроков, которым раздавали карты в этом розыгрыше.<br>
+<b>amt_pot_p</b> (десятичное) - Префлоп. Величена банка в начале улицы (для префлопа, это сумма поставленных блайндов).<br>
+<b>amt_pot_f</b> (десятичное) - Флоп. Величена банка в начале улицы.<br>
+<b>amt_pot_t</b> (десятичное) - Торн. Величена банка в начале улицы.<br>
+<b>amt_pot_r</b> (десятичное) - Ривер. Величена банка в начале улицы.<br>
+<b>str_actors_p</b> (символ (10)) - Схема действий игроков на префлопе (действиями считаються: бет, рейз и колл) (пример: 2109821 – означает, 2 – первым действовал MP+2, 1 – действие каттофа , 0 – действие баттона, 9 – действие малого блайнда, 8 – действие большого блайнда, 2 – действие MP+2, 1 – действие каттофа).<br>
+<b>str_actors_f</b> (символ (10)) - Схема действий игроков на флопе (действиями считаються: бет, рейз и колл) (пример: 198 – означает, 1 – первым действовал каттоф, 9 – действие малого блайнда, 8 – действие большого блайнда).<br>
+<b>str_actors_t</b> (символ (10)) - Схема действий игроков на торне (действиями считаються: бет, рейз и колл) (пример: 198 – означает, 1 – первым действовал каттоф, 9 – действие малого блайнда, 8 – действие большого блайнда).<br>
+<b>str_actors_r</b> (символ (10)) - Схема действий игроков на ривере (действиями считаються: бет, рейз и колл) (пример: 198 – означает, 1 – первым действовал каттоф, 9 – действие малого блайнда, 8 – действие большого блайнда).<br>
+<b>str_aggressors_p</b> (символ (10)) - Схема ставок и мест агрессоров на префлопе (первый пример: 8181 – означает, 8 – блайнд большого блайнда, 1 – каттоф рейз, 8 – большой блайнд 3бет, 1 - каттоф 4бет; второй пример: 83 – означает, 8 – блайнд большого блайнда, 3 – MP+1 рейз).<br>
+<b>str_aggressors_f</b> (символ (10)) - Схема ставок и мест агрессоров на флопе (пример: 2102 – означает, 2 – MP+2 бет, 1 – каттоф рейз, 0 – баттон 3бет, 2 - MP+2 4бет.<br>
+<b>str_aggressors_t</b> (символ (10)) - Схема ставок и мест агрессоров на торне (пример: 2102 – означает, 2 – MP+2 бет, 1 – каттоф рейз, 0 – баттон 3бет, 2 - MP+2 4бет.<br>
+<b>str_aggressors_r</b> (символ (10)) - Схема ставок и мест агрессоров на ривере (пример: 2102 – означает, 2 – MP+2 бет, 1 – каттоф рейз, 0 – баттон 3бет, 2 - MP+2 4бет.<br>
+<b>id_win_hand</b> (м. целое) - Идентификатор выигрышной руки (0 – 314).<br>
+<b>id_win_hand_lo</b> (целое) - Идентификатор выигрышной лоу руки (например: 76431, 75321, 87632).<br>
+<b>id_winner</b> (целое) - Идентификатор игрока выигравшего розыгрыш (1 - &#8734;).<br>
+<b>id_winner_lo</b> (целое) - Идентификатор игрока выигравшего лоу розыгрыш (1 - &#8734;).<br>
+<b>button</b> (м. целое) - Номер места за столом, на котором находился баттон (1 - 10).<br>
+<b>card_1</b> (м. целое) - Первая карта флопа (0 – 52: 0 – карта не показывалась, 1-13 – крести от 2 до А, 14-26 – бубны от 2 до А, 27-39 – червы от 2 до А, 40-52 – пики от 2 до А).<br>
+<b>card_2</b> (м. целое) - Вторая карта флопа (0 – 52: 0 – карта не показывалась, 1-13 – крести от 2 до А, 14-26 – бубны от 2 до А, 27-39 – червы от 2 до А, 40-52 – пики от 2 до А).<br>
+<b>card_3</b> (м. целое) - Третья карта флопа (0 – 52: 0 – карта не показывалась, 1-13 – крести от 2 до А, 14-26 – бубны от 2 до А, 27-39 – червы от 2 до А, 40-52 – пики от 2 до А).<br>
+<b>card_4</b> (м. целое) - Карта торна (0 – 52: 0 – карта не показывалась, 1-13 – крести от 2 до А, 14-26 – бубны от 2 до А, 27-39 – червы от 2 до А, 40-52 – пики от 2 до А).<br>
+<b>card_5</b> (м. целое) - Карта ривера (0 – 52: 0 – карта не показывалась, 1-13 – крести от 2 до А, 14-26 – бубны от 2 до А, 27-39 – червы от 2 до А, 40-52 – пики от 2 до А).<br>
+<b>flg_note</b> (булева) - Если на розыгрыш есть хотя бы одна заметка (нотс), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_tag</b> (булева) - Если розыгрыш помечен меткой, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_autonote</b> (булева) - Если на розыгрыш есть хотя бы один автонотс (NoteTracker), значенье - True (истина), иначе - False (ложь).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">cash_limit</font></font></b></div><b>id_limit</b> (м. целое) - Идентификатор лимита (1 - &#8734;).<br>
+<b>limit_name</b> (текст) - Название лимита (например: €0.10/€0.20 или €0.04 NL).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>limit_currency</b> (символ (3) - Обозначение валюты лимита (например: USD или EUR).<br>
+<b>amt_sb</b> (десятичное) - Величина малого блайнда.<br>
+<b>amt_bb</b> (десятичное) - Величина большого блайнда.<br>
+<b>flg_nlpl</b> (булева) - Если игра пот-лимит или безлимитная, значение - True (истина), иначе - False (ложь).<br>
+<b>flg_nl</b> (булева) - Если игра безлимитная, значение - True (истина), иначе - False (ложь).<br>
+<b>flg_pl</b> (булева) - Если игра пот-лимит, значение - True (истина), иначе - False (ложь).<br>
+<b>flg_lo</b> (булева) - Если игра лоу, значение - True (истина), иначе - False (ложь).<br>
+<b>flg_fr</b> (булева) - Если стол «длинный», значение - True (истина), иначе - False (ложь).<br>
+<b>flg_sh</b> (булева) - Если стол «короткий», значение - True (истина), иначе - False (ложь).<br>
+<b>flg_hu</b> (булева) - Если стол «один на один», значение - True (истина), иначе - False (ложь).<br>
+<b>id_filter</b> (целое) - Идентификатор (0 – 16).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">cash_table</font></font></b></div><b>id_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>table_name</b> (текст) - Название стола (например: Achates или Educatio).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">cash_table_session_summary</font></font></b></div><b>id_session</b> (целое) - Идентификатор сессии (1 - &#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_site</b> (м. целое) - Идентификатор покерной сети (100, 200 … 2400). Ссылается на таблицу "lookup_sites".<br>
+<b>id_player</b> (целое) - Идентификатор основного ника игрока (1 - &#8734;).<br>
+<b>id_player_real</b> (целое) - Идентификатор дополнительного ника игрока, который мы добавили к основному нику в поле "Aliased" (0 - &#8734; и соответствует идентификатору основного ника игрока).<br>
+<b>id_limit</b> (целое) - Идентификатор лимита (1 - &#8734;).<br>
+<b>id_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>date_start</b> (дата, время) - Дата и время начала сессии.<br>
+<b>date_end</b> (дата, время) - Дата и время окончания сессии.<br>
+<b>cnt_minutes</b> (целое) - Продолжительность сессии в минутах.<br>
+<b>seat</b> (целое) - Место игрока за столом во время сессии (1-10).<br>
+<b>amt_pot</b> (десятичное) - Величина банков за сессию.<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша за сессию.<br>
+<b>amt_rake</b> (десятичное) - Величина заплаченного рейка за сессию.<br>
+<b>amt_rake_contributed</b> (десятичное) - Величина наигранного contributed-рейка за сессию.<br>
+<b>amt_rake_contributed_weighted</b> (десятичное) - Величина наигранного contributed weighted-рейка за сессию.<br>
+<b>amt_mgr</b> (десятичное) - Величина наигранного dealt-рейка за сессию.<br>
+<b>cnt_hands</b> (целое) - Количество сыгранных игр игроком в сессии.<br>
+<b>cnt_hands_won</b> (целое) - Количество выигранных игроком игр в сессии.<br>
+<b>cnt_ttl_players</b> (целое) - Количество человек участвовавших в игре во время сессии.<br>
+<b>cnt_ttl_players_flop</b> (целое) - Количество игроков увидевших флоп во время сессии (на данный момент данный счет программой не ведется).<br>
+<b>flg_note</b> (булева) - Если на сессию есть хотя бы одна заметка (нотс), значение - True (истина), иначе - False (ложь).<br>
+<b>flg_tag</b> (булева) - Если на сессию есть хотя бы одна метка, значение - True (истина), иначе - False (ложь).<br>
+<b>val_curr_conv</b> (десятичное) - Коэффициент перевода валюты в валюту USD.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">live_cash_player</font></font></b></div><b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_live_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>id_live_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_before</b> (десятичное) - Размер стека игрока до начала розыгрыша.<br>
+<b>amt_stack</b> (десятичное) -<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5632 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5632_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5632 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5632 --><!-- post #5633 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5633" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5633" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5633"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:58
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5633&postcount=6" target="new" rel="nofollow" id="postcount5633" name="6"><strong>6</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5633">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5633", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5633_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5633" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5633">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">live_cash_player</font></font></b></div><b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_live_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>id_live_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_before</b> (десятичное) - Размер стека игрока до начала розыгрыша.<br>
+<b>amt_stack</b> (десятичное) -<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">live_cash_table</font></font></b></div><b>id_live_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>id_live_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте в раздаче.<br>
+<b>amt_sb</b> (десятичное) - Величина малого блайнда за столом.<br>
+<b>amt_bb</b> (десятичное) - Величина большого блайнда за столом.<br>
+<b>amt_avg_stack</b> (десятичное) - Величина среднего стека за столом.<br>
+<b>amt_rake</b> (десятичное) - Количество взятого рейка в раздаче.<br>
+<b>amt_pot</b> (десятичное) - Величина банка в раздаче.<br>
+<b>cnt_players</b> (целое) - Количество игроков участвующих в раздаче.<br>
+<b>cnt_saw_flop</b> (целое) - Количество игроков видивших в раздаче флоп.<br>
+<b>winner</b> (текст) - Ник победителя розыгрыша.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">live_tourney_player</font></font></b></div><b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_live_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>id_live_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_before</b> (десятичное) - Размер стека игрока до начала розыгрыша.<br>
+<b>amt_stack</b> (десятичное) -<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">live_tourney_table</font></font></b></div><b>id_live_table</b> (целое) - Идентификатор стола (1 - &#8734;).<br>
+<b>id_live_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_sb</b> (десятичное) - Величина малого блайнда за столом.<br>
+<b>amt_bb</b> (десятичное) - Величина большого блайнда за столом.<br>
+<b>amt_avg_stack</b> (десятичное) - Величина среднего стека за столом.<br>
+<b>amt_rake</b> (десятичное) - Количество взятого рейка в раздаче.<br>
+<b>amt_pot</b> (десятичное) - Величина банка в раздаче.<br>
+<b>cnt_players</b> (целое) - Количество игроков участвующих в раздаче.<br>
+<b>cnt_saw_flop</b> (целое) - Количество игроков видивших в раздаче флоп.<br>
+<b>winner</b> (текст) - Ник победителя розыгрыша.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5633 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5633_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5633 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5633 --><!-- post #5634 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5634" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5634" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5634"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 22:59
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5634&postcount=7" target="new" rel="nofollow" id="postcount5634" name="7"><strong>7</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5634">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5634", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5634_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5634" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5634">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">lookup_actions</font></font></b></div><b>id_action</b> (целое) - Идентификатор действия (0 - &#8734;)<br>
+<b>"action"</b> (текст) - Наименование действия (X - чек, C - колл, B- бет, R - рейз, XC – чек/колл, BRC – бет/рейз/колл и т.д.).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_hand_groups</font></font></b></div><b>id_group</b> (м. целое) - Идентификатор групп рук (0 - 9).<br>
+<b>group_name</b> (текст) - Наименование группы рук ('',’Straight Flush',’Four of a Kind',’Full House',’Flush',’Straight',’Three of a Kind',’Two Pair',’One Pair',’High Card').<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_hand_ranks</font></font></b></div><b>id_hand_rank</b> (м. целое) - Идентификатор ранга руки (0-314).<br>
+<b>id_group</b> (м. целое) - Идентификатор групп рук (0 - 9). Ссылается на таблицу "lookup_hand_groups".<br>
+<b>group_name</b> (текст) - Наименование группы рук ('',’Straight Flush',’Four of a Kind',’Full House',’Flush',’Straight',’Three of a Kind',’Two Pair',’One Pair',’High Card').<br>
+<b>group_details</b> (текст) - Детализация ранга группы рук (например -’Royal Flush' или’Six High' и т.д.).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_hole_cards</font></font></b></div><b>id_holecard</b> (целое) - Идентификатор карманных карт (1-169 для Холдема, 1-1820 для Омахи).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>hole_cards</b> (символ (4)) - Обозначение карманных карт (AAQ7, Т943).<br>
+<b>enum_pair_type</b> (символ (1)) - Обозначение типа пар в карманных картах: N – нет пары (AJ53), 1 – одна пара (KKT7), 2 – две пары (AAQQ), T – тройка (J888), Q – каре (9999).<br>
+<b>val_pair_1</b> (м. целое) - Ранг первой пары (0 - нет пары, 2 – 22 … 14 - АА).<br>
+<b>val_pair_2</b> (м. целое) - Ранг второй пары (0 - нет пары, 2 – 22 … 13 - KK).<br>
+<b>flg_h_suited</b> (булева) - Если карманные карты игрока - одномастные, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_h_connector</b> (булева) - Если карманные карты игрока - связка, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_h_1_gap</b> (булева) - Если карманные карты игрока – связка с одним промежутком, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_h_2_gap</b> (булева) - Если карманные карты игрока – связка с двумя промежутками, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_o_connector</b> (булева) - Если в карманных картах игрока есть связка без промежутков, значенье - True (истина) (например - AAA2 или AAKJ), иначе - False (ложь).<br>
+<b>flg_o_connector_2_str</b> (булева) - Если в карманных картах игрока есть связка без промежутков из трех карт, значенье - True (истина) (например - AAKQ или AJT9), иначе - False (ложь).<br>
+<b>flg_o_connector_2_gap</b> (булева) - Если в карманных картах игрока есть две связки без промежутков, значенье - True (истина) (например - KQ98 или KQ87), иначе - False (ложь).<br>
+<b>flg_o_connector_3</b> (булева) - Если в карманных картах игрока есть связка без промежутков из четырех карт, значенье - True (истина) (например - QJT9 или 8765), иначе - False (ложь).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_positions</font></font></b></div><b>cnt_players</b> (м. целое) - Количество игроков участвующих в раздаче (2 – 10).<br>
+<b>position</b> (м. целое) - Позиция относительно баттона. 0 = баттон, 9 = малый блайнд, 8 = большой блайнд, 7 = UTG, 6 = UTG+1, 5 = UTG+2, 4 = MP, 3 = MP+1, 2 = MP+2, 1 = CO.<br>
+<b>absolute_position</b> (м. целое) - Абсолютная позиция игрока. 0 = баттон, 1 = CO, 2 = MP+2, 3 = MP+1, 4 = MP, 5 = UTG+2, 6 = UTG+1, 7 = UTG, 8 = большой блайнд, 9 = малый блайнд. (При сокращение числа игроков, номер места игрока не меняется).<br>
+<b>description</b> (символ (6)) - Обозначение позиции (BUTTON, CO, MP+2, MP+1, MP, UTG+2, UTG+1, UTG, BB, SB).<br>
+<b>flg_sb</b> (булева) - Если игрок находится на малом блайнде, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_bb</b> (булева) - Если игрок находится на большом блайнде, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_ep</b> (булева) - Если игрок находится в ранней позиции, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_mp</b> (булева) - Если игрок находится в средней позиции, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_co</b> (булева) - Если игрок находится на каттофе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_btn</b> (булева) - Если игрок находится на баттоне, значенье - True (истина), иначе - False (ложь).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_sites</font></font></b></div><b>id_site</b> (целое) - Идентификатор покерной сети (100, 200 … 2400).<br>
+<b>site_abbrev</b> (символ (3)) - Аббревиатура покерной сети (PS, PTY … YN).<br>
+<b>site_name</b> (текст) - Наименование покерной сети (PokerStars, Party … Yatahay Network).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_suits_omaha</font></font></b></div><b>id_suits</b> (целое) - Идентификатор мастности карманных карт в Омахе (0, 1 – 15)<br>
+<b>suits</b> (текст) - Обозначение мастности карманных карт в Омахе (xxxy, xyyy, xyxy, xyzy, xyzx, xyzr, xxyx, xyyx, xyzz, xyyz, xyxz, xxyy, xxyz, xyxx, xxxx).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_tags</font></font></b></div><b>id_tag</b> (целое) - Индитификатор цветовой метки (1 - 15).<br>
+<b>enum_type</b> (символ (1)) - Тип метки (H – на раздачу, P - на игрока, S – на сессию, T – на турнир).<br>
+<b>tag</b> (текст) - Текст метки (Review, GoodHand, Fish и т.д.).<br>
+<b>icon</b> (текст) - Наименование файла иконки метки (tag_blue.png, tag_green.png, tag_bomb.png и т.д.).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">lookup_tourney_type</font></font></b></div><b>id_type</b> (м. целое) - Идентификатор типа турнира (0, 100, 200, 300).<br>
+<b>description</b> (текст) - Наименование типа турнира (N/A, Limit, No Limit, Pot Limit).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">notes</font></font></b></div><b>id_note</b> (целое) - Идентификатор заметки (1 - &#8734;).<br>
+<b>id_x</b> (целое) - Идентификатор, зависящий от enum_type. Этот идентификатор равен идентификационному номеру того, на что сделана эта заметка. Например, если это - заметка об определенном игроке, то значение id_x равно значению id_player.<br>
+<b>enum_type</b> (символ (1)) - Символ заметки. Обозначающий тип заметки, на:’P' - игрока,’H' – розыгрыш.<br>
+<b>flg_tournament</b> (булева) - Если нотс записан на турнир, значенье - True (истина), иначе - False (ложь).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>date_note</b> (дата, время) - Дата создания или обновления заметки.<br>
+<b>id_color</b> (м. целое) - Индитификатор цвета иконки нотса на игрока (0-8: 0 – цвет не указан, 1 - желтый, 2 - зеленый, 3 - голубой, 4 - синий, 5 - темно синий, 6 - феолетовый, 7 - красный, 8 - оранжевый).<br>
+<b>note</b> (текст) - Текст заметки.<br>
+<b>note_tsvector</b> (tsvector) -<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">notes_auto</font></font></b></div><b>id_autonote</b> (целое) - Идентификатор автонотса (1-&#8734;).<br>
+<b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>uuid_name</b> (uuid) -<br>
+<b>id_category</b> (м. целое) - Идентификатор категории автонотса (1-4: префлоп, флоп, торн, ривер).<br>
+<b>flg_tournament</b> (булева) - Если автонотс записан на турнир, значенье - True (истина), иначе - False (ложь).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>note</b> (текст) - Текст автонотса.<br>
+<b>cnt_times</b> (м. целое) -<br>
+<b>id_hands</b> (текст) -<br>
+<b>date_added</b> (дата, время) - Дата и время создания автонотса (NoteTracker).<br>
+<b>date_updated</b> (дата, время) - Дата и время обновления автонотса (NoteTracker).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">player</font></font></b></div><b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_site</b> (м. целое) - Идентификатор покерной сети (100, 200 … 2400). Ссылается на таблицу "lookup_sites".<br>
+<b>player_name</b> (текст) - Ник игрока в покерной сети (Например: TORRES20, ApacheKills).<br>
+<b>player_name_search</b> (текст) - Ник игрока в покерной сети набранный строчными буквами (Например: torres20, apachekills) (для облегчения поиска).<br>
+<b>id_player_alias</b> (целое) - Идентификатор дополнительного ника игрока, который мы добавили к основному нику в поле "Aliased" (0 - &#8734; и соответствует идентификатору основного ника игрока).<br>
+<b>flg_note</b> (булева) - Если есть хоть одна заметка (нотс) на игрока. Значение будет - True (истина), если нет - False (ложь).<br>
+<b>flg_tag</b> (булева) - Если есть метка на игрока, значенье - True (истина), иначе - False (ложь).<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">settings</font></font></b></div><b>setting_name</b> (текст) - Название установки.<br>
+<b>setting_value</b> (текст) - Значение установки.<br>
+<br>
+<br>
+<div align="center"><b><font color="DarkGreen"><font size="4">tags</font></font></b></div><b>id_x</b> (целое) - Идентификатор, зависящий от enum_type. Этот идентификатор равен идентификационному номеру того, на что сделана эта заметка. Например, если это - заметка об определенном игроке, то значение id_x равно значению id_player.<br>
+<b>enum_type</b> (символ (1)) - Тип метки (H – на раздачу, P - на игрока, S – на сессию, T – на турнир).<br>
+<b>flg_tournament</b> (булева) - Если метка поставлена на турнир, значенье - True (истина), иначе - False (ложь).<br>
+<b>id_tag</b> (целое) - Индитификатор цветовой метки (1 - 15).<br>
+<b>flg_auto</b> (булева) - Если есть автонотс на турнир, значенье - True (истина), иначе - False (ложь).
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5634 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5634_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5634 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5634 --><!-- post #5635 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5635" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5635" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5635"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 23:01
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5635&postcount=8" target="new" rel="nofollow" id="postcount5635" name="8"><strong>8</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5635">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5635", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5635_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5635" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5635">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">tourney_hand_player_combinations</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>flg_f_highcard</b> (булева) - Если на флопе у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_1pair</b> (булева) - Если на флопе у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_2pair</b> (булева) - Если на флопе у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_threeoak</b> (булева) - Если на флопе у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_straight</b> (булева) - Если на флопе у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_flush</b> (булева) - Если на флопе у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fullhouse</b> (булева) - Если на флопе у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fouroak</b> (булева) - Если на флопе у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_strflush</b> (булева) - Если на флопе у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_f_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на флопе (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_f_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на флопе (0 – нет кикера,1 - 11: 1 – топ кикер, 11 – самый слабый кикер).<br>
+<b>val_f_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на флопе (0, 1, 2).<br>
+<b>flg_f_gutshot_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «дырявый стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_straight_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «двухсторонний стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_2gutshot_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «двойной дырявый стрит-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_flush_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «флеш-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_wrap_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «многоаутовый стрит-дро» (омаха, например T965 на флопе 872), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_wrap_outs</b> (м. целое) - Количество аутов у многоаутового стрит-дро комбинации (омаха, например T965 на флопе 872 – 20 аутов).<br>
+<b>flg_f_bflush_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «бэк-дор флеш-дро» (3-х карточный флеш-дро), значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_bstraight_draw</b> (булева) - Если на флопе у игрока есть дро-комбинация «бэк-дор стрит-дро» (3-х карточный стрит-дро), значенье - True (истина), иначе - False (ложь)<br>
+<b>id_f_flush_draw_strength</b> (м. целое) - Идентификатор старшей карты игрока в флеш-дро на флопе (20 – 1, например: 20 - 7&#9827;A&#9827; на флопе T&#9824;4&#9827;8&#9827; или K&#9829;2&#9829; на флопе 4&#9830;A&#9829;9&#9829;, 1 - 2&#9827;5&#9829; на флопе K&#9827;9&#9827;3&#9827;).<br>
+<b>val_f_straight_draw_nut_outs</b> (м. целое) - Количество аутов на натсовый стрит у стрит-дро комбинации (например: 4 - 6&#9829;Q&#9824; на флопе T&#9824;K&#9824;J&#9830;).<br>
+<b>val_f_straight_draw_nonnut_outs</b> (м. целое) - Количество аутов на не натсовый стрит у стрит-дро комбинации (например: 8 - 9&#9824;4&#9829; на флопе 8&#9830;7&#9827;T&#9827;).<br>
+<b>flg_f_low_hand</b> (булева) - Если на флопе у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на флопе (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_f_nut_flush_blocker</b> (булева) - Если на флопе у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_f_low_draw</b> (булева) - Если на флопе у игрока есть дро на лоу комбинацию (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_f_low_draw_strength</b> (м. целое) - Флоп. Количество аутов для получения лоу комбинации на следующей улице.<br>
+<b>flg_t_highcard</b> (булева) - Если на торне у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_1pair</b> (булева) - Если на торне у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_2pair</b> (булева) - Если на торне у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_threeoak</b> (булева) - Если на торне у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_straight</b> (булева) - Если на торне у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_flush</b> (булева) - Если на торне у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fullhouse</b> (булева) - Если на торне у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fouroak</b> (булева) - Если на торне у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_strflush</b> (булева) - Если на торне у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_t_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на торне (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_t_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на торне (0 – нет кикера,1 - 10: 1 – топ кикер, 10 – самый слабый кикер).<br>
+<b>val_t_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на торне (0, 1, 2).<br>
+<b>flg_t_gutshot_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «дырявый стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_straight_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «двухсторонний стрит-дро», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_2gutshot_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «двойной дырявый стрит-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_flush_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «флеш-дро», значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_wrap_draw</b> (булева) - Если на торне у игрока есть дро-комбинация «многоаутовый стрит-дро» (омаха, например T965 на борде 872А), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_wrap_outs</b> (м. целое) - Количество аутов у многоаутового стрит-дро комбинации (омаха, например T965 на борде 872А – 20 аутов).<br>
+<b>id_t_flush_draw_strength</b> (м. целое) - Идентификатор старшей карты игрока в флеш-дро на торне (20 – 1, например: 20 - 7&#9827;A&#9827; на борде T&#9824;4&#9827;8&#9827;7&#9830; или K&#9829;2&#9829; на борде 4&#9830;A&#9829;9&#9829;Q&#9824;, 1 - 2&#9827;5&#9829; на борде K&#9827;9&#9827;3&#9827;9&#9830;).<br>
+<b>val_t_straight_draw_nut_outs</b> (м. целое) - Количество аутов на натсовый стрит у стрит-дро комбинации (например: 4 - 6&#9829;Q&#9824; на борде T&#9824;K&#9824;J&#9830;2&#9827;.<br>
+<b>val_t_straight_draw_nonnut_outs</b> (м. целое) - Количество аутов на не натсовый стрит у стрит-дро комбинации (например: 8 - 9&#9824;4&#9829; на борде 8&#9830;7&#9827;T&#9827;A&#9824;).<br>
+<b>flg_t_low_hand</b> (булева) - Если на торне у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на торне (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_t_nut_flush_blocker</b> (булева) - Если на торне у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)<br>
+<b>flg_t_low_draw</b> (булева) - Если на торне у игрока есть дро на лоу комбинацию (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_t_low_draw_strength</b> (м. целое) - Торн. Количество аутов для получения лоу комбинации на следующей улице.<br>
+<b>flg_r_highcard</b> (булева) - Если на ривере у игрока комбинация «старшая карта», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_1pair</b> (булева) - Если на ривере у игрока комбинация «одна пара», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_2pair</b> (булева) - Если на ривере у игрока комбинация «две пары», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_threeoak</b> (булева) - Если на ривере у игрока комбинация «трипс» или «сет», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_straight</b> (булева) - Если на ривере у игрока комбинация «стрит», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_flush</b> (булева) - Если на ривере у игрока комбинация «флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fullhouse</b> (булева) - Если на ривере у игрока комбинация «фулл-хаус», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fouroak</b> (булева) - Если на ривере у игрока комбинация «каре», значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_strflush</b> (булева) - Если на ривере у игрока комбинация «стрит-флеш», значенье - True (истина), иначе - False (ложь).<br>
+<b>id_r_hand_strength</b> (м. целое) - Идентификатор силы комбинации игрока на ривере (0 – 10, для каждого типа комбинации идентификаторы имеют свои значения).<br>
+<b>id_r_kicker_strength</b> (м. целое) - Идентификатор кикер карты игрока на ривере (0 – нет кикера,1 - 10: 1 – топ кикер, 10 – самый слабый кикер).<br>
+<b>val_r_hole_cards_used</b> (м. целое) - Количество карманных карт игрока участвующих в составлении комбинации на ривере (0, 1, 2).<br>
+<b>flg_r_low_hand</b> (булева) - Если на ривере у игрока есть лоу комбинация (омаха хай-лоу), значенье - True (истина), иначе - False (ложь)<br>
+<b>val_r_low_hand_strength</b> (м. целое) - Идентификатор силы лоу комбинации игрока на ривере (0 – нет лоу комбинации, 1 – 10: 1 – сильнейшая лоу комбинация, 10 – слабейшая лоу комбинация).<br>
+<b>flg_r_nut_flush_blocker</b> (булева) - Если на ривере у игрока есть блокер на натсовый флеш у противника, значенье - True (истина), иначе - False (ложь)
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5635 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5635_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5635 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5635 --><!-- post #5636 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5636" style="padding:0px 0px 10px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post5636" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5636"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 23:02
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5636&postcount=9" target="new" rel="nofollow" id="postcount5636" name="9"><strong>9</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5636">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5636", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5636_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5636" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5636">
+			
+			<div align="center"><b><font color="DarkGreen"><font size="4">tourney_hand_player_statistics</font></font></b></div><b>id_hand</b> (целое) - Идентификатор розыгрыша (1-&#8734;).<br>
+<b>id_gametype</b> (м. целое) - Идентификатор типа игры (0, 1, 2, 3) 1 - Holdem, 2 - Omaha Hi, 3 - Omaha Hi/Lo.<br>
+<b>id_player</b> (целое) - Идентификатор ника игрока (1-&#8734;).<br>
+<b>id_player_real</b> (целое) - Идентификатор дополнительного ника игрока, который мы добавили к основному нику в поле "Aliased" (0 - &#8734; и соответствует идентификатору основного ника игрока).<br>
+<b>id_holecard</b> (м. целое) - Идентификатор карманных карт (1-169 для Холдема, 1-1820 для Омахи).<br>
+<b>id_blinds</b> (м. целое) - Идентификатор лимита (1 - &#8734;).<br>
+<b>id_tourney</b> (целое) - Идентификатор сессии (1 - &#8734;).<br>
+<b>date_played</b> (дата, время) - Дата/время розыгрыша руки.<br>
+<b>position</b> (м. целое) - Позиция относительно баттона. 0 = баттон, 9 = малый блайнд, 8 = большой блайнд, 7 = UTG, 6 = UTG+1, 5 = UTG+2, 4 = MP, 3 = MP+1, 2 = MP+2, 1 = CO.<br>
+<b>cnt_players</b> (м. целое) - Количество игроков участвующих в розыгрыше (сданы карты) (2 - 10).<br>
+<b>cnt_p_raise</b> (м. целое) - Количество рейзов игрока на префлопе в данном розыгрыше.<br>
+<b>flg_p_first_raise</b> (булева) - Если игрок первым рейзанул на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_p_call</b> (м. целое) - Количество уравниваний игрока на префлопе в данном розыгрыше.<br>
+<b>flg_p_limp</b> (булева) - Если игрок на префлопе вошел в игру лимпом, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_fold</b> (булева) - Если игрок на префлопе сбросился, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_ccall</b> (булева) - Если игрок на префлопе колд-коллил, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_p_face_limpers</b> (м. целое) - Количество префлоп лимперов вошедших в банк до слова игрока.<br>
+<b>flg_vpip</b> (булева) - Если игрок на префлопе добровольно вложил деньги в банк (не блайнды), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_bet</b> (булева) - Если игрок ставил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_f_raise</b> (м. целое) - Количество рейзов игрока на флопе в данном розыгрыше.<br>
+<b>flg_f_first_raise</b> (булева) - Если игрок первым рейзанул на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_f_call</b> (м. целое) - Количество уравниваний игрока на флопе в данном розыгрыше.<br>
+<b>flg_f_check</b> (булева) - Если игрок чекнул на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_check_raise</b> (булева) - Если игрок чек/рейзил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_fold</b> (булева) - Если игрок сбросился на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_saw</b> (булева) - Если игрок увидел флоп, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_bet</b> (булева) - Если игрок ставил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_t_raise</b> (м. целое) - Количество рейзов игрока на торне в данном розыгрыше.<br>
+<b>flg_t_first_raise</b> (булева) - Если игрок первым рейзанул на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_t_call</b> (м. целое) - Количество уравниваний игрока на торне в данном розыгрыше.<br>
+<b>flg_t_check</b> (булева) - Если игрок чекнул на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_check_raise</b> (булева) - Если игрок чек/рейзил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_fold</b> (булева) - Если игрок сбросился на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_saw</b> (булева) - Если игрок увидел торн, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_bet</b> (булева) - Если игрок ставил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_r_raise</b> (м. целое) - Количество рейзов игрока на ривере в данном розыгрыше.<br>
+<b>flg_r_first_raise</b> (булева) - Если игрок первым рейзанул на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>cnt_r_call</b> (м. целое) - Количество уравниваний игрока на ривере в данном розыгрыше.<br>
+<b>flg_r_check</b> (булева) - Если игрок чекнул на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_check_raise</b> (булева) - Если игрок чек/рейзил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_fold</b> (булева) - Если игрок сбросился на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_saw</b> (булева) - Если игрок увидел ривер, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_allin</b> (символ (1)) - Улица, на которой игрок пошел ва-банк. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не ходил - "N".<br>
+<b>enum_face_allin</b> (символ (1)) - Улица, на которой игрок оказался перед ва-банком. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не было - "N".<br>
+<b>enum_face_allin_action</b> (символ (1)) - Что игрок сделал, оказавшись перед ва-банком. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_blind_s</b> (булева) - Если игрок ставил малый блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_b</b> (булева) - Если игрок ставил большой блайнд, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_sb_steal_fold</b> (булева) - Если игрок, находясь в позиции малого блайнда, сбросился на стилинг, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_bb_steal_fold</b> (булева) - Если игрок, находясь в позиции большого блайнда, сбросился на стилинг, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_def_opp</b> (булева) - Если игрок, находясь в позиции малого или большого блайнда, и столкнулся со стилингом, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_steal_att</b> (булева) - Если игрок, находясь в стилинговой позиции стилил, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_steal_opp</b> (булева) - Если у игрока была возможность стилинговать, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_blind_k</b> (булева) - Если игрок поставил "мертвый" блайнд[/B] (блайнд который не идет в зачет ставки игрока), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_showdown</b> (булева) - Если игрок дошел до вскрытия, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_won_hand</b> (булева) - Если игрок выиграл розыгрыш (на вскрытии или до), значенье - True (истина), иначе - False (ложь).<br>
+<b>amt_won</b> (десятичное) - Величина выигрыша.<br>
+<b>amt_expected_won</b> (десятичное) - Величина ожидаемого (эквити) выигрыша.<br>
+<b>val_equity</b> (десятичное) - Эквити руки в ва-банк ситуации.<br>
+<b>id_final_hand</b> (м. целое) - Идентификатор руки на вскрытии (0 - 314). Ссылается на таблицу "lookup_hand_ranks".<br>
+<b>id_final_hand_lo</b> (целое) - Идентификатор лоу комбинации на вскрытии.<br>
+<b>flg_showed</b> (булева) - Если игрок показал свою руку (добровольно), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_folded</b> (символ (1)) - Улица, на которой игрок сбросился. Значения: префлоп - "P", флоп - "F", торн - "T", ривер - "R", не сбросился - "N".<br>
+<b>flg_p_face_raise</b> (булева) - Если игрок оказался перед префлоп рейзом противника, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet</b> (булева) - Если игрок 3-бетил на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_p_4bet</b> (булева) - Если игрок 4+-бетил на префлопе (4-бет, 5-бет и т.д.), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_p_squeeze</b> (булева) - Если игрок исполнял сквиз на префлопе, значенье - True (истина), иначе - False (ложь). Сквиз – ситуация, когда один из противников делает рейз один из последующих противников колд-коллит рейзера и Вы делаете 3-бет.<br>
+<b>flg_p_squeeze_opp</b> (булева) - Если игрок имел возможность сквизить на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_squeeze_def_opp</b> (булева) - Если игрок столкнулся со сквизом противника на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_p_squeeze_action</b> (символ (1)) - Что игрок сделал, столкнувшись со сквизом противника на префлопе. Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet</b> (булева) - Если игрок 3-бетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_4bet</b> (булева) - Если игрок 4+-бетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_f_cbet</b> (булева) - Если игрок контбетил (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (флоп), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_f_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (флоп). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet</b> (булева) - Если игрок 3-бетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_4bet</b> (булева) - Если игрок 4+-бетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_cbet</b> (булева) - Если игрок контбетил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_float</b> (булева) - Если игрок флоатил (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_float_opp</b> (булева) - Если игрок имел возможность флоатить (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_float_def_opp</b> (булева) - Если игрок столкнулся с флоатингом противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_float_action</b> (символ (1)) - Что игрок сделал, столкнувшись с флоатингом противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_t_donk</b> (булева) - Если игрок делал донк ставку (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_donk_opp</b> (булева) - Если игрок имел возможность сделать донк ставку (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_donk_def_opp</b> (булева) - Если игрок столкнулся с донк ставкой противника (торн), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_t_donk_action</b> (символ (1)) - Что игрок сделал, столкнувшись с донк ставкой противника (торн). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_face_raise</b> (булева) - Если игрок оказался перед рейзом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet</b> (булева) - Если игрок 3-бетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet_opp</b> (булева) - Если игрок имел возможность сделать 3-бет (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_3bet_def_opp</b> (булева) - Если игрок столкнулся с 3-бетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_3bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 3-бетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_4bet</b> (булева) - Если игрок 4+-бетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_4bet_opp</b> (булева) - Если игрок имел возможность сделать 4+-бет (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_4bet_def_opp</b> (булева) - Если игрок столкнулся с 4+-бетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_4bet_action</b> (символ (1)) - Что игрок сделал, оказавшись перед 4+-бетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_cbet</b> (булева) - Если игрок контбетил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_cbet_opp</b> (булева) - Если игрок имел возможность контбетить (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_cbet_def_opp</b> (булева) - Если игрок столкнулся с контбетом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_cbet_action</b> (символ (1)) - Что игрок сделал, столкнувшись с контбетом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_float</b> (булева) - Если игрок флоатил (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_float_opp</b> (булева) - Если игрок имел возможность флоатить (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_float_def_opp</b> (булева) - Если игрок столкнулся с флоатингом противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_float_action</b> (символ (1)) - Что игрок сделал, столкнувшись с флоатингом противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".<br>
+<b>flg_r_donk</b> (булева) - Если игрок делал донк ставку (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_donk_opp</b> (булева) - Если игрок имел возможность сделать донк ставку (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_donk_def_opp</b> (булева) - Если игрок столкнулся с донк ставкой противника (ривер), значенье - True (истина), иначе - False (ложь).<br>
+<b>enum_r_donk_action</b> (символ (1)) - Что игрок сделал, столкнувшись с донк ставкой противника (ривер). Значения: уровнял - "C", рейзанул - "R", сбросился - "F", не было - "N".
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+				<em>
+					
+						Последний раз редактировалось SS-24; 12.04.2012 в <span class="time">18:37</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5636 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5636_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5636 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5636 --><!-- post #5637 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+	<div id="edit5637" style="padding:0px 0px 10px 0px">
+	
+
+
+
+<table id="post5637" class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr>
+	
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-right: 0px">
+			<!-- status icon and date -->
+			<a name="post5637"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/post_old.gif" alt="Старый" border="0" title="Старый"></a>
+			06.01.2012, 23:02
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead pe-thead-post" style="font-weight:normal; border: 0px solid #f1f1f1; border-left: 0px" align="right">
+			&nbsp;
+			#<a href="http://forum.pokerenergy.ru/showpost.php?p=5637&postcount=10" target="new" rel="nofollow" id="postcount5637" name="10"><strong>10</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2 pe-post-avatar" width="175" style="border-top:0; border-right:1px solid #eee">
+
+			<div id="postmenu_5637">
+				
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/user_offline.gif" alt="SS-24 вне форума" border="0" title="SS-24 вне форума">
+
+ <a class="bigusername" href="http://forum.pokerenergy.ru/member.php?u=2950">SS-24</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_5637", true); </script>
+				
+			</div>
+
+			
+				<div class="smallfont pe-avatar">
+					<a href="http://forum.pokerenergy.ru/member.php?u=2950"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/avatar2950_1.gif" width="80" height="80" alt="Аватар для SS-24" border="0" title="Аватар для SS-24"></a>
+				</div>
+			
+
+			<div class="smallfont">Moderator</div>
+
+
+			
+			
+
+			<div class="smallfont">
+				
+				<div>Регистрация: 22.12.2010</div>
+				
+				
+				<div>
+					Сообщений: 402
+				</div>
+				
+				
+				<div><span id="repdisplay_5637_2950">Репутация: <a href="http://forum.pokerenergy.ru/member.php?do=repaview&u=2950" onclick="return repaview(2950)" target="_blank" title="Просмотр репутации SS-24"><strong title="SS-24 Случайно зашедший" class="repa_pos">30</strong></a></span></div>
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td class="alt1 pe-post-msg" id="td_post_5637" style="border-right: 0px solid #f1f1f1">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				<img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/icon1.gif" alt="По умолчанию" border="0" title="По умолчанию">
+				<strong>Re: PokerTracker 4 – Схема базы данных. (описание)</strong>
+			</div>
+			<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_5637">
+			
+			<b>seat</b> (м. целое) - Номер места игрока за столом (1 - 10)<br>
+<b>holecard_1</b> (м. целое) - Первая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_2</b> (м. целое) - Вторая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_3</b> (м. целое) - Третья карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>holecard_4</b> (м. целое) - Четвертая карманная карта игрока (1-52, крести 2-А 1-13, бубны 2-А 14-26, червы 2-А 27-39, пики 2-А 40-52).<br>
+<b>id_suits</b> (м. целое) - Идентификатор мастности карманных карт в Омахе (0, 1 – 15).<br>
+<b>flg_hero</b> (булева) - Если игрок «Hero», значенье - True (истина), иначе - False (ложь)<br>
+<b>amt_before</b> (десятичное) - Размер стека игрока до начала розыгрыша.<br>
+<b>amt_blind</b> (десятичное) - Сумма поставленных игроком блайндов.<br>
+<b>amt_ante</b> (десятичное) - Сумма поставленных игроком анте.<br>
+<b>amt_bet_p</b> (десятичное) - Общая сумма денег, поставленная игроком на префлопе.<br>
+<b>amt_bet_f</b> (десятичное) - Общая сумма денег, поставленная игроком на флопе.<br>
+<b>amt_bet_t</b> (десятичное) - Общая сумма денег, поставленная игроком на торне.<br>
+<b>amt_bet_r</b> (десятичное) - Общая сумма денег, поставленная игроком на ривере.<br>
+<b>amt_bet_ttl</b> (десятичное) - Общая сумма денег, поставленная игроком на всех улицах.<br>
+<b>id_action_p</b> (целое) - Идентификатор префлоп действий (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_f</b> (целое) - Идентификатор действий на флопе (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_t</b> (целое) - Идентификатор действий на торне (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>id_action_r</b> (целое) - Идентификатор действий на ривере (1 - &#8734;), ссылается на таблицу "lookup_actions".<br>
+<b>flg_p_open</b> (булева) - Если игрок первым поставил на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_p_open_opp</b> (булева) - Если у игрока была возможность поставить первым на префлопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_first</b> (булева) - Если игрок должен действовать первым на флопе (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_open</b> (булева) - Если игрок первым поставил на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_open_opp</b> (булева) - Если у игрока была возможность поставить первым на флопе, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_f_has_position</b> (булева) - Если игрок на флопе имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>flg_t_first</b> (булева) - Если игрок должен действовать первым на торне (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_open</b> (булева) - Если игрок первым поставил на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_open_opp</b> (булева) - Если у игрока была возможность поставить первым на торне, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_t_has_position</b> (булева) - Если игрок на торне имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>flg_r_first</b> (булева) - Если игрок должен действовать первым на ривере (у него первое слово и неважно, что он скажет чек или ставка), значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_open</b> (булева) - Если игрок первым поставил на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_open_opp</b> (булева) - Если у игрока была возможность поставить первым на ривере, значенье - True (истина), иначе - False (ложь).<br>
+<b>flg_r_has_position</b> (булева) - Если игрок на ривере имеет позицию на других игроков, значенье - True (истина), иначе - False (ложь). Иметь позицию – означает, действовать последним в первом круге торговли на улице.<br>
+<b>amt_p_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на префлопе (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_p_raise_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания последнего рейза на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_raise_facing / размер банка).<br>
+<b>amt_p_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на префлопе (2бет может быть только один).<br>
+<b>val_p_2bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 2бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_2bet_facing / размер банка).<br>
+<b>amt_p_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на префлопе.<br>
+<b>val_p_3bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 3бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_3bet_facing / размер банка).<br>
+<b>amt_p_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на префлопе.<br>
+<b>val_p_4bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 4бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_4bet_facing / размер банка).<br>
+<b>amt_p_5bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 5бет противника на префлопе.<br>
+<b>val_p_5bet_facing_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы необходимой для уравнивания 4бета на префлопе, к размеру банка на момент необходимости уравнивания. (amt_p_5bet_facing / размер банка).<br>
+<b>val_p_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего префлоп рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_p_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого префлоп рейза (например: если игрок поставил малый блайнд – 1$ и когда до него дошел ход сделал рейз, поставив еще 5$, значение будет равно - 6) (первым префлоп рейзом в данном контексте считается рейз сделанный при первом слове игрока, это может быть и 3-бет, если перед словом игрока был рейз от противника).<br>
+<b>val_p_raise_made_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы вложенной игроком в банк на момент его первого префлоп рейза, к размеру банка на момент этого рейза (amt_p_raise_made/размер банка).<br>
+<b>amt_p_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ префлоп рейза (например: лимит, игрок уровнял рейз 4$, после этого был 3-бет 6$, и игрок сделал 4-бет 8$ (кэп), значение будет равно 8) (вторым+ префлоп рейзом в данном контексте считается рейз сделанный при втором+ слове игрока).<br>
+<b>val_p_raise_made_2_pct</b> (десятичное) - Префлоп, процентное соотношение: суммы вложенной игроком в банк на момент его второго+ префлоп рейза, к размеру банка на момент его второго+ префлоп рейза (amt_p_raise_made_2/размер банка).<br>
+<b>amt_f_bet_facing</b> (десятичное) - Флоп, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_f_bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_f_bet_facing/размер банка).<br>
+<b>val_f_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора флопа: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_f_bet_made</b> (десятичное) - Размер ставки игрока на флопе.<br>
+<b>val_f_bet_made_pct</b> (десятичное) - Флоп, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_f_bet_made/размер банка).<br>
+<b>amt_f_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на флопе (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_f_raise_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания последнего рейза на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_f_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на флопе (2бет может быть только один).<br>
+<b>val_f_2bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 2бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_f_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на флопе.<br>
+<b>val_f_3bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 3бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_f_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на флопе.<br>
+<b>val_f_4bet_facing_pct</b> (десятичное) - Флоп, процентное соотношение: суммы необходимой для уравнивания 4бета на флопе, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_f_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего флоп рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_f_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на флопе (первым рейзом на флопе в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_f_raise_made_pct</b> (десятичное) - Флоп, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на флопе, к размеру банка на момент этого рейза (amt_f_raise_made/размер банка).<br>
+<b>amt_f_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на флопе (вторым+ рейзом на флопе в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_f_raise_made_2_pct</b> (десятичное) - Флоп, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на флопе, к размеру банка на момент этого второго+ рейза на флопе (amt_f_raise_made_2/размер банка).<br>
+<b>amt_t_bet_facing</b> (десятичное) - Торн, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_t_bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_t_bet_facing/размер банка).<br>
+<b>val_t_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора торна: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_t_bet_made</b> (десятичное) - Размер ставки игрока на торне.<br>
+<b>val_t_bet_made_pct</b> (десятичное) - Торн, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_t_bet_made/размер банка).<br>
+<b>amt_t_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на торне (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_t_raise_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания последнего рейза на торне, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_t_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на торне (2бет может быть только один).<br>
+<b>val_t_2bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 2бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_t_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на торне.<br>
+<b>val_t_3bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 3бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_t_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на торне.<br>
+<b>val_t_4bet_facing_pct</b> (десятичное) - Торн, процентное соотношение: суммы необходимой для уравнивания 4бета на торне, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_t_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего торн рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_t_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на торне (первым рейзом на торне в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_t_raise_made_pct</b> (десятичное) - Торн, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на торне, к размеру банка на момент этого рейза (amt_t_raise_made/размер банка).<br>
+<b>amt_t_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на торне (вторым+ рейзом на торне в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_t_raise_made_2_pct</b> (десятичное) - Торн, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на торне, к размеру банка на момент этого второго+ рейза (amt_t_raise_made_2/размер банка).<br>
+<b>amt_r_bet_facing</b> (десятичное) - Ривер, сколько игроку необходимо добавить, для того чтобы уравнять ставку противника.<br>
+<b>val_r_bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания ставки противника, к размеру банка на момент необходимости уравнивания (amt_r_bet_facing/размер банка).<br>
+<b>val_r_bet_aggressor_pos</b> (м. целое) - Позиция противника, беттора ривера: -1 – бета от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_r_bet_made</b> (десятичное) - Размер ставки игрока на ривере.<br>
+<b>val_r_bet_made_pct</b> (десятичное) - Ривер, процентное соотношение: величины ставки, к размеру банка на момент ставки игрока (amt_r_bet_made/размер банка).<br>
+<b>amt_r_raise_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять последний рейз противника на ривере (рейзом считается любая ставка противника: рейз, 3бет, 4бет и т.д.).<br>
+<b>val_r_raise_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания последнего рейза на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_raise_facing / размер банка).<br>
+<b>amt_r_2bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 2бет противника на ривере (2бет может быть только один).<br>
+<b>val_r_2bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 2бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_2bet_facing / размер банка).<br>
+<b>amt_r_3bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 3бет противника на ривере.<br>
+<b>val_r_3bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 3бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_3bet_facing / размер банка).<br>
+<b>amt_r_4bet_facing</b> (десятичное) - Сколько игроку необходимо добавить, чтобы уравнять 4бет противника на ривере.<br>
+<b>val_r_4bet_facing_pct</b> (десятичное) - Ривер, процентное соотношение: суммы необходимой для уравнивания 4бета на ривере, к размеру банка на момент необходимости уравнивания. (amt_f_4bet_facing / размер банка).<br>
+<b>val_r_raise_aggressor_pos</b> (м. целое) - Позиция противника, последнего ривер рейзера: -1 – рейза от противников не было, 9 – малый блайнд, 8 – большой блайнд, 7 – UTG, 6 – UTG+1, 5 – UTG+2, 4 – MP, 3 – MP+1, 2 – MP+2, 1 – CO, 0 – баттон.<br>
+<b>amt_r_raise_made</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего первого рейза на ривере (первым рейзом на флопе в данном контексте считается рейз сделанный игроком при первой возможности его сделать, это может быть и 3-бетом и 4-бетом, если перед словом игрока был рейз или 3-бет от противников).<br>
+<b>val_r_raise_made_pct</b> (десятичное) - Ривер, процентное соотношение: суммы вложенных игроком денег в банк на момент своего первого рейза на ривере, к размеру банка на момент этого рейза (amt_r_raise_made/размер банка).<br>
+<b>amt_r_raise_made_2</b> (десятичное) - Сколько всего игрок вложил в банк на момент своего второго+ рейза на ривере (вторым+ рейзом на флопе в данном контексте считается рейз сделанный после того, как на этой улице он уже делал один рейз).<br>
+<b>val_r_raise_made_2_pct</b> (десятичное) - Ривер, процентное соотношение: суммы вложенных игроком денег в банк на момент своего второго+ рейза на ривере, к размеру банка на момент этого второго+ рейза (amt_r_raise_made_2/размер банка).
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr size="1" style="color:#f1f1f1; background-color:#f1f1f1">
+				<em>
+					
+						Последний раз редактировалось SS-24; 12.04.2012 в <span class="time">18:38</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border: 0px solid #f1f1f1; border-top: 0px">
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right" style="border: 0px solid #f1f1f1; border-left: 0px; border-top: 0px">
+	
+		<!-- controls -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 5637 popup menu -->
+<div class="vbmenu_popup" id="postmenu_5637_menu" style="display:none">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">SS-24</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/member.php?u=2950">Посмотреть профиль</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/private.php?do=newpm&u=2950" rel="nofollow">Отправить личное сообщение для SS-24</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forum.pokerenergy.ru/search.php?do=finduser&u=2950" rel="nofollow">Найти ещё сообщения от SS-24</a></td></tr>
+	
+	
+	
+		
+			 
+		
+		
+	</tbody></table>
+</div>
+<!-- / post 5637 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #5637 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 0px 0px 0px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="10" cellspacing="0" border="0" width="100%" style="margin-top:-7px">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://forum.pokerenergy.ru/newreply.php?do=newreply&noquote=1&p=5637" rel="nofollow"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/threadclosed.gif" alt="Закрытая тема" border="0" title="Закрытая тема"></a></td>
+	
+	
+		<td align="right"><div class="pagenav" align="right">
+<table class="tborder" cellpadding="3" cellspacing="0" border="0">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight:normal">Страница 1 из 2</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Показано с 1 по 10 из 12."><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="http://forum.pokerenergy.ru/showthread.php?t=2256&page=2" title="с 11 по 12 из 12">2</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="http://forum.pokerenergy.ru/showthread.php?t=2256&page=2" title="Следующая страница - с 11 по 12 из 12">&gt;</a></td>
+	
+	<td class="vbmenu_control" title="" id="pagenav.123" style="cursor: pointer;"> <img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/menu_open.gif" border="0" title="" alt=""></td>
+</tr>
+</tbody></table>
+</div>
+		
+		</td>
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+<!-- thread tags -->
+	<br>
+	<table class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+	<tbody><tr>
+		<td class="thead">
+			
+			<a name="taglist"></a>
+			<a href="http://forum.pokerenergy.ru/tags.php">Метки</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1 smallfont" id="tag_list_cell"><a href="http://forum.pokerenergy.ru/tags.php?tag=poker+tracker+4">poker tracker 4</a>, <a href="http://forum.pokerenergy.ru/tags.php?tag=pokertracker+4">pokertracker 4</a>, <a href="http://forum.pokerenergy.ru/tags.php?tag=pokertracker4">pokertracker4</a>, <a href="http://forum.pokerenergy.ru/tags.php?tag=pt4">pt4</a>, <a href="http://forum.pokerenergy.ru/tags.php?tag=%EF%EE%EA%E5%F0+%F2%F0%E5%EA%E5%F0+4">покер трекер 4</a>, <a href="http://forum.pokerenergy.ru/tags.php?tag=%EF%F24">пт4</a> <img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/11x11progress.gif" id="tag_form_progress" class="inlineimg" style="display:none" alt=""></td>
+	</tr>
+	</tbody></table>
+
+	<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_ajax_taglist.js"></script>
+		<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_ajax_tagsugg.js"></script>
+<!-- / thread tags -->
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://forum.pokerenergy.ru/showthread.php?t=2256&goto=nextoldest" rel="nofollow">Предыдущая тема</a>
+			|
+			<a href="http://forum.pokerenergy.ru/showthread.php?t=2256&goto=nextnewest" rel="nofollow">Следующая тема</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+<!-- currently active users -->
+	<br>
+	<table class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+	<tbody><tr>
+		<td class="tcat" colspan="2">
+			Здесь присутствуют: 1 <span class="normal">(пользователей: 0 , гостей: 1)</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1" colspan="2">
+			<span class="smallfont">&nbsp;</span>
+		</td>
+	</tr>
+	</tbody></table>
+<!-- end currently active users -->
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display:none">
+<form action="http://forum.pokerenergy.ru/postings.php?t=2256&pollid=" method="post" name="threadadminform">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">Опции темы<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img class="inlineimg" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/printer.gif" alt="Версия для печати" title="Версия для печати"> <a href="http://forum.pokerenergy.ru/printthread.php?t=2256" accesskey="3" rel="nofollow">Версия для печати</a></td>
+	</tr>
+	
+	
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<tbody><tr valign="bottom">
+	<td width="100%" valign="top">
+		
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align:left; white-space:nowrap">
+	<form action="http://forum.pokerenergy.ru/forumdisplay.php" method="get">
+	<input type="hidden" name="s" value="">
+	<input type="hidden" name="daysprune" value="">
+	<strong>Быстрый переход</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Навигация по форуму">
+			<option value="cp">Мой кабинет</option>
+			<option value="pm">Личные сообщения</option>
+			<option value="subs">Подписки</option>
+			<option value="wol">Кто на форуме</option>
+			<option value="search">Поиск по форуму</option>
+			<option value="home">Главная страница форума</option>
+		</optgroup>
+		
+		<optgroup label="Разделы">
+		<option value="3" class="fjdpth0"> Работа магазина</option>
+<option value="19" class="fjdpth1">&nbsp; &nbsp;  Ваши предложения и вопросы</option>
+<option value="4" class="fjdpth0"> Обсуждение покерных программ</option>
+<option value="10" class="fjdpth1">&nbsp; &nbsp;  Holdem Manager</option>
+<option value="36" class="fjdpth1">&nbsp; &nbsp;  Holdem Manager 2</option>
+<option value="40" class="fjdpth1">&nbsp; &nbsp;  Note Caddy и Note Caddy Edge</option>
+<option value="38" class="fjsel" selected="selected">&nbsp; &nbsp;  PokerTracker4</option>
+<option value="11" class="fjdpth1">&nbsp; &nbsp;  PokerTracker3</option>
+<option value="41" class="fjdpth1">&nbsp; &nbsp;  PostgreSQL</option>
+<option value="14" class="fjdpth1">&nbsp; &nbsp;  Покерные программы</option>
+<option value="27" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Table Ninja</option>
+<option value="30" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Pokertableratings.com</option>
+<option value="5" class="fjdpth0"> Обсуждение обучающих сайтов</option>
+<option value="37" class="fjdpth1">&nbsp; &nbsp;  LeggoPoker, Deucescracked, BlueFirePoker</option>
+<option value="18" class="fjdpth1">&nbsp; &nbsp;  Другие обучающие сайты</option>
+<option value="8" class="fjdpth0"> Датамайнинг</option>
+<option value="22" class="fjdpth1">&nbsp; &nbsp;  Услуги датамайнинга</option>
+<option value="6" class="fjdpth0"> Покерные принадлежности и литература</option>
+<option value="20" class="fjdpth1">&nbsp; &nbsp;  Наборы для игры в покер</option>
+<option value="21" class="fjdpth1">&nbsp; &nbsp;  Книги о покере</option>
+<option value="7" class="fjdpth0"> Свободное общение</option>
+<option value="25" class="fjdpth1">&nbsp; &nbsp;  Платежные системы</option>
+<option value="24" class="fjdpth1">&nbsp; &nbsp;  Рекламные объявления</option>
+
+		</optgroup>
+		
+	</select><input type="submit" class="button" value="Вперёд">
+	</form>
+</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+<table class="tborder" cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+<thead>
+	<tr>
+		<td class="tcat" width="100%" colspan="5">
+			<a style="float:right" href="http://forum.pokerenergy.ru/showthread.php?t=2256#top" onclick="return toggle_collapse(&#39;similarthreads&#39;)"><img id="collapseimg_similarthreads" src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/collapse_tcat.gif" alt="" border="0"></a>
+			Похожие темы<a name="similarthreads"></a>
+		</td>
+	</tr>
+</thead>
+<tbody id="collapseobj_similarthreads" style="">
+<tr class="thead" align="center">
+	<td class="thead" width="40%">Тема</td>
+	<td class="thead" width="15%" nowrap="nowrap">Автор</td>
+	<td class="thead" width="20%">Раздел</td>
+	<td class="thead" width="5%">Ответов</td>
+	<td class="thead" width="20%">Последнее сообщение</td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://forum.pokerenergy.ru/showthread.php?t=2254" title="PokerTracker 4 – Установка и первый запуск программы. 
+ 
+Установка. 
+Скачиваем установщик программы и запускаем его. 
+...">PokerTracker 4 – Установка и первый запуск программы. (описание)</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">SS-24</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">PokerTracker4</span></td>
+	<td class="alt2" align="center"><span class="smallfont">0</span></td>
+	<td class="alt1" align="right"><span class="smallfont">27.12.2011 <span class="time">16:08</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://forum.pokerenergy.ru/showthread.php?t=2219" title="Руководство по Holdem Manager 2 – Работа с базами данных. 
+ 
+При работе с базой данных возможно выполнение следующих операций: 
+…….• Создание базы...">Руководство по Holdem Manager 2 – Работа с базами данных (описание).</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">SS-24</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Holdem Manager 2</span></td>
+	<td class="alt2" align="center"><span class="smallfont">1</span></td>
+	<td class="alt1" align="right"><span class="smallfont">16.08.2011 <span class="time">12:57</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://forum.pokerenergy.ru/showthread.php?t=2153" title="Структура базы данных PostgreSQL для PokerTracker 3. 
+ 
+ 
+ 
+Введение. 
+База данных – в реальности это коллекция таблиц (электронных таблиц). Каждая...">Структура базы данных PostgreSQL для PokerTracker 3</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">SS-24</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">PokerTracker3</span></td>
+	<td class="alt2" align="center"><span class="smallfont">24</span></td>
+	<td class="alt1" align="right"><span class="smallfont">08.03.2011 <span class="time">23:06</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://forum.pokerenergy.ru/showthread.php?t=1825" title="Каким образом можно удалить из базы PT3 устаревшие руки? Можно ли просто из папки &quot;Processed&quot; удалить файлы старше определённой даты?">Удаление рук из базы PT3.</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">Girevik</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">PokerTracker3</span></td>
+	<td class="alt2" align="center"><span class="smallfont">1</span></td>
+	<td class="alt1" align="right"><span class="smallfont">25.02.2010 <span class="time">04:38</span></span></td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+
+
+<br>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="http://forum.pokerenergy.ru/index.php" method="get" style="clear:left">
+
+<table cellpadding="10" cellspacing="0" border="0" width="100%" class="page" align="center">
+<tbody><tr>
+	
+	
+		<td class="tfoot">
+			<select name="langid" onchange="switch_id(this, &#39;lang&#39;)">
+				<optgroup label="Выбор языка">
+					<option value="4" class="">-- English (US)</option>
+<option value="3" class="" selected="selected">-- Russian (RU)</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	<td class="tfoot" align="right" width="100%">
+    <a href="http://forum.pokerenergy.ru/sendmessage.php" rel="nofollow" accesskey="9">Обратная связь</a> -
+    <a href="http://pokerenergy.ru/">PokerEnergy.ru</a> -
+    
+    
+    <a href="http://forum.pokerenergy.ru/archive/index.php">Архив</a> -
+    
+    
+    
+    <a href="http://forum.pokerenergy.ru/showthread.php?t=2256#top" onclick="self.scrollTo(0, 0); return false;">Вверх</a>
+	</td>
+</tr>
+</tbody></table>
+
+<div id="footer-menu">
+	<ul>
+		<li><a href="http://pokerenergy.ru/pokernie-programmi/">Покерные программы</a></li>
+		<li><a href="http://pokerenergy.ru/platnie-podpiski/">Платные подписки</a></li>
+		<li><a href="http://pokerenergy.ru/datamining/">Датамайнинг</a></li>
+		<li><a href="http://pokerenergy.ru/knigi/">Книги</a></li>
+		<li><a href="http://pokerenergy.ru/pokernie-nabori/">Покерные наборы</a></li>
+		<li><a href="http://pokerenergy.ru/bezopasnost/">Безопасность</a></li>
+	</ul>
+</div>
+
+<div id="footer-submenu">
+	<ul>
+		<li><a href="http://pokerenergy.ru/about/">О магазине</a></li>
+		<li><a href="http://forum.pokerenergy.ru/" style="color:#09f;">Форум</a></li>
+		<li><a href="http://pokerenergy.ru/oplata-i-dostavka/">Оплата и доставка</a></li>
+		<li><a href="http://pokerenergy.ru/partners/?show">Система бонусов</a></li>
+		<li><a href="http://pokerenergy.ru/partners/">Партнеры</a></li>
+		<li><a href="http://pokerenergy.ru/help/">Помощь</a></li>
+	</ul>
+</div>
+
+<div id="footer">
+	<div id="footer-copyright">
+		© Pokerenergy.ru 2008-2012<br>
+		<!--<a href="#" style="color:#fff;">Условия пользовательского соглашения</a><br />-->
+		<a href="http://pokerenergy.ru/sitemap/">Карта сайта</a><br>
+	</div>
+	<div id="footer-counter">
+		<img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/alfa_bank.png" alt="">
+		<img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/88x31_wm_white_on_transparent_ru.png" alt="">
+		<img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/moneta_footer.png" alt="">
+		<img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/moneybookers_footer.png" alt="">
+		<a href="http://www.liveinternet.ru/click" target="_blank"><img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/hit" alt="" title="LiveInternet" width="31" border="0" height="31"></a>
+	</div>
+	<div id="footer-contacts">
+		<img src="./PokerTracker 4 – Схема базы данных. (описание) - Форум о покерных программах_files/contacts.png" alt="">
+	</div>
+</div>
+
+
+
+</form>
+
+
+
+</div>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+
+</div></div></div><div style="display: none;" id="hiddenlpsubmitdiv"></div><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

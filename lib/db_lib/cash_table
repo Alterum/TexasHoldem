@@ -1,0 +1,3 @@
+	cash_table
+id_table (целое) - Идентификатор стола (1 - ∞).
+table_name (текст) - Название стола (например: Achates или Educatio).
