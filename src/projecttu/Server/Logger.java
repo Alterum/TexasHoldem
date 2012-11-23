@@ -28,9 +28,10 @@ public class Logger {
 	public synchronized void log(String str) {
 	
 		String date = getCurrentDateAndTime();
+		String threadName = Thread.currentThread()+": ";
 		
-		System.out.println(date+str);
-		out.println(date+str);
+		System.out.println(date+threadName+str);
+		out.println(date+threadName+str);
 	}
 	
 	public String getCurrentDateAndTime() {

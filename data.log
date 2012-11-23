@@ -1,3 +1,5 @@
 [ 2012/11/23 09:57:40 ] GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2012/11/23 10:12:05 ] GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2012/11/23 10:12:31 ] Thread[player1,5,] is dead and was removed from Active connections
+[ 2012/11/23 12:27:51 ] GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/11/23 12:28:55 ] Thread[player2,5,] is dead and was removed from Active connections

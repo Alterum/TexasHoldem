@@ -9,3 +9,11 @@
 [ 2012/11/23 10:12:22 ] Connection name: player2
 [ 2012/11/23 10:12:30 ] Server: IOException for Read Output Object: java.net.SocketException: Connection reset
 [ 2012/11/23 10:12:30 ] Socket closed! Connection name: player1
+[ 2012/11/23 12:28:00 ] Connection open. Socket[addr=/127.0.0.1,port=37942,localport=8907] projecttu.Server.Connection@2ad191
+[ 2012/11/23 12:28:06 ] Connection open. Socket[addr=/127.0.0.1,port=37943,localport=8907] projecttu.Server.Connection@1ef158
+[ 2012/11/23 12:28:12 ] InputName for Thread[Thread-4,5,main] corect
+[ 2012/11/23 12:28:12 ] Connection name: player
+[ 2012/11/23 12:28:19 ] InputName for Thread[Thread-2,5,main] corect
+[ 2012/11/23 12:28:19 ] Connection name: player2
+[ 2012/11/23 12:28:54 ] Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/11/23 12:28:54 ] Socket closed! Connection name: player2
