@@ -15,11 +15,14 @@ public class ServerProcess {
 	}
 	
 	public OutputObject get(String name) {
+		
 		try {
 			available.acquire();
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return business.getOutputData(name);
 	}
 

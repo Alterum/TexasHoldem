@@ -13,21 +13,20 @@ import projecttu.OutputObject.OutputToServer;
 import projecttu.OutputObject.ServerParser;
 
 public class BusinessProcess {
+	
+	private HashMap<String, Integer> bankInRound =
+			new HashMap<String, Integer>();
+	private int currentRound;
+	private OutputObject output;
+	private PokerTable table;
+	private DBDriver db;
+	
 	public BusinessProcess(PokerTable table, DBDriver driver) {
 		db = driver;
 		this.table = table;
 	}
 	
 	public OutputObject getOutputData(String name) {
-		
-		// BRED DLJA nA4ala  novoj igry
-//		int READY_TO_START = -5;
-//		if(table.getPlayer(name).getStatus() == READY_TO_START)
-//			waitNewGame();
-//		waitInQueue();
-		
-		
-//		System.out.println("getOutputData before "+Thread.currentThread().getName());
 		
 		HashMap<String, Boolean> map2 = convertAccessButtons(name);
 		HashMap<String, String> map1 = convertInfo(name);
@@ -38,13 +37,45 @@ public class BusinessProcess {
 		return output;
 	}
 	
+	public HashMap<String, Boolean> convertAccessButtons(String name) {
+		String[] bttnsNames =
+			{"play", "call", "raise", "fold", "check", "newGame"};
+		
+		HashMap<String, Boolean> map = 
+				new HashMap<String, Boolean>();
+		
+		for(String key : bttnsNames)
+			map.put(key, false);
+				
+		if(table.getPlayer(name).getStatus() == 0) // If push button fold
+			return map;
+		else if (table.getPlayer(name).getStatus() == -1) {
+			map.put("newGame", true);
+			return map;
+		}
+		map.put("fold", true);
+		
+		int playerScore = table.getPlayer(name).getScore();
+		int currentBet = table.getCurrentBet();
+		
+		System.out.println(Thread.currentThread()+" score: "+playerScore+" bet:"+currentBet);
+		
+		if(playerScore > currentBet)
+			map.put("raise", true);
+		
+		if(currentBet == 0)
+			map.put("check", true);
+		else if(playerScore >= currentBet)
+			map.put("call", true);
+		
+		return map; 
+	}
+	
 	public synchronized HashMap<String, String> convertInfo(String name) {
+		
 		HashMap<String, String> map = new HashMap<String, String>();
-
 		setPlayerInfo(name, map);
-
 		setOpponentsInfo(name, map);
-
 		setTableInfo(map);
 		
 		return map;
@@ -103,49 +134,6 @@ public class BusinessProcess {
 		
 	}
 
-	public HashMap<String, Boolean> convertAccessButtons(String name) {
-		String[] bttnsNames =
-			{"play", "call", "raise", "fold", "check", "newGame"};
-		
-		HashMap<String, Boolean> map = 
-				new HashMap<String, Boolean>();
-		
-		for(String key : bttnsNames)
-			map.put(key, false);
-				
-		if(table.getPlayer(name).getStatus() == 0) // If push button fold
-			return map;
-		else if (table.getPlayer(name).getStatus() == -1) {
-			map.put("newGame", true);
-			return map;
-		}
-		map.put("fold", true);
-		
-		int playerScore = table.getPlayer(name).getScore();
-		int currentBet = table.getCurrentBet();
-		
-		if(playerScore > currentBet)
-			map.put("raise", true);
-		
-		if(currentBet == 0)
-			map.put("check", true);
-		else if(playerScore >= currentBet)
-			map.put("call", true);
-		
-		return map; 
-	}
-	
-//	private void waitNewGame() {
-//		while(!newGame) {
-//			try {
-//				Thread.sleep(100);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//	}
-
 	public void setInputData(OutputObject obj) {
 		
 		OutputToServer input = (OutputToServer) obj;
@@ -153,65 +141,58 @@ public class BusinessProcess {
 		
 		int bet = input.getBet();
 		int status = input.getPlayerStatus();
-		
 		String name = input.toString();
 		
-		//From db
+		System.out.println(Thread.currentThread()+": setInputData- bet: "+bet+" status: "+status+" name: "+name);
+		
 		Player player = table.getPlayer(name);
 		
 		player.setScore(player.getScore()-bet);
 		player.setBet(player.getBet()+bet);
 		player.setStatus(status);
 		
-//		try {
-//			Thread.sleep(100);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
+		System.out.println(Thread.currentThread()+": setInputData- bankInRound: "+(table.getBankInRound()+bet));
+		
 		table.setBankInRound(table.getBankInRound()+bet);
 		
-		compareBets(name, bet);
-
-		for(String s : bankInRound.keySet())
-			System.out.println("before: "+s + " sum bet in round: "+bankInRound.get(s));
-//		System.out.println(Thread.currentThread().getName()+" currentBet: "+bet);
-		for(Player s : table.getActivePlayers())
-				System.out.println("ActivePlayer "+s.getName());
-//		compareBets(name, bet);
-//		
-		for(Player s : table.getPlayers())
-			System.out.println("TablePlayer "+s.getName());
-				
-		table.setCurrentBet(bankInRound.get(name));
-//		
-		System.out.println(name+" bet "+bet);
-		System.out.println("currentBet: "+table.getCurrentBet());
-		for(String s : bankInRound.keySet())
-			System.out.println("after: "+s + " sum bet in round: "+bankInRound.get(s));
-//		
 		
-		// vynesti v connection
-//		smphr.release();
-		
-	}
-	
-	public void compareBets(String name, int bet) {
 		if (bankInRound.get(name) != null)
 			bankInRound.put(name, bankInRound.get(name)+bet);
 		else
 			bankInRound.put(name, bet);
+		
+		compareBets(name);
+
+		for(String s : bankInRound.keySet())
+			System.out.println("before: "+s + " sum bet in round: "+bankInRound.get(s));
+
+		for(Player s : table.getActivePlayers())
+				System.out.println("ActivePlayer "+s.getName());
+		
+		for(Player s : table.getPlayers())
+			System.out.println("TablePlayer "+s.getName());
+				
+		table.setCurrentBet(bankInRound.get(name));
+		
+		System.out.println(name+" bet "+bet);
+		System.out.println("currentBet: "+table.getCurrentBet());
+		for(String s : bankInRound.keySet())
+			System.out.println("after: "+s + " sum bet in round: "+bankInRound.get(s));
+		
+	}
+	
+	public void compareBets(String name) {
+
 		int playerBet = bankInRound.get(name);
 		boolean flag = true;
-		int bank = 0;
+//		int bank = 0;
 		for(String key : bankInRound.keySet()) {
 			if(playerBet != bankInRound.get(key)) {
 				flag = false;
 				break;
 			}
 			playerBet = bankInRound.get(key);
-			bank += playerBet;
+//			bank += playerBet;
 		}
 		
 		if(flag) { // urovnjalis NEXT ROUND
@@ -239,74 +220,5 @@ public class BusinessProcess {
 			}
 		}
 	}
-	
-//	public synchronized void startGame() {
-////			table.newGame();
-//			
-//			System.out.println("NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME NEW GANE NEW GAME ");
-//			// function set Players to SmallBlind and BigBlind
-//			table.selectSmallAndBigBlinds();
-//			
-//			// Create Semaphore vynesti v connection
-//			smphr = new Semaphore(1, true);
-//			
-//			int index = 0;
-//			for(Player player : table.getPlayers()) {
-//				player.setStatus(1);
-//				table.setActivePlayer(index++, player);
-//				player.setStatus(1);
-//				player.setBet(0);
-//				bankInRound.put(player.getName(), player.getBet());
-//				System.out.println("TablePlayerSTRAT "+player.getName());
-//			}
-//			
-//			table.dealCardsToPlayers();
-//			table.dealCardsToTheTable(5);
-//			table.getWinCombination();
-//
-//			currentRound = 0;
-//	}
-	
-//	public boolean isStartGame() {
-//		return startToGame;
-//	}
-	
-	public void setStart(boolean flag) {
-		startToGame = flag;
-	}
-	
-//	public synchronized boolean addPlayerToTheTable(Player player) {
-//		return table.addPlayer(player);
-//	}
-//	public synchronized Player getPlayer(String name) {
-//		return table.getPlayer(name);
-//	}
-//	public synchronized boolean removePlayerFromTheTable(Player player) {
-//		return table.removePlayer(player);
-//	}
-	public synchronized ArrayList<Player> getPlayers() {
-		return table.getPlayers();
-	}
-	
-	public boolean isNewGame() {
-		return newGame;
-	}
-	
-	public void setNewGame(boolean t) {
-		newGame = t;
-	}
-	
-	private HashMap<String, Integer> bankInRound =
-			new HashMap<String, Integer>();
-	private ServerParser parser;
-	private int currentRound;
-	private OutputObject output;
-	private boolean startToGame = false; // ?? connection
-	private boolean newGame = false; // ?? connection
-	private PokerTable table;
-	private Semaphore smphr; // connection
-	
-	private DBDriver db;
-	private ConstructOutData constructor;
 }
 	
