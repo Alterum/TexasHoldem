@@ -85,4 +85,9 @@ public class Status {
 	public ServerProcess getProcess() {
 		return process;
 	}
+	
+	public boolean isNewGame() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

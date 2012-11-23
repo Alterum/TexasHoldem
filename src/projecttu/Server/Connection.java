@@ -122,6 +122,8 @@ public class Connection implements Runnable {
 	}
 	
 	private void processDataExchange() throws IOException {
+		System.out.println("processDataExchange " + Thread.currentThread());
+		
 		while(true) {
 			
 			sendDataToClient(
@@ -149,6 +151,7 @@ public class Connection implements Runnable {
 	}
 
 	private void sendDataToClient(OutputObject data) {
+		
 		try { oos.writeObject(data); }
 		catch (IOException e1) {
 			log.log("Server: IOExceptio for Write Output Object: "+e1);

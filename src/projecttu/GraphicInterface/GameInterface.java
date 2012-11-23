@@ -29,7 +29,7 @@ class PokerFrame extends JFrame {
 		setTitle("Texas Holdem");
 		setSize(800, 600);
 		
-		ServerListener listener = new ServerListener("localhost", 8880);
+		ServerListener listener = new ServerListener("localhost", 8907);
 		
 		JPanel playerPanel = new PlayerPanel(listener);
 		
