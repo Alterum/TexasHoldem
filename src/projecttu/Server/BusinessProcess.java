@@ -118,15 +118,25 @@ public class BusinessProcess {
 
 	private void setPlayerInfo(String name, HashMap<String, String> map) {
 		map.put("playerName", name);
-		map.put("playerStatus", Integer.toString(table.getPlayer(name).getStatus()));
-		map.put("playerBank", Integer.toString(table.getPlayer(name).getScore()));
-		String playerCards = "";
-		for(String card : table.getPlayer(name).getHand())
-			playerCards += card+" "; 
-		map.put("playerCards", playerCards);
-		map.put("playerBet", Integer.toString(table.getPlayer(name).getBet()));
+		map.put("playerCards", getPlayerCards(name));
+		map.put("playerStatus", 
+				Integer.toString(
+						table.getPlayer(name).getStatus()));
+		map.put("playerBank", 
+				Integer.toString(
+						table.getPlayer(name).getScore()));
+		map.put("playerBet", 
+				Integer.toString(
+						table.getPlayer(name).getBet()));
 	}
 	
+	private String getPlayerCards(String name) {
+		String playerCards = "";
+		for(String card : table.getPlayer(name).getHand())
+			playerCards += card+" ";
+		return playerCards;
+	}
+
 	private void setOpponentsInfo(String name, HashMap<String, String> map) {
 		String oppName="oppName";
 		String oppCards="oppCards";
@@ -148,28 +158,34 @@ public class BusinessProcess {
 	public void setInputData(OutputObject obj) {
 		
 		OutputToServer input = (OutputToServer) obj;
-				
-		int bet = input.getBet();
-		int status = input.getPlayerStatus();
-		String name = input.toString();
 		
+		roundGameProcess(
+				input.toString(), 
+				input.getBet(), 
+				input.getPlayerStatus());
+	}
+	
+	private void roundGameProcess(String name, int bet, int status) {
 		setPlayerData(name, bet, status);
 		setBankInRound(name, bet);
 		comparePlayersBets(name);
 		setTableCurrentBet(name, bet);
+		
 	}
-	
+
 	private void setTableCurrentBet(String name, int bet) {
 		// Start log
-		for(String s : bankInRound.keySet())
-			log.log("setInputData: before setCurentBet: "+s + " sum bet in round: "+bankInRound.get(s));
+		for(String playerName : bankInRound.keySet())
+			log.log("setInputData: before setCurentBet: "+playerName+
+					" sum bet in round: "+bankInRound.get(playerName));
 		// End log
 		
 		table.setCurrentBet(bankInRound.get(name));
 		
 		// Start log
-		for(String s : bankInRound.keySet())
-			log.log("setInputData: after setCurentBet: "+s + " sum bet in round: "+bankInRound.get(s));
+		for(String playerName : bankInRound.keySet())
+			log.log("setInputData: after setCurentBet: "+playerName+
+					" sum bet in round: "+bankInRound.get(playerName));
 		log.log("SetInputData: "+name+" bet: "+bet);
 		log.log("setInputData: Table currentBet: "+table.getCurrentBet());
 		log.log("SetInputData, current riund: "+currentRound);
@@ -178,9 +194,16 @@ public class BusinessProcess {
 	}
 
 	private void setBankInRound(String name, int bet) {
-		table.setBankInRound(table.getBankInRound()+bet);
+		int roundBank =
+				table.getBankInRound()+bet;
+		int playerRoundBank = 
+				bankInRound.get(name)+bet;
+		
+		log.log("setInputData, bankInRound: "+roundBank);
+		
+		table.setBankInRound(roundBank);
 		if (bankInRound.get(name) != null)
-			bankInRound.put(name, bankInRound.get(name)+bet);
+			bankInRound.put(name, playerRoundBank);
 		else
 			bankInRound.put(name, bet);
 		
@@ -195,15 +218,12 @@ public class BusinessProcess {
 		player.setScore(playerScore);
 		player.setBet(playerBet);
 		player.setStatus(status);
-		log.log("setInputData, bankInRound: "+(table.getBankInRound()+bet));
 	}
 
 	public void comparePlayersBets(String name) {
 		boolean isNextRound = 
-				readyToNextRound(bankInRound.get(name));
-//		int bank = 0;
+				readyToNextRound(name);
 		log.log("CompareBets, next round = "+isNextRound);
-		
 		if(isNextRound) {
 			newRound(name);
 		}
@@ -211,9 +231,7 @@ public class BusinessProcess {
 	
 	private void newRound(String name) {
 		currentRound++;
-		
 		isGameOver(name);
-		
 		resetRoundData(name);
 		
 	}
@@ -230,19 +248,17 @@ public class BusinessProcess {
 		
 	}
 
-	private boolean readyToNextRound(int playerBetInRound) {
+	private boolean readyToNextRound(String name) {
+		int playerBetInRound = bankInRound.get(name);
 		if(table.getPlayers().size() != bankInRound.size())
 			return false;
 		
 		for(String playerName : bankInRound.keySet()) {
-			
 			log.log("compareBets, player bet: "+playerBetInRound+
 					"; name: "+playerName+" = "+bankInRound.get(playerName));
-			
 			if(playerBetInRound != bankInRound.get(playerName))
 				return false;
 			playerBetInRound = bankInRound.get(playerName);
-//			bank += playerBetInRound;
 		}
 		
 		return true;
@@ -251,7 +267,8 @@ public class BusinessProcess {
 
 	public void isGameOver(String name) {
 		Player player = table.getPlayer(name);
-		if(currentRound == 4) { // GAME OVER
+		int LASTROUND = 4;
+		if(currentRound == LASTROUND) { // GAME OVER
 			Player winer =	table.getPlayerWithBestHand();
 			if(table.getPlayer(name).equals(winer)) {
 				player.setScore(table.getBank());
