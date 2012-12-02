@@ -16,6 +16,7 @@ public class BusinessProcess {
 	
 	private HashMap<String, Integer> bankInRound =
 			new HashMap<String, Integer>();
+	private ConvertData convert;
 	private int currentRound;
 	private OutputObject output;
 	private PokerTable table;
@@ -51,10 +52,13 @@ public class BusinessProcess {
 		
 		for(String key : bttnsNames)
 			map.put(key, false);
-				
-		if(table.getPlayer(name).getStatus() == 0) // If push button fold
+		
+		int OBSERVER = 0;
+		int NEWGAME = -1;
+		
+		if(table.getPlayer(name).getStatus() == OBSERVER) // If push button fold
 			return map;
-		else if (table.getPlayer(name).getStatus() == -1) {
+		else if (table.getPlayer(name).getStatus() == NEWGAME) {
 			map.put("newGame", true);
 			return map;
 		}
@@ -65,6 +69,7 @@ public class BusinessProcess {
 		
 		log.log("score: "+playerScore+" bet:"+currentBet);
 		
+		// 
 		if(playerScore > currentBet)
 			map.put("raise", true);
 		
@@ -174,7 +179,6 @@ public class BusinessProcess {
 
 	private void setBankInRound(String name, int bet) {
 		table.setBankInRound(table.getBankInRound()+bet);
-		
 		if (bankInRound.get(name) != null)
 			bankInRound.put(name, bankInRound.get(name)+bet);
 		else
@@ -185,56 +189,71 @@ public class BusinessProcess {
 	private void setPlayerData(String name, int bet, int status) {
 		log.log("setInputData- bet: "+bet+" status: "+status+" name: "+name);
 		Player player = table.getPlayer(name);
-		player.setScore(player.getScore()-bet);
-		player.setBet(player.getBet()+bet);
+		int playerScore = player.getScore()-bet;
+		int playerBet = player.getBet()+bet;
+		
+		player.setScore(playerScore);
+		player.setBet(playerBet);
 		player.setStatus(status);
-		log.log("setInputData- bankInRound: "+(table.getBankInRound()+bet));
+		log.log("setInputData, bankInRound: "+(table.getBankInRound()+bet));
 	}
 
 	public void comparePlayersBets(String name) {
-
-		int playerBetInRound = bankInRound.get(name);
-		boolean isNextRound = true;
-		int bank = 0;
-		
-		if(table.getPlayers().size() != bankInRound.size())
-			isNextRound = false;
-		
-		for(String key : bankInRound.keySet()) {
-			
-			log.log("compareBets, player bet: "+playerBetInRound+"; name: "+key+" = "+bankInRound.get(key));
-			
-			if(playerBetInRound != bankInRound.get(key)) {
-				isNextRound = false;
-				break;
-			}
-			playerBetInRound = bankInRound.get(key);
-			bank += playerBetInRound;
-		}
-		
+		boolean isNextRound = 
+				readyToNextRound(bankInRound.get(name));
+//		int bank = 0;
 		log.log("CompareBets, next round = "+isNextRound);
 		
-		if(isNextRound) { // NEXT ROUND
-			currentRound++;
-			
-			isGameOver(name);
-			
-			table.setBank(table.getBankInRound());
-			table.setBankInRound(0);
-			
-			for(String key : bankInRound.keySet()) {
-				bankInRound.put(key, 0);
-				table.getPlayer(name).setBet(0);
-				table.setCurrentBet(0);
-			}
+		if(isNextRound) {
+			newRound(name);
 		}
 	}
 	
+	private void newRound(String name) {
+		currentRound++;
+		
+		isGameOver(name);
+		
+		resetRoundData(name);
+		
+	}
+
+	private void resetRoundData(String name) {
+		table.setBank(table.getBankInRound());
+		table.setBankInRound(0);
+		
+		for(String playerName : bankInRound.keySet()) {
+			bankInRound.put(playerName, 0);
+			table.getPlayer(name).setBet(0);
+			table.setCurrentBet(0);
+		}
+		
+	}
+
+	private boolean readyToNextRound(int playerBetInRound) {
+		if(table.getPlayers().size() != bankInRound.size())
+			return false;
+		
+		for(String playerName : bankInRound.keySet()) {
+			
+			log.log("compareBets, player bet: "+playerBetInRound+
+					"; name: "+playerName+" = "+bankInRound.get(playerName));
+			
+			if(playerBetInRound != bankInRound.get(playerName))
+				return false;
+			playerBetInRound = bankInRound.get(playerName);
+//			bank += playerBetInRound;
+		}
+		
+		return true;
+		
+	}
+
 	public void isGameOver(String name) {
 		Player player = table.getPlayer(name);
 		if(currentRound == 4) { // GAME OVER
 			Player winer =	table.getPlayerWithBestHand();
-			if(table.getPlayer(name) == winer) {
+			if(table.getPlayer(name).equals(winer)) {
 				player.setScore(table.getBank());
 			}
 		}
