@@ -36,6 +36,8 @@ public class BusinessProcess {
 				convertInfo(name);
 		
 		output = new OutputToClient(map1, map2);
+		
+		log.log("OutputData, current round "+currentRound);
 
 		return output;
 	}
@@ -76,7 +78,8 @@ public class BusinessProcess {
 	
 	public synchronized HashMap<String, String> convertInfo(String name) {
 		
-		HashMap<String, String> map = new HashMap<String, String>();
+		HashMap<String, String> map =
+				new HashMap<String, String>();
 		setPlayerInfo(name, map);
 		setOpponentsInfo(name, map);
 		setTableInfo(map);
@@ -159,6 +162,7 @@ public class BusinessProcess {
 		table.setBankInRound(table.getBankInRound()+bet);
 		
 		
+		// ??????
 		if (bankInRound.get(name) != null)
 			bankInRound.put(name, bankInRound.get(name)+bet);
 		else
@@ -183,23 +187,33 @@ public class BusinessProcess {
 			log.log("setInputData: after setCurentBet: "+s + " sum bet in round: "+bankInRound.get(s));
 		log.log("SetInputData: "+name+" bet: "+bet);
 		log.log("setInputData: Table currentBet: "+table.getCurrentBet());
+		log.log("SetInputData, current riund: "+currentRound);
 		// End log
 		
 	}
 	
 	public void compareBets(String name) {
 
-		int playerBet = bankInRound.get(name);
+		int playerBetInRound = bankInRound.get(name);
 		boolean isNextRound = true;
 		int bank = 0;
+		
+		if(table.getPlayers().size() != bankInRound.size())
+			isNextRound = false;
+		
 		for(String key : bankInRound.keySet()) {
-			if(playerBet != bankInRound.get(key)) {
+			
+			log.log("compareBets, player bet: "+playerBetInRound+"; name: "+key+" = "+bankInRound.get(key));
+			
+			if(playerBetInRound != bankInRound.get(key)) {
 				isNextRound = false;
 				break;
 			}
-			playerBet = bankInRound.get(key);
-			bank += playerBet;
+			playerBetInRound = bankInRound.get(key);
+			bank += playerBetInRound;
 		}
+		
+		log.log("CompareBets, next round = "+isNextRound);
 		
 		if(isNextRound) { // NEXT ROUND
 			currentRound++;

@@ -12,9 +12,13 @@ public class Status {
 	private PokerTable table;
 	
 	Status() {
-		table = new PokerTable();
+		setNewTable();
 		process = new ServerProcess(
 				new BusinessProcess(table, new DBDriver()));
+	}
+	
+	void setNewTable() {
+		table = new PokerTable();
 	}
 	
 	void setAmountPlayers(int x) {
@@ -78,7 +82,7 @@ public class Status {
 	
 	void newTable() {
 		if(readyPlayers == allPlayers) {
-			table = new PokerTable();
+			setNewTable();
 			readyPlayers = 0;
 		}
 	}

@@ -54,7 +54,7 @@ public class ThreadProcess {
 		}
 		else if(input.equals("observer")) {
 			player.setStatus(0);
-			return true;
+			return true; 
 		}
 		return false;
 	}
@@ -83,17 +83,6 @@ public class ThreadProcess {
 	public boolean input(OutputObject info) {
 		
 		process.set(info);
-		
-		synchronized(status) {
-			status.readyToNextRound();
-			
-			try {
-				status.wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
 		return true;
 	}
 
