@@ -19,7 +19,7 @@ public class ThreadProcess {
 		status = observer;
 	}
 	
-	public synchronized String getPlayerName(String name) {
+	public synchronized String isPlayerNameReserved(String name) {
 		Player p = table.getPlayer(name);
 		if(p != null)
 			return null;

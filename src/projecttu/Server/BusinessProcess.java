@@ -159,6 +159,8 @@ public class BusinessProcess {
 		
 		OutputToServer input = (OutputToServer) obj;
 		
+		log.log("SetInputData - name: "+input.toString());
+		
 		roundGameProcess(
 				input.toString(), 
 				input.getBet(), 

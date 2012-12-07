@@ -1,5 +1,8 @@
 package projecttu.Server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
 
@@ -26,7 +29,6 @@ public class Status {
 	}
 	
 	void readyToPlay() {
-		readyPlayers++;
 		System.out.println(Thread.currentThread()+": in Status ready players: "+readyPlayers);
 	}
 	

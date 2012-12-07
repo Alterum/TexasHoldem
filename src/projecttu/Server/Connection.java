@@ -97,7 +97,7 @@ public class Connection implements Runnable {
 	private void getPlayerName() {
 		while(true) {
 			try {
-				if(getInputName(server.getPlayerName(in.readLine()))){
+				if(getInputName(server.isPlayerNameReserved(in.readLine()))){
 					out.println("true");
 					break;
 				} else
