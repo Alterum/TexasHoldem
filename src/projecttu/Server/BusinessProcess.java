@@ -27,8 +27,8 @@ public class BusinessProcess {
 		db = driver;
 		this.table = table;
 		
-//		for(Player player : table.getPlayers())
-//			bankInRound.put(player.getName(), 0);
+		for(Player player : table.getPlayers())
+			bankInRound.put(player.getName(), 0);
 		
 		log = new Logger("bussines_process.log");
 	}
