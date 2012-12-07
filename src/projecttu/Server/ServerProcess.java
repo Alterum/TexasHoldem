@@ -11,11 +11,17 @@ public class ServerProcess {
 	private int readyNewGame = 0;
 	private int readyToNextRound = 0;
 	private int allPlayers = 2; // need to change
-	private DataAccessChanel process;
+	private DataAccessChanel chanel;
 	private PokerTable table;
 	
 	ServerProcess() {
 		setNewTable();
+	}
+	
+	void setAccessChanel() {
+		chanel = new DataAccessChanel(
+				 new BusinessProcess(
+						 table, new DBDriver()));
 	}
 	
 	void setNewTable() {
@@ -72,6 +78,8 @@ public class ServerProcess {
 				table.setActivePlayer(player);
 			table.dealCardsToPlayers();
 			
+			setAccessChanel();
+			
 			return true;
 		}
 		return false;
@@ -88,13 +96,8 @@ public class ServerProcess {
 		}
 	}
 
-	public DataAccessChanel getProcess() {
-
-		 process = new DataAccessChanel(
-				 new BusinessProcess(
-						 table, new DBDriver()));
-		
-		return process;
+	public DataAccessChanel getAccessChanel() {
+		return chanel;
 	}
 	
 	public boolean isNewGame() {

@@ -108,3 +108,46 @@
 [ 2012/12/07 12:32:15 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
 [ 2012/12/07 12:32:15 ] Thread[Thread-2,5,main]: Connection name: opo14
 [ 2012/12/07 12:32:22 ] Thread[opo14,5,main]: Socket closed! Connection name: opo14
+[ 2012/12/07 13:04:19 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49258,localport=8907] projecttu.Server.Connection@14fb35d
+[ 2012/12/07 13:04:27 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49260,localport=8907] projecttu.Server.Connection@dc49c3
+[ 2012/12/07 13:04:34 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 13:04:34 ] Thread[Thread-4,5,main]: Connection name: sdgfdf
+[ 2012/12/07 13:04:43 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 13:04:43 ] Thread[Thread-2,5,main]: Connection name: ersrvd
+[ 2012/12/07 13:05:25 ] Thread[sdgfdf,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 13:05:25 ] Thread[sdgfdf,5,main]: Socket closed! Connection name: sdgfdf
+[ 2012/12/07 13:05:27 ] Thread[ersrvd,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 13:05:27 ] Thread[ersrvd,5,main]: Socket closed! Connection name: ersrvd
+[ 2012/12/07 13:06:03 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49272,localport=8907] projecttu.Server.Connection@188a478
+[ 2012/12/07 13:06:05 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49273,localport=8907] projecttu.Server.Connection@dc49c3
+[ 2012/12/07 13:06:09 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 13:06:09 ] Thread[Thread-4,5,main]: Connection name: plok12
+[ 2012/12/07 13:06:15 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 13:06:15 ] Thread[Thread-2,5,main]: Connection name: plok32
+[ 2012/12/07 13:06:21 ] Thread[plok12,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 13:06:21 ] Thread[plok12,5,main]: Socket closed! Connection name: plok12
+[ 2012/12/07 13:06:22 ] Thread[plok32,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 13:06:22 ] Thread[plok32,5,main]: Socket closed! Connection name: plok32
+[ 2012/12/07 13:09:56 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49296,localport=8907] projecttu.Server.Connection@1188793
+[ 2012/12/07 13:10:01 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 13:10:01 ] Thread[Thread-2,5,main]: Connection name: plok12
+[ 2012/12/07 13:10:13 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49305,localport=8907] projecttu.Server.Connection@1b7b7a3
+[ 2012/12/07 13:10:16 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 13:10:16 ] Thread[Thread-4,5,main]: Connection name: plafdas
+[ 2012/12/07 13:10:24 ] Thread[plafdas,5,main]: Socket closed! Connection name: plafdas
+[ 2012/12/07 13:10:29 ] Thread[plok12,5,main]: Socket closed! Connection name: plok12
+[ 2012/12/07 13:17:44 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49388,localport=8907] projecttu.Server.Connection@1188793
+[ 2012/12/07 13:17:45 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49390,localport=8907] projecttu.Server.Connection@6ed1dc
+[ 2012/12/07 13:18:11 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 13:18:11 ] Thread[Thread-2,5,main]: Connection name: polkoo
+[ 2012/12/07 13:18:19 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 13:18:19 ] Thread[Thread-4,5,main]: Connection name: polkoool
+[ 2012/12/07 13:18:30 ] Thread[polkoool,5,main]: Socket closed! Connection name: polkoool
+[ 2012/12/07 13:18:35 ] Thread[polkoo,5,main]: Socket closed! Connection name: polkoo
+[ 2012/12/07 13:27:12 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49455,localport=8907] projecttu.Server.Connection@1188793
+[ 2012/12/07 13:27:19 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49456,localport=8907] projecttu.Server.Connection@193ebc5
+[ 2012/12/07 13:27:23 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 13:27:23 ] Thread[Thread-4,5,main]: Connection name: 123lok
+[ 2012/12/07 13:27:33 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 13:27:33 ] Thread[Thread-2,5,main]: Connection name: lok123
+[ 2012/12/07 13:27:38 ] Thread[123lok,5,main]: Socket closed! Connection name: 123lok

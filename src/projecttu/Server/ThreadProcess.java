@@ -31,14 +31,13 @@ public class ThreadProcess {
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
 		process.putPlayerAtTheTable(player);
-		data = process.getProcess();
 	}
 	
 	public boolean startGameProcess(String readLine) {
 		if(!isPlayerReadyToPlay(readLine))
 			return false;
 		waitingForOtherPlayers();
-		// table.selectSmallAndBigBlinds(); nado vynesti v status
+		data = process.getAccessChanel();
 		return true;
 	}
 	
@@ -76,6 +75,7 @@ public class ThreadProcess {
 	}
 	
 	public boolean input(OutputObject info) {
+		
 		
 		data.put(info);
 		return true;
