@@ -216,6 +216,9 @@ public class PokerTable {
 	public void setBank(int b) {
 		bank = b;
 	}
+	public void addToTheBank(int b) {
+		bank += b;
+	}
 	public int getBankInRound() {
 		return bankInRound;
 	}

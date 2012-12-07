@@ -167,3 +167,11 @@
 [ 2012/12/07 14:24:55 ] Thread[Thread-4,5,main]: Connection name: polkd543
 [ 2012/12/07 14:25:34 ] Thread[polkd543,5,main]: Server: IOException for Read Output Object: java.io.EOFException
 [ 2012/12/07 14:25:34 ] Thread[polkd543,5,main]: Socket closed! Connection name: polkd543
+[ 2012/12/07 14:52:05 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=50331,localport=8907] projecttu.Server.Connection@1a95cf6
+[ 2012/12/07 14:52:14 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=50333,localport=8907] projecttu.Server.Connection@174b989
+[ 2012/12/07 14:52:19 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 14:52:19 ] Thread[Thread-4,5,main]: Connection name: ploka12
+[ 2012/12/07 14:52:25 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 14:52:25 ] Thread[Thread-2,5,main]: Connection name: ploka345
+[ 2012/12/07 14:52:50 ] Thread[ploka345,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 14:52:50 ] Thread[ploka345,5,main]: Socket closed! Connection name: ploka345

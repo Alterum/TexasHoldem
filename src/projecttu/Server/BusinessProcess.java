@@ -16,9 +16,8 @@ public class BusinessProcess {
 	
 	private HashMap<String, Integer> bankInRound =
 			new HashMap<String, Integer>();
-	private ConvertData convert;
+
 	private int currentRound;
-	private OutputObject output;
 	private PokerTable table;
 	private OutputDataHarvester harvester;
 	private DBDriver db;
@@ -37,148 +36,37 @@ public class BusinessProcess {
 	}
 	
 	public OutputObject getOutputData(String name) {
-		
-//		HashMap<String, Boolean> buttons =
-//				convertAccessButtons(name);
-//		HashMap<String, String> info =
-//				convertInfo(name);
-		
-//		harvester.getData(name, currentRound);
-		
-//		output = new OutputToClient(info, buttons);
-//		
-//		log.log("OutputData, current round "+currentRound);
-
 		return harvester.getData(name, currentRound);
 	}
-	
-//	public HashMap<String, Boolean> convertAccessButtons(String name) {
-//		String[] bttnsNames =
-//			{"play", "call", "raise", "fold", "check", "newGame"};
-//		
-//		HashMap<String, Boolean> map = 
-//				new HashMap<String, Boolean>();
-//		
-//		for(String key : bttnsNames)
-//			map.put(key, false);
-//		
-//		int OBSERVER = 0;
-//		int NEWGAME = -1;
-//		
-//		int playerStatus = table.getPlayer(name).getStatus();
-//		
-//		if(playerStatus == OBSERVER) // If push button fold
-//			return map;
-//		else if (playerStatus == NEWGAME) {
-//			map.put("newGame", true);
-//			return map;
-//		}
-//		map.put("fold", true);
-//		
-//		int playerScore = table.getPlayer(name).getScore();
-//		int currentBet = table.getCurrentBet();
-//		
-//		log.log("score: "+playerScore+" bet:"+currentBet);
-//		
-//		// 
-//		if(playerScore > currentBet)
-//			map.put("raise", true);
-//		
-//		if(currentBet == 0)
-//			map.put("check", true);
-//		else if(playerScore >= currentBet)
-//			map.put("call", true);
-//		
-//		return map; 
-//	}
-//	
-//	public synchronized HashMap<String, String> convertInfo(String name) {
-//		
-//		HashMap<String, String> map =
-//				new HashMap<String, String>();
-//		setPlayerInfo(name, map);
-//		setOpponentsInfo(name, map);
-//		setTableInfo(map);
-//		
-//		return map;
-//	}
-//	
-//	private void setTableInfo(HashMap<String, String> map) {
-//		String cards="";
-//		if(currentRound == 1){ // 3 cards visible
-//			cards += "BB BB "+table.getCardsOnTable()[2] + " "+
-//					table.getCardsOnTable()[1] + " " +
-//					table.getCardsOnTable()[0];
-//		} else if(currentRound == 2){ // 4 cards visible
-//			cards += "BB "+table.getCardsOnTable()[3] + " "+
-//					table.getCardsOnTable()[2] + " " +
-//					table.getCardsOnTable()[1] + " " +
-//					table.getCardsOnTable()[0];
-//		} else if(currentRound == 3) { // 5 cards visible	
-//			for(String card : table.getCardsOnTable())
-//				cards+=card+" ";
-//		} else // All cards invisible
-//			cards += "BB BB BB BB BB";
-//		map.put("cards", cards);
-//		map.put("currentBet", Integer.toString(table.getCurrentBet()));
-//		map.put("bank", Integer.toString(table.getBank()));
-//		map.put("bankInRound", Integer.toString(table.getBankInRound()));
-//		map.put("currentRound", Integer.toString(currentRound));
-//		
-//	}
-//
-//	private void setPlayerInfo(String name, HashMap<String, String> map) {
-//		map.put("playerName", name);
-//		map.put("playerCards", getPlayerCards(name));
-//		map.put("playerStatus", 
-//				Integer.toString(
-//						table.getPlayer(name).getStatus()));
-//		map.put("playerBank", 
-//				Integer.toString(
-//						table.getPlayer(name).getScore()));
-//		map.put("playerBet", 
-//				Integer.toString(
-//						table.getPlayer(name).getBet()));
-//	}
-//	
-//	private String getPlayerCards(String name) {
-//		String playerCards = "";
-//		for(String card : table.getPlayer(name).getHand())
-//			playerCards += card+" ";
-//		return playerCards;
-//	}
-//
-//	private void setOpponentsInfo(String name, HashMap<String, String> map) {
-//		int index = 1;
-//		for(Player player : table.getPlayers()) {
-//			if(player.getName() == name)
-//				continue;
-//			map.put("oppName"+index, player.getName());
-//			map.put("oppCards"+index, player.getHand()[0]+" "+player.getHand()[1]);
-//			map.put("oppBank"+index, Integer.toString(player.getScore()));
-//			map.put("oppBet"+index, Integer.toString(player.getBet()));
-//			index++;
-//		}
-//		
-//	}
 
-	public void setInputData(OutputObject obj) {
+	public boolean setInputData(OutputObject obj) {
 		
 		OutputToServer input = (OutputToServer) obj;
 		
 		log.log("SetInputData - name: "+input.toString());
 		
-		roundGameProcess(
+		if(!roundGameProcess(
 				input.toString(), 
 				input.getBet(), 
-				input.getPlayerStatus());
+				input.getPlayerStatus()))
+			return false;
+		
+		return true;
 	}
 	
-	private void roundGameProcess(String name, int bet, int status) {
+	private boolean roundGameProcess(String name, int bet, int status) {
+		
+		int NEWGAME = -1;
+		if(status == NEWGAME) {
+			return false;
+		}
+		
 		setPlayerData(name, bet, status);
 		setBankInRound(name, bet);
 		comparePlayersBets(name);
 		setTableCurrentBet(name, bet);
+		
+		return true;
 		
 	}
 
@@ -189,6 +77,7 @@ public class BusinessProcess {
 					" sum bet in round: "+bankInRound.get(playerName));
 		// End log
 		
+		// Write to DB
 		table.setCurrentBet(bankInRound.get(name));
 		
 		// Start log
@@ -210,12 +99,14 @@ public class BusinessProcess {
 		
 		log.log("setInputData, bankInRound: "+roundBank);
 		
+		// Write to DB
 		table.setBankInRound(roundBank);
+		table.addToTheBank(roundBank);
+		
 		if (bankInRound.get(name) != null)
 			bankInRound.put(name, playerRoundBank);
 		else
 			bankInRound.put(name, bet);
-		
 	}
 
 	private void setPlayerData(String name, int bet, int status) {
@@ -224,6 +115,7 @@ public class BusinessProcess {
 		int playerScore = player.getScore()-bet;
 		int playerBet = player.getBet()+bet;
 		
+		// write to DB
 		player.setScore(playerScore);
 		player.setBet(playerBet);
 		player.setStatus(status);
@@ -246,7 +138,7 @@ public class BusinessProcess {
 	}
 
 	private void resetRoundData(String name) {
-		table.setBank(table.getBankInRound());
+		
 		table.setBankInRound(0);
 		
 		for(String playerName : bankInRound.keySet()) {
@@ -282,6 +174,8 @@ public class BusinessProcess {
 			if(table.getPlayer(name).equals(winer)) {
 				player.setScore(table.getBank());
 			}
+			log.log("HAPPY END winer is: "+
+					winer.getName()+", many: "+winer.getScore());
 		}
 	}
 }

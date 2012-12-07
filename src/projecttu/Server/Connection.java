@@ -74,13 +74,15 @@ public class Connection implements Runnable {
 	
 	private void gameProcess() {
 		try {
-			if(server.startGameProcess(
-					in.readLine()))
-				out.println("startPlay");
-			else
-				return;
-			
-			processDataExchange();
+			while(true) {
+				if(server.startGameProcess(
+						in.readLine()))
+					out.println("startPlay");
+				else
+					return;
+				
+				processDataExchange();
+			}
 			
 		} catch (IOException e) {
 			try {

@@ -72,9 +72,8 @@ public class ThreadProcess {
 	}
 	
 	public boolean input(OutputObject info) {
-		
-		
-		data.put(info);
+		if(!data.put(info))
+			return false;
 		return true;
 	}
 

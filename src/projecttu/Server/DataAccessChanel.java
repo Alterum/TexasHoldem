@@ -24,9 +24,11 @@ public class DataAccessChanel {
 		return business.getOutputData(name);
 	}
 
-	public void put(OutputObject info) {
-		business.setInputData(info);
+	public boolean put(OutputObject info) {
+		if(!business.setInputData(info))
+			return false;
 		available.release();
+		return true;
 	}
 	
 	
