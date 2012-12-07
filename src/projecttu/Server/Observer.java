@@ -48,5 +48,9 @@ public class Observer implements Runnable {
 	public void newGame() {
 		status.newTable();	
 	}
+	
+	public boolean isMaxConnInCurTable() {
+		return status.getCurrentTable().isMaxPlayersForTheTable();
+	}
 
 }

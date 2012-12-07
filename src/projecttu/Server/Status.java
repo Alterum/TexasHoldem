@@ -29,6 +29,7 @@ public class Status {
 	}
 	
 	void readyToPlay() {
+		readyPlayers++;
 		System.out.println(Thread.currentThread()+": in Status ready players: "+readyPlayers);
 	}
 	
@@ -78,7 +79,7 @@ public class Status {
 		return false;
 	}
 	
-	PokerTable getNewTable() {
+	PokerTable getCurrentTable() {
 		return table;
 	}
 	
@@ -96,5 +97,17 @@ public class Status {
 	public boolean isNewGame() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	synchronized public Player getPlayer(String name) {
+		return table.getPlayer(name);
+	}
+
+	synchronized public void putPlayerAtTheTable(Player player) {
+		table.addPlayer(player);
+	}
+
+	synchronized public boolean getUpFromTheTable(Player player) {
+		return table.removePlayer(player);
 	}
 }

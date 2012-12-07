@@ -12,15 +12,16 @@ public class ThreadProcess {
 	private ServerProcess process;
 	
 	private Player player;
-	private PokerTable table;
 	
-	ThreadProcess(PokerTable table, Status observer) {
-		this.table = table;
+	ThreadProcess(Status observer) {
 		status = observer;
 	}
 	
-	public synchronized String isPlayerNameReserved(String name) {
-		Player p = table.getPlayer(name);
+	public String isPlayerNameReserved(String name) {
+		Player p;
+		synchronized(status) {
+			p = status.getPlayer(name);
+		}
 		if(p != null)
 			return null;
 		else
@@ -29,14 +30,10 @@ public class ThreadProcess {
 
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
-		table = status.getNewTable();
+		status.putPlayerAtTheTable(player);
+		
+		// Create BusinessProcess Object
 		process = status.getProcess();
-		
-		System.out.println(table);
-		
-		synchronized(table) {
-			table.addPlayer(player);
-		}	
 	}
 	
 	public boolean startGameProcess(String readLine) {
@@ -87,7 +84,7 @@ public class ThreadProcess {
 	}
 
 	public synchronized boolean removePlayerFromTheTable() {
-		return table.removePlayer(player);
+		return status.getUpFromTheTable(player);
 	}		
 
 }

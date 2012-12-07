@@ -16,32 +16,28 @@ public class PokerGame {
 		new Revision(online, log);
 		log.log("GameServer start: "+s);
 		
-		activeGameTables.put(new PokerTable(), new Observer());
+		activeGameTables.add(new Observer());
 		
 		while(true) {
 			Socket incoming = s.accept(); // blocked
 			
-			PokerTable table = null;
 			Observer viewer = null;
 			
-			for(PokerTable tble : activeGameTables.keySet())
-				if(!tble.isMaxPlayersForTheTable()) {
-					table = tble;
-					viewer = activeGameTables.get(tble);
-				}
+			for(Observer view : activeGameTables)
+				if(!view.isMaxConnInCurTable())
+					viewer = view;
 			
 			
-			if(table == null) {
-				table = new PokerTable();
+			if(viewer == null) {
 				viewer = new Observer();
-				activeGameTables.put(table, viewer);	
+				activeGameTables.add(viewer);
 			}
 			
 			viewer.start();
 			
 			try {
 				online.addConnection(new Connection(
-						incoming, table, viewer.getStatus()));
+						incoming, viewer.getStatus()));
 			} catch(IOException e) {
 				log.log("Socket emergency has benn closed! "+incoming+"\r\n"+e);
 				incoming.close();
@@ -52,8 +48,8 @@ public class PokerGame {
 	private ActiveConnections online = 
 			new ActiveConnections();
 	private Logger log = new Logger("data.log");
-	private Map<PokerTable, Observer> activeGameTables =
-			new HashMap<PokerTable, Observer>();
+	private List<Observer> activeGameTables =
+			new ArrayList<Observer>();
 }
 
 class Revision extends Thread {
