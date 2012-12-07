@@ -26,6 +26,10 @@ public class BusinessProcess {
 	public BusinessProcess(PokerTable table, DBDriver driver) {
 		db = driver;
 		this.table = table;
+		
+		for(Player player : table.getPlayers())
+			bankInRound.put(player.getName(), 0);
+		
 		log = new Logger("bussines_process.log");
 	}
 	

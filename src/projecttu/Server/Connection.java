@@ -31,7 +31,7 @@ public class Connection implements Runnable {
 	private ThreadProcess server;
 	
 	public Connection(Socket socket,
-			Status status) throws IOException {
+			ServerProcess status) throws IOException {
 		incoming = socket;
 		this.log = new Logger("connection.log");
 		

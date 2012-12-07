@@ -8,19 +8,19 @@ public class ThreadProcess {
 	
 	private DBDriver db;
 
-	private Status status;
 	private ServerProcess process;
+	private DataAccessChanel data;
 	
 	private Player player;
 	
-	ThreadProcess(Status observer) {
-		status = observer;
+	ThreadProcess(ServerProcess process) {
+		this.process = process;
 	}
 	
 	public String isPlayerNameReserved(String name) {
 		Player p;
-		synchronized(status) {
-			p = status.getPlayer(name);
+		synchronized(process) {
+			p = process.getPlayer(name);
 		}
 		if(p != null)
 			return null;
@@ -30,10 +30,8 @@ public class ThreadProcess {
 
 	public void prepareGameProcess(String name) {
 		player = new Player(name);
-		status.putPlayerAtTheTable(player);
-		
-		// Create BusinessProcess Object
-		process = status.getProcess();
+		process.putPlayerAtTheTable(player);
+		data = process.getProcess();
 	}
 	
 	public boolean startGameProcess(String readLine) {
@@ -57,13 +55,13 @@ public class ThreadProcess {
 	}
 	
 	private void waitingForOtherPlayers() {
-		synchronized(status) {
-			status.readyToPlay();
+		synchronized(process) {
+			process.readyToPlay();
 			
 			System.out.println(Thread.currentThread()+": Before Wait waitingForOtherPlayers");
 			
 			try {
-				status.wait();
+				process.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -74,17 +72,17 @@ public class ThreadProcess {
 	
 	public OutputObject output() {
 		
-		return process.get(player.getName());
+		return data.get(player.getName());
 	}
 	
 	public boolean input(OutputObject info) {
 		
-		process.set(info);
+		data.put(info);
 		return true;
 	}
 
-	public synchronized boolean removePlayerFromTheTable() {
-		return status.getUpFromTheTable(player);
+	public boolean removePlayerFromTheTable() {
+		return process.getUpFromTheTable(player);
 	}		
 
 }

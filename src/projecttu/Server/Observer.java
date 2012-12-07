@@ -1,10 +1,10 @@
 package projecttu.Server;
 
 public class Observer implements Runnable {
-	private Status status;
+	private ServerProcess status;
 	
 	Observer() {
-		status = new Status();
+		status = new ServerProcess();
 	}
 	
 	void start() {
@@ -41,7 +41,7 @@ public class Observer implements Runnable {
 		}
 	}
 	
-	Status getStatus() {
+	ServerProcess getStatus() {
 		return status;
 	}
 
