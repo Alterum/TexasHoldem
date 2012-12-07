@@ -34,7 +34,8 @@ public class ServerProcess {
 	
 	synchronized void readyToPlay() {
 		readyPlayers++;
-		System.out.println(Thread.currentThread()+": in Status ready players: "+readyPlayers);
+		System.out.println(Thread.currentThread()+
+				": in Status ready players: "+readyPlayers);
 	}
 	
 	synchronized void readyToNewGame() {
@@ -43,7 +44,8 @@ public class ServerProcess {
 	
 	synchronized void readyToNextRound() {
 		readyToNextRound++;
-		System.out.println(Thread.currentThread()+": in Status ready to next round: "+readyPlayers);
+		System.out.println(Thread.currentThread()+
+				": in Status ready to next round: "+readyPlayers);
 	}
 	
 	void ressetAllReadyToNextRound() {
@@ -71,20 +73,22 @@ public class ServerProcess {
 	}
 	
 	synchronized boolean ready() {
-		if(readyPlayers >= allPlayers) {
-			readyPlayers = 0;
-			
-			for(Player player : table.getPlayers())
-				table.setActivePlayer(player);
-			table.dealCardsToPlayers();
-			
-			setAccessChanel();
-			
-			return true;
-		}
-		return false;
+		if(readyPlayers < allPlayers)
+			return false;
+		
+		readyPlayers = 0;
+		prepareGameTable();
+		setAccessChanel();
+		return true;
 	}
 	
+	private void prepareGameTable() {
+		for(Player player : table.getPlayers())
+			table.setActivePlayer(player);
+		table.dealCardsToPlayers();
+		
+	}
+
 	PokerTable getCurrentTable() {
 		return table;
 	}

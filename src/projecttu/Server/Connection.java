@@ -66,10 +66,13 @@ public class Connection implements Runnable {
 		getPlayerName();
 		
 		log.log("Connection name: "+name);
-		
 		thread.setName(name);
-		server.prepareGameProcess(name);
 		
+		server.prepareGameProcess(name);
+		gameProcess();
+	}
+	
+	private void gameProcess() {
 		try {
 			if(server.startGameProcess(
 					in.readLine()))
@@ -92,8 +95,9 @@ public class Connection implements Runnable {
 				incoming.close();
 			} catch(IOException e) {}
 		}
+		
 	}
-	
+
 	private void getPlayerName() {
 		while(true) {
 			try {

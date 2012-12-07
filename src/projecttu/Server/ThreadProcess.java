@@ -6,11 +6,8 @@ import projecttu.OutputObject.OutputObject;
 
 public class ThreadProcess {
 	
-	private DBDriver db;
-
 	private ServerProcess process;
 	private DataAccessChanel data;
-	
 	private Player player;
 	
 	ThreadProcess(ServerProcess process) {
