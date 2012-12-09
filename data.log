@@ -48,3 +48,8 @@
 [ 2012/12/07 14:25:35 ] Thread[Thread-0,5,main]: Thread[polkd543,5,] is dead and was removed from Active connections
 [ 2012/12/07 14:52:02 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2012/12/07 14:52:50 ] Thread[Thread-0,5,main]: Thread[ploka345,5,] is dead and was removed from Active connections
+[ 2012/12/07 19:48:43 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/12/07 19:49:38 ] Thread[Thread-0,5,main]: Thread[player001,5,] is dead and was removed from Active connections
+[ 2012/12/07 19:51:13 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/12/07 19:55:37 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2012/12/07 19:56:35 ] Thread[Thread-0,5,main]: Thread[plaudif,5,] is dead and was removed from Active connections

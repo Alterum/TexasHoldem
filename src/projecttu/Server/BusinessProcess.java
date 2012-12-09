@@ -58,6 +58,7 @@ public class BusinessProcess {
 		
 		int NEWGAME = -1;
 		if(status == NEWGAME) {
+			table.getPlayer(name).setStatus(1);
 			return false;
 		}
 		
@@ -174,8 +175,8 @@ public class BusinessProcess {
 			if(table.getPlayer(name).equals(winer)) {
 				player.setScore(table.getBank());
 			}
-			log.log("HAPPY END winer is: "+
-					winer.getName()+", many: "+winer.getScore());
+//			log.log("HAPPY END winer is: "+
+//					winer.getName()+", many: "+winer.getScore());
 		}
 	}
 }

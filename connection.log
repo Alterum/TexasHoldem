@@ -175,3 +175,24 @@
 [ 2012/12/07 14:52:25 ] Thread[Thread-2,5,main]: Connection name: ploka345
 [ 2012/12/07 14:52:50 ] Thread[ploka345,5,main]: Server: IOException for Read Output Object: java.io.EOFException
 [ 2012/12/07 14:52:50 ] Thread[ploka345,5,main]: Socket closed! Connection name: ploka345
+[ 2012/12/07 19:48:48 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49383,localport=8907] projecttu.Server.Connection@844c3d
+[ 2012/12/07 19:48:50 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49384,localport=8907] projecttu.Server.Connection@5be0a8
+[ 2012/12/07 19:49:01 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 19:49:01 ] Thread[Thread-4,5,main]: Connection name: player001
+[ 2012/12/07 19:49:08 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 19:49:08 ] Thread[Thread-2,5,main]: Connection name: player007
+[ 2012/12/07 19:49:38 ] Thread[player001,5,main]: Socket closed! Connection name: player001
+[ 2012/12/07 19:51:19 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49401,localport=8907] projecttu.Server.Connection@844c3d
+[ 2012/12/07 19:51:21 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49402,localport=8907] projecttu.Server.Connection@5be0a8
+[ 2012/12/07 19:51:30 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 19:51:30 ] Thread[Thread-4,5,main]: Connection name: player033
+[ 2012/12/07 19:51:37 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 19:51:37 ] Thread[Thread-2,5,main]: Connection name: player009
+[ 2012/12/07 19:55:40 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49429,localport=8907] projecttu.Server.Connection@16ce64e
+[ 2012/12/07 19:55:43 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=49430,localport=8907] projecttu.Server.Connection@5be0a8
+[ 2012/12/07 19:55:45 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/07 19:55:45 ] Thread[Thread-4,5,main]: Connection name: 100
+[ 2012/12/07 19:55:53 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/07 19:55:53 ] Thread[Thread-2,5,main]: Connection name: plaudif
+[ 2012/12/07 19:56:34 ] Thread[plaudif,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/07 19:56:34 ] Thread[plaudif,5,main]: Socket closed! Connection name: plaudif
