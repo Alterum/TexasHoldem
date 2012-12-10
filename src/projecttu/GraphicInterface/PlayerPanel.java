@@ -211,6 +211,11 @@ public class PlayerPanel extends JPanel {
 	}
 	
 	private void fold() {
+		/**
+		 *  set status 0 - observer
+		 *  get data and return withou deelay
+		 */
+		
 		System.exit(0);
 	}
 	
