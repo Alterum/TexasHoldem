@@ -22,6 +22,8 @@ public class BusinessProcess {
 	private OutputDataHarvester harvester;
 	private DBDriver db;
 	private Logger log;
+	private final int NEWGAME = -1;
+	private final int OBSERVER = 0;
 	
 	public BusinessProcess(PokerTable table, DBDriver driver) {
 		db = driver;
@@ -56,9 +58,20 @@ public class BusinessProcess {
 	
 	private boolean roundGameProcess(String name, int bet, int status) {
 		
-		int NEWGAME = -1;
 		if(status == NEWGAME) {
 			table.getPlayer(name).setStatus(1);
+			return false;
+		}
+		
+		/**
+		 * OBSERVER
+		 * check Active player: esli ostalsja tolk oodin togda on stanovitsja pobeditelem
+		 * 
+		 */
+		if(status == OBSERVER) {
+			table.removeActivePlayer(table.getPlayer(name));
+			if(table.getActivePlayers().size() == 1)
+				table.getActivePlayers().get(0).setScore(table.getBank());
 			return false;
 		}
 		

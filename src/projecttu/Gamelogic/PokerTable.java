@@ -84,26 +84,40 @@ public class PokerTable {
 	}
 	
 	public boolean removePlayer(Player pl) {
-		Iterator<Player> itr = players.iterator();
+		return removePlayerFromTable(pl, 1);
+	}
+	
+	public boolean removeActivePlayer(Player pl) {
+		return removePlayerFromTable(pl, 0);
+	}
+	
+	private boolean removePlayerFromTable(Player player, int x) {
+		if(x==1) {
+			removeFromArray(players.iterator(), player);
+			selectSmallAndBigBlinds();
+		}
+		return removeFromArray(activePlayers.iterator(), player);
+	}
+	
+	private boolean removeFromArray(Iterator<Player> itr, Player pl) {
 		while(itr.hasNext()) {
 			Player player = itr.next();
 			if(player.equals(pl)) {
-				
-				if(smallBlind == player)
-					smallBlind = null;
-				else if(bigBlind == player)
-					bigBlind = null;
-				
 				itr.remove();
-				selectSmallAndBigBlinds();
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	
-	
+	private void checkObBigSmallBlind(Player player) {
+		if(smallBlind == player)
+			smallBlind = null;
+		else if(bigBlind == player)
+			bigBlind = null;
+		
+	}
+
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}
@@ -135,7 +149,6 @@ public class PokerTable {
 	}
 	
 	public ArrayList<String[]> getWinCombination() {
-		// TODO Auto-generated method stub
 		ArrayList<String[]> allHands = 
 				new ArrayList<String[]>();
 		for(Player player : players) {

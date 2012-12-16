@@ -28,6 +28,7 @@ public class ClientParser implements Parser {
 	private HashMap<String, JButton> buttons = null;
 	private HashMap<String, JLabel> labels = null;
 	private Logger log;
+	private final int OBSERVER = 0;
 	
 	public ClientParser() {
 		log = new Logger("client_parser.log");
@@ -72,6 +73,9 @@ public class ClientParser implements Parser {
 	private synchronized void parserInput() {
 		enabledButtons();
 		setInfoPanel();	
+		
+		if(status == OBSERVER)
+			on = true;
 		
 	}
 
@@ -127,6 +131,14 @@ public class ClientParser implements Parser {
 	@Override
 	public void parserOutput(String query) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	public void requestFold() {
+		disabledButtons();
+		status = OBSERVER;
+		output = new OutputToServer(0, status, name);
+		on = true;
 		
 	}
 }
