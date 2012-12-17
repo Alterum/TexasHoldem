@@ -103,17 +103,18 @@ public class OutputDataHarvester {
 	}
 
 	private void setPlayerInfo(String name, HashMap<String, String> map) {
+		Player player = table.getPlayer(name);
 		map.put("playerName", name);
 		map.put("playerCards", getPlayerCards(name));
 		map.put("playerStatus", 
 				Integer.toString(
-						table.getPlayer(name).getStatus()));
+						player.getStatus()));
 		map.put("playerBank", 
 				Integer.toString(
-						table.getPlayer(name).getScore()));
+						player.getScore()));
 		map.put("playerBet", 
 				Integer.toString(
-						table.getPlayer(name).getBet()));
+						player.getBet()));
 	}
 	
 	private String getPlayerCards(String name) {

@@ -24,6 +24,7 @@ public class BusinessProcess {
 	private Logger log;
 	private final int NEWGAME = -1;
 	private final int OBSERVER = 0;
+	private final int LASTROUND = 4;
 	
 	public BusinessProcess(PokerTable table, DBDriver driver) {
 		db = driver;
@@ -69,10 +70,20 @@ public class BusinessProcess {
 		 * 
 		 */
 		if(status == OBSERVER) {
-			table.removeActivePlayer(table.getPlayer(name));
-			if(table.getActivePlayers().size() == 1)
+			log.log("OBSERVER");
+			if(table.getActivePlayer(name) != null) {
+				table.getActivePlayer(name).setStatus(OBSERVER);
+				table.removeActivePlayer(table.getActivePlayer(name));
+				table.setBankInRound(table.getBankInRound()+bankInRound.get(name));
+				bankInRound.remove(name);
+			}
+			if(table.getActivePlayers().size() == 1) {
 				table.getActivePlayers().get(0).setScore(table.getBank());
-			return false;
+				currentRound = LASTROUND;
+				table.getPlayer(name).setStatus(NEWGAME);
+			}
+			
+//			return true;
 		}
 		
 		setPlayerData(name, bet, status);
@@ -115,12 +126,9 @@ public class BusinessProcess {
 		
 		// Write to DB
 		table.setBankInRound(roundBank);
-		table.addToTheBank(roundBank);
+//		table.addToTheBank(roundBank);
 		
-		if (bankInRound.get(name) != null)
-			bankInRound.put(name, playerRoundBank);
-		else
-			bankInRound.put(name, bet);
+		bankInRound.put(name, playerRoundBank);
 	}
 
 	private void setPlayerData(String name, int bet, int status) {
@@ -146,9 +154,16 @@ public class BusinessProcess {
 	
 	private void newRound(String name) {
 		currentRound++;
+		setTableBank();
 		isGameOver(name);
 		resetRoundData(name);
-		
+	}
+
+	private void setTableBank() {
+		int bank = 0;
+		for(String player : bankInRound.keySet())
+			bank+=bankInRound.get(player);
+		table.setBank(table.getBank()+bank);
 	}
 
 	private void resetRoundData(String name) {

@@ -13,8 +13,7 @@ public class PokerTable {
 	}
 	
 	private void loadTable() {
-		count++;
-		name = "Table #"+count;
+		name = "Table #"+count++;
 		deck = new Deck();
 		players = new ArrayList<Player>();
 		activePlayers = new ArrayList<Player>();
@@ -31,33 +30,21 @@ public class PokerTable {
 
 	public void selectSmallAndBigBlinds() {
 		// TODO Auto-generated method stub
-		if(players.size() < 2)
+		if(activePlayers.size() < 2)
 			return;
-		if(small == players.size())
+		if(small == activePlayers.size())
 			small = 0;
 		int big = small+1;
-		if(small == players.size()-1)
+		if(small == activePlayers.size()-1)
 			big = 0;
 		
-		smallBlind = players.get(small++);
-		bigBlind = players.get(big);
+		smallBlind = activePlayers.get(small++);
+		bigBlind = activePlayers.get(big);
 	}
 	
 	public String[] getCardsOnTable() {
 		return cardsOnTable.get(0);
 	}
-	
-//	public void newGame() {
-//		deck = new Deck();
-//		deck.shuffle();
-//		cardsOnTable = new ArrayList<String[]>();
-//		activePlayers = new ArrayList<Player>();
-////		activePlayers.addAll(players);
-//		currentBet = 0;
-//		bank = 0;
-//		small = 0;
-//		bankInRound = 0;
-//	}
 	
 	public void setToSmallBlind(Player small) {
 		smallBlind = small;
@@ -110,31 +97,36 @@ public class PokerTable {
 		return false;
 	}
 	
-	private void checkObBigSmallBlind(Player player) {
+	private void checkOnBigSmallBlind(Player player) {
 		if(smallBlind == player)
 			smallBlind = null;
 		else if(bigBlind == player)
 			bigBlind = null;
 		
 	}
-
-	public ArrayList<Player> getPlayers() {
-		return players;
+	
+	public Player getActivePlayer(String name) {
+		return getPlayerFromArray(name, activePlayers);
 	}
 	
 	public Player getPlayer(String name) {
-		for(Player player : players)
+		return getPlayerFromArray(name, players);
+	}
+	
+	private Player getPlayerFromArray(String name,
+			ArrayList<Player> array) {
+		for(Player player : array)
 			if(player.getName().equals(name))
 				return player;
 		return null;
 	}
 	
-//	public void setActivePlayer(int i, Player player) {
-//		activePlayers.add(i, player);
-//	}
-	
 	public void setActivePlayer(Player player) {
 		activePlayers.add(player);
+	}
+	
+	public ArrayList<Player> getPlayers() {
+		return players;
 	}
 	
 	public ArrayList<Player> getActivePlayers() {
@@ -142,7 +134,7 @@ public class PokerTable {
 	}
 	
 	public boolean isMaxPlayersForTheTable() {
-		if(players.size() < MAX)
+		if(players.size() < MAX && activePlayers.size() == 0)
 			return false;
 		else
 			return true;
@@ -202,9 +194,9 @@ public class PokerTable {
 	
 	public void dealCardsToPlayers() {
 		ArrayList<String[]> hands = 
-				deck.deal(players.size(), 2);
+				deck.deal(activePlayers.size(), 2);
 		int index = 0;
-		for(Player pl : players)
+		for(Player pl : activePlayers)
 			pl.setHand(hands.get(index++));
 		
 	}

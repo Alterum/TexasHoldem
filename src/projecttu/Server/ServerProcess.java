@@ -10,7 +10,7 @@ public class ServerProcess {
 	private int readyPlayers = 0;
 	private int readyNewGame = 0;
 	private int readyToNextRound = 0;
-	private int allPlayers = 2; // need to change
+	private int allPlayers = 3; // need to change
 	private DataAccessChanel chanel;
 	private PokerTable table;
 	
