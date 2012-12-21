@@ -119,7 +119,7 @@ public class TestPokerTable {
 		table.setToBigBlind(p1);
 		table.removePlayer(p1);
 		
-		assertEquals(table.getBigBlind().getName(), "name3");
+		assertEquals(table.getBigBlind().getName(), "name");
 	}
 	
 	@Test
@@ -133,7 +133,7 @@ public class TestPokerTable {
 		table.setToSmallBlind(p1);
 		table.removePlayer(p1);
 		
-		assertEquals(table.getSmallBlind().getName(), "name2");
+		assertEquals(table.getSmallBlind().getName(), "name");
 	}
 	
 	@Test
@@ -156,17 +156,6 @@ public class TestPokerTable {
 //
 //	}
 	
-	@Test
-	public void testGetWinCombination() {
-		
-	}
-	
-	@Test
-	public void testMaxDealCardsToTheTable() {
-		PokerTable table = new PokerTable();
-		
-		assertTrue(table.dealCardsToTheTable(5));
-	}
 	
 	@Ignore
 	public void testIterationDealCardsToTheTable() {

@@ -15,7 +15,7 @@ public class ServerProcess {
 	private PokerTable table;
 	private DBDriver db;
 	
-	ServerProcess(DBDriver db) {
+	public ServerProcess(DBDriver db) {
 		this.db = db;
 		setNewTable();
 	}
