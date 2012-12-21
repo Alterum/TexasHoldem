@@ -21,7 +21,7 @@ public class ServerProcess {
 	}
 	
 	void setAccessChanel() {
-		db.setValue("cash_table", "table_name", table.toString());
+//		db.setValue("cash_table", "table_name", table.toString());
 		
 		chanel = new DataAccessChanel(
 				 new BusinessProcess(
@@ -119,7 +119,7 @@ public class ServerProcess {
 	}
 
 	synchronized public void putPlayerAtTheTable(Player player) {
-		db.setValue("player", "name", player.getName());
+//		db.setValue("player", "name", player.getName());
 		table.addPlayer(player);
 	}
 

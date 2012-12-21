@@ -30,22 +30,22 @@ public class DBDriver {
 	
 	void connectToDB() throws SQLException {
 
-		try {
-			connection = DriverManager.getConnection(
-					"jdbc:postgresql://127.0.0.1:5432/holdem", "joker",
-					"joker#");
- 
-		} catch (SQLException e) {
-			System.out.println("Connection Failed! Check output console");
-			e.printStackTrace();
-		}
- 
-		if (connection != null) {
-			System.out.println("You made it, take control your database now!");
-			state = connection.createStatement();
-		} else {
-			System.out.println("Failed to make connection!");
-		}
+//		try {
+//			connection = DriverManager.getConnection(
+//					"jdbc:postgresql://127.0.0.1:5432/holdem", "joker",
+//					"joker#");
+// 
+//		} catch (SQLException e) {
+//			System.out.println("Connection Failed! Check output console");
+//			e.printStackTrace();
+//		}
+// 
+//		if (connection != null) {
+//			System.out.println("You made it, take control your database now!");
+//			state = connection.createStatement();
+//		} else {
+//			System.out.println("Failed to make connection!");
+//		}
 	}
 	
 	public void setValue(String table, String name, String value) {

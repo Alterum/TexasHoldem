@@ -659,3 +659,19 @@
 [ 2012/12/21 10:31:35 ] Thread[name1,5,main]: Process Data Exchange start
 [ 2012/12/21 10:32:19 ] Thread[name2,5,main]: Server: IOException for Read Output Object: java.net.SocketException: Connection reset
 [ 2012/12/21 10:32:19 ] Thread[name2,5,main]: Socket closed! Connection name: name2
+[ 2012/12/21 11:43:10 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=39330,localport=8907] projecttu.Server.Connection@1070a02
+[ 2012/12/21 11:43:15 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 11:43:15 ] Thread[Thread-2,5,main]: Connection name: name23
+[ 2012/12/21 11:43:15 ] Thread[name23,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 13:30:14 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=39497,localport=8907] projecttu.Server.Connection@47338
+[ 2012/12/21 13:30:29 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 13:30:29 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 13:30:29 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 13:30:35 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=39498,localport=8907] projecttu.Server.Connection@becf73
+[ 2012/12/21 13:30:40 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 13:30:40 ] Thread[Thread-4,5,main]: Connection name: name3
+[ 2012/12/21 13:30:40 ] Thread[name3,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 13:30:40 ] Thread[name3,5,main]: Process Data Exchange start
+[ 2012/12/21 13:30:40 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 13:30:43 ] Thread[name3,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/21 13:30:43 ] Thread[name3,5,main]: Socket closed! Connection name: name3
