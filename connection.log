@@ -461,3 +461,153 @@
 [ 2012/12/21 08:34:15 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
 [ 2012/12/21 08:34:15 ] Thread[name1,5,main]: Process Data Exchange start
 [ 2012/12/21 08:34:15 ] Thread[player1,5,main]: Process Data Exchange start
+[ 2012/12/21 08:45:40 ] Thread[name1,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/21 08:45:40 ] Thread[name1,5,main]: Socket closed! Connection name: name1
+[ 2012/12/21 08:53:33 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37641,localport=8907] projecttu.Server.Connection@1deebc8
+[ 2012/12/21 08:53:36 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37642,localport=8907] projecttu.Server.Connection@195edfe
+[ 2012/12/21 08:53:42 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 08:53:42 ] Thread[Thread-4,5,main]: Connection name: player1
+[ 2012/12/21 08:53:42 ] Thread[player1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 08:53:48 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 08:53:48 ] Thread[Thread-2,5,main]: Connection name: palyer2
+[ 2012/12/21 08:53:48 ] Thread[palyer2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 08:53:48 ] Thread[palyer2,5,main]: Process Data Exchange start
+[ 2012/12/21 08:53:48 ] Thread[player1,5,main]: Process Data Exchange start
+[ 2012/12/21 08:54:48 ] Thread[palyer2,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/21 08:54:48 ] Thread[palyer2,5,main]: Socket closed! Connection name: palyer2
+[ 2012/12/21 09:11:15 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37771,localport=8907] projecttu.Server.Connection@9a4b70
+[ 2012/12/21 09:11:17 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37772,localport=8907] projecttu.Server.Connection@3bfb01
+[ 2012/12/21 09:11:21 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:11:21 ] Thread[Thread-4,5,main]: Connection name: name1
+[ 2012/12/21 09:11:21 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:11:25 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:11:25 ] Thread[Thread-2,5,main]: Connection name: name2
+[ 2012/12/21 09:11:25 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:11:26 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:11:26 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:11:33 ] Thread[name1,5,main]: Socket closed! Connection name: name1
+[ 2012/12/21 09:14:30 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37796,localport=8907] projecttu.Server.Connection@9a4b70
+[ 2012/12/21 09:14:32 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37797,localport=8907] projecttu.Server.Connection@3bfb01
+[ 2012/12/21 09:14:36 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:14:36 ] Thread[Thread-4,5,main]: Connection name: name2
+[ 2012/12/21 09:14:36 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:14:40 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:14:40 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 09:14:40 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:14:41 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:14:41 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:14:47 ] Thread[name1,5,main]: Socket closed! Connection name: name1
+[ 2012/12/21 09:16:45 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37810,localport=8907] projecttu.Server.Connection@9a4b70
+[ 2012/12/21 09:16:47 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37811,localport=8907] projecttu.Server.Connection@3bfb01
+[ 2012/12/21 09:16:50 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:16:50 ] Thread[Thread-4,5,main]: Connection name: name2
+[ 2012/12/21 09:16:50 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:16:54 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:16:54 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 09:16:54 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:16:55 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:16:55 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:17:13 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:17:15 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:17:15 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:17:15 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:21:34 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37847,localport=8907] projecttu.Server.Connection@49cab1
+[ 2012/12/21 09:21:37 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37848,localport=8907] projecttu.Server.Connection@3bfb01
+[ 2012/12/21 09:21:42 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:21:42 ] Thread[Thread-4,5,main]: Connection name: name1
+[ 2012/12/21 09:21:42 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:21:47 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:21:47 ] Thread[Thread-2,5,main]: Connection name: name2
+[ 2012/12/21 09:21:47 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:21:48 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:21:48 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:22:05 ] Thread[name1,5,main]: Socket closed! Connection name: name1
+[ 2012/12/21 09:24:21 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37875,localport=8907] projecttu.Server.Connection@49cab1
+[ 2012/12/21 09:24:23 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37876,localport=8907] projecttu.Server.Connection@3bfb01
+[ 2012/12/21 09:24:27 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:24:27 ] Thread[Thread-4,5,main]: Connection name: name2
+[ 2012/12/21 09:24:27 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:24:34 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:24:34 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 09:24:34 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:24:34 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:24:34 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:24:52 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:24:53 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:24:53 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:24:53 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:37:39 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37988,localport=8907] projecttu.Server.Connection@1d7b662
+[ 2012/12/21 09:37:41 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=37989,localport=8907] projecttu.Server.Connection@709cb5
+[ 2012/12/21 09:37:44 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:37:44 ] Thread[Thread-4,5,main]: Connection name: name1
+[ 2012/12/21 09:37:44 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:37:49 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:37:49 ] Thread[Thread-2,5,main]: Connection name: name2
+[ 2012/12/21 09:37:49 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:37:49 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:37:49 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:38:15 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:38:17 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:38:17 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:38:17 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:45:01 ] Thread[name2,5,main]: Server: IOException for Read Output Object: java.net.SocketException: Connection reset
+[ 2012/12/21 09:45:01 ] Thread[name2,5,main]: Socket closed! Connection name: name2
+[ 2012/12/21 09:45:14 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38046,localport=8907] projecttu.Server.Connection@1d7b662
+[ 2012/12/21 09:45:16 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38047,localport=8907] projecttu.Server.Connection@14045de
+[ 2012/12/21 09:45:20 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:45:20 ] Thread[Thread-4,5,main]: Connection name: name1
+[ 2012/12/21 09:45:20 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:45:25 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:45:25 ] Thread[Thread-2,5,main]: Connection name: name2
+[ 2012/12/21 09:45:25 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:45:25 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:45:25 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Socket closed! Connection name: name1
+[ 2012/12/21 09:46:40 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38059,localport=8907] projecttu.Server.Connection@1d7b662
+[ 2012/12/21 09:46:42 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38060,localport=8907] projecttu.Server.Connection@14045de
+[ 2012/12/21 09:46:46 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:46:46 ] Thread[Thread-4,5,main]: Connection name: name1
+[ 2012/12/21 09:46:46 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:46:51 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:46:51 ] Thread[Thread-2,5,main]: Connection name: name2
+[ 2012/12/21 09:46:51 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:46:51 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:46:51 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:47:07 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:47:09 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:47:09 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:47:09 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:52:12 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38103,localport=8907] projecttu.Server.Connection@1070a02
+[ 2012/12/21 09:52:15 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38104,localport=8907] projecttu.Server.Connection@aafcb8
+[ 2012/12/21 09:52:20 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 09:52:20 ] Thread[Thread-4,5,main]: Connection name: name2
+[ 2012/12/21 09:52:20 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:52:25 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 09:52:25 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 09:52:25 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:52:25 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:52:25 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 09:52:44 ] Thread[name2,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:52:46 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 09:52:46 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 09:52:46 ] Thread[name2,5,main]: Process Data Exchange start
+[ 2012/12/21 10:04:47 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38194,localport=8907] projecttu.Server.Connection@1070a02
+[ 2012/12/21 10:04:52 ] Thread[Thread-2,5,main]: InputName for Thread[Thread-2,5,main] corect
+[ 2012/12/21 10:04:52 ] Thread[Thread-2,5,main]: Connection name: name1
+[ 2012/12/21 10:04:52 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:05:01 ] Thread[main,5,main]: Connection open. Socket[addr=/127.0.0.1,port=38195,localport=8907] projecttu.Server.Connection@18f794f
+[ 2012/12/21 10:05:11 ] Thread[Thread-4,5,main]: InputName for Thread[Thread-4,5,main] corect
+[ 2012/12/21 10:05:11 ] Thread[Thread-4,5,main]: Connection name: name32
+[ 2012/12/21 10:05:11 ] Thread[name32,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:05:11 ] Thread[name32,5,main]: Process Data Exchange start
+[ 2012/12/21 10:05:11 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 10:05:50 ] Thread[name32,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:05:52 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:05:52 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 10:05:52 ] Thread[name32,5,main]: Process Data Exchange start
+[ 2012/12/21 10:07:36 ] Thread[name1,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:07:38 ] Thread[name32,5,main]: BEFORE start Game Process, wait data PLAY
+[ 2012/12/21 10:07:38 ] Thread[name32,5,main]: Process Data Exchange start
+[ 2012/12/21 10:07:38 ] Thread[name1,5,main]: Process Data Exchange start
+[ 2012/12/21 10:08:19 ] Thread[name32,5,main]: Server: IOException for Read Output Object: java.io.EOFException
+[ 2012/12/21 10:08:19 ] Thread[name32,5,main]: Socket closed! Connection name: name32

@@ -99,7 +99,7 @@ public class ClientParser implements Parser {
 	public void setInfoPanel() {
 		HashMap<String, String> info = input.getInfo();
 		for(String key : info.keySet()) {
-			log.log("Clietn "+name+" Input: "+key+" = "+info.get(key));
+			log.log("Client "+name+" Input: "+key+" = "+info.get(key));
 			labels.get(key).setText(info.get(key));
 		}
 

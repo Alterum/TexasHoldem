@@ -200,14 +200,19 @@ public class BusinessProcess {
 		int LASTROUND = 4;
 		if(currentRound == LASTROUND) { // GAME OVER
 			Player winer =	table.getPlayerWithBestHand();
-			if(table.getPlayer(name).equals(winer)) {
+			if(player.equals(winer)) {
+				log.log("Player score before win: "+player.getScore());
+				log.log("BANK: "+table.getBank());
 				player.setScore(player.getScore()+table.getBank());
-				table.setBank(0);
-				table.setBankInRound(0);
-				table.setCurrentBet(0);
+				log.log("Player score after win: "+player.getScore());
+			
 			}
-//			log.log("HAPPY END winer is: "+
-//					winer.getName()+", many: "+winer.getScore());
+			
+			if(winer != null)
+				log.log("HAPPY END winer is: "+
+					winer.getName()+", many: "+winer.getScore());
+			else
+				log.log("WINER IS NUL!!!!");
 		}
 	}
 }

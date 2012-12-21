@@ -80,6 +80,7 @@ public class ServerProcess {
 		if(readyPlayers < allPlayers)
 			return false;
 		
+		
 		readyPlayers = 0;
 		prepareGameTable();
 		setAccessChanel();
@@ -87,6 +88,7 @@ public class ServerProcess {
 	}
 	
 	private void prepareGameTable() {
+		table.resetTable();
 		for(Player player : table.getPlayers())
 			table.setActivePlayer(player);
 		table.dealCardsToPlayers();

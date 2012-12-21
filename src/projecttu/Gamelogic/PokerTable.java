@@ -4,26 +4,32 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import projecttu.Server.Logger;
+
 
 public class PokerTable {
 	public PokerTable() {
 		loadTable();
-		deck.shuffle();
-		dealCardsToTheTable(5);
 	}
 	
 	private void loadTable() {
 		name = "Table #"+count++;
-		deck = new Deck();
 		players = new ArrayList<Player>();
 		activePlayers = new ArrayList<Player>();
+		resetTable();
+	}
+	
+	public void resetTable() {
+		deck = new Deck();
 		cardsOnTable = new ArrayList<String[]>();
 		currentBet = 0;
 		bank = 0;
 		small = 0;
 		bankInRound = 0;
+		deck.shuffle();
+		dealCardsToTheTable(5);
 	}
-
+	
 	public String toString() {
 		return name;
 	}
@@ -165,29 +171,60 @@ public class PokerTable {
 	}
 	
 	public Player getPlayerWithBestHand() {
+		log.log("GET PLAYER WITH BEST HAND");
 		ArrayList<String[]> allHands = 
 				new ArrayList<String[]>();
 		HashMap<String, String[]> bestPlayersHand = 
 				new HashMap<String, String[]>();
 		for(Player player : activePlayers) {
 			int index = 0;
+			log.log("Player: "+player.getName());
 			String[] playerhand = new String[7];
+			log.log("Player hand: "+player.getHand());
 			for(String s : player.getHand())
 				playerhand[index++] = s;
+			log.log("Cards on table: "+cardsOnTable.get(0));
 			for(String s : cardsOnTable.get(0))
 				playerhand[index++] = s;
+			
+			int g=0;
+			for(String str : playerhand)
+				log.log("playerhand #"+g+++" "+str);
+			
+			log.log("PokerHands BestHand: "+PokerHands.bestHand(playerhand).get(0));
+			
 			bestPlayersHand.put(player.getName(),
 					PokerHands.bestHand(playerhand).get(0));
 			allHands.add(PokerHands.bestHand(playerhand).get(0));
 		}
 		String name = "";
-		for(String key : bestPlayersHand.keySet())
-			for(String[] s : PokerHands.max(allHands))
-				if(bestPlayersHand.get(key) == s) {
+		for(String key : bestPlayersHand.keySet()) {
+			log.log("Best player Hand: "+ key);
+			for(String[] s : PokerHands.max(allHands)) {
+				
+				for(int o=0; o<s.length; o++)
+					log.log("Poker Hands max: "+ s[o]);
+				for(int o=0; o<bestPlayersHand.get(key).length; o++)
+					log.log("Best player hand: "+ bestPlayersHand.get(key)[o]);
+				
+				boolean flag = true;
+				for(int o=0; o<bestPlayersHand.get(key).length; o++)
+					if(!bestPlayersHand.get(key)[o].equals(s[o]))
+						flag = false;
+						
+				if(flag) {
 					name = key;
 					break;
 				}
-			
+//				if(bestPlayersHand.get(key).equals(s)) {
+//					name = key;
+//					break;
+//				}
+			}
+		}
+		
+		log.log("Player with best hand is"+name);
+		
 		return getPlayer(name);
 	}
 	
@@ -245,4 +282,5 @@ public class PokerTable {
 	private int bankInRound = 0;
 	private int bank = 0;
 	private static int count = 0;
+	private Logger log = new Logger("table.txt");
 }
