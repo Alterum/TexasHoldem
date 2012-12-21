@@ -60,7 +60,7 @@ public class BusinessProcess {
 	private boolean roundGameProcess(String name, int bet, int status) {
 		
 		if(status == NEWGAME) {
-			table.getPlayer(name).setStatus(1);
+//			table.getPlayer(name).setStatus(1);
 			return false;
 		}
 		

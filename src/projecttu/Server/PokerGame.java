@@ -3,6 +3,7 @@ package projecttu.Server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -16,7 +17,7 @@ public class PokerGame {
 		new Revision(online, log);
 		log.log("GameServer start: "+s);
 		
-		activeGameTables.add(new Observer());
+		activeGameTables.add(new Observer(new DBDriver()));
 		
 		while(true) {
 			Socket incoming = s.accept(); // blocked
@@ -29,7 +30,7 @@ public class PokerGame {
 			
 			
 			if(viewer == null) {
-				viewer = new Observer();
+				viewer = new Observer(new DBDriver());
 				activeGameTables.add(viewer);
 			}
 			

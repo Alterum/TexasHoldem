@@ -1,10 +1,17 @@
 package projecttu.Server;
 
+import java.sql.SQLException;
+
 public class Observer implements Runnable {
 	private ServerProcess status;
 	
-	Observer() {
-		status = new ServerProcess();
+	Observer(DBDriver db) {
+		try {
+			db.connectToDB();
+			status = new ServerProcess(db);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	void start() {

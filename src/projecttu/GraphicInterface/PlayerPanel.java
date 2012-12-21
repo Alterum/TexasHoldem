@@ -195,7 +195,7 @@ public class PlayerPanel extends JPanel {
 	}
 	
 	private void requestOnPlay() {
-		listener.send("start");
+//		listener.send("start");
 		for(String key : menuButtons.keySet())
 			menuButtons.get(key).setEnabled(false);
 		listener.startListen();

@@ -10,18 +10,22 @@ public class ServerProcess {
 	private int readyPlayers = 0;
 	private int readyNewGame = 0;
 	private int readyToNextRound = 0;
-	private int allPlayers = 3; // need to change
+	private int allPlayers = 2; // need to change
 	private DataAccessChanel chanel;
 	private PokerTable table;
+	private DBDriver db;
 	
-	ServerProcess() {
+	ServerProcess(DBDriver db) {
+		this.db = db;
 		setNewTable();
 	}
 	
 	void setAccessChanel() {
+		db.setValue("cash_table", "table_name", table.toString());
+		
 		chanel = new DataAccessChanel(
 				 new BusinessProcess(
-						 table, new DBDriver()));
+						 table, db));
 	}
 	
 	void setNewTable() {
@@ -113,6 +117,7 @@ public class ServerProcess {
 	}
 
 	synchronized public void putPlayerAtTheTable(Player player) {
+		db.setValue("player", "name", player.getName());
 		table.addPlayer(player);
 	}
 

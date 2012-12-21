@@ -23,6 +23,7 @@ public class ClientParser implements Parser {
 	private int bet;
 	private String name;
 	private boolean on = false;
+	private boolean newGame = false;
 	private OutputObject output = null;
 	private OutputToClient input = null;
 	private HashMap<String, JButton> buttons = null;
@@ -52,6 +53,7 @@ public class ClientParser implements Parser {
 	public void requestNewGame() {
 		disabledButtons();
 		output = new OutputToServer(0, -5, name);
+		newGame=true;
 		on = true;
 	}
 	
@@ -63,6 +65,10 @@ public class ClientParser implements Parser {
 
 	public boolean isRequest() {
 		return on;
+	}
+	
+	public boolean isNewGame() {
+		return newGame;
 	}
 	
 	public synchronized void parserInputObject(OutputObject obj) {

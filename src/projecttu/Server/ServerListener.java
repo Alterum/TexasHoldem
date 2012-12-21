@@ -30,8 +30,10 @@ public class ServerListener implements Runnable{
 	
 	@Override
 	public void run() {
-		waitResponseForStartGame();
-		dataExchangeWithServer();
+		while(true) {
+			waitResponseForStartGame();
+			dataExchangeWithServer();
+		}
 	}
 	
 	private void dataExchangeWithServer() {
@@ -39,6 +41,13 @@ public class ServerListener implements Runnable{
 			waitDataFromServer();
 			prepareOutput();
 			sendDataToServer();
+			
+			try { Thread.sleep(100); }
+			catch (InterruptedException e) {
+				e.printStackTrace(); }
+			
+			if(parser.isNewGame())
+				break;
 		}
 		
 	}
@@ -67,6 +76,7 @@ public class ServerListener implements Runnable{
 
 	private void waitDataFromServer() {
 		try {
+			send("start");
 			OutputObject obj = (OutputObject) ois.readObject(); // blocked
 			System.out.println(obj);
 			parser.parserInputObject(obj);

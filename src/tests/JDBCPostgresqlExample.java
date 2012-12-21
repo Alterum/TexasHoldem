@@ -38,8 +38,8 @@ public class JDBCPostgresqlExample {
  
 		try {
 			connection = DriverManager.getConnection(
-					"jdbc:postgresql://127.0.0.1:5432/testh", "joker",
-					"holdem76");
+					"jdbc:postgresql://127.0.0.1:5432/holdem", "joker",
+					"joker#");
  
 		} catch (SQLException e) {
 			System.out.println("Connection Failed! Check output console");
