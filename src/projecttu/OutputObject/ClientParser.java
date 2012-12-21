@@ -147,4 +147,9 @@ public class ClientParser implements Parser {
 		on = true;
 		
 	}
+
+	public void setFalseNewGame() {
+		newGame = false;
+		
+	}
 }

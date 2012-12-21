@@ -76,7 +76,6 @@ public class ServerListener implements Runnable{
 
 	private void waitDataFromServer() {
 		try {
-			send("start");
 			OutputObject obj = (OutputObject) ois.readObject(); // blocked
 			System.out.println(obj);
 			parser.parserInputObject(obj);
@@ -90,6 +89,9 @@ public class ServerListener implements Runnable{
 
 	private void waitResponseForStartGame() {
 		try {
+			send("start");
+			parser.setFalseNewGame();
+			System.out.println("Send start");
 			while(true) {
 				String str = in.readLine();
 				if(str.equals("startPlay"))

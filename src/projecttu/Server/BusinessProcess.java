@@ -22,7 +22,7 @@ public class BusinessProcess {
 	private OutputDataHarvester harvester;
 	private DBDriver db;
 	private Logger log;
-	private final int NEWGAME = -1;
+	private final int NEWGAME = -5;
 	private final int OBSERVER = 0;
 	private final int LASTROUND = 4;
 	
@@ -201,7 +201,10 @@ public class BusinessProcess {
 		if(currentRound == LASTROUND) { // GAME OVER
 			Player winer =	table.getPlayerWithBestHand();
 			if(table.getPlayer(name).equals(winer)) {
-				player.setScore(table.getBank());
+				player.setScore(player.getScore()+table.getBank());
+				table.setBank(0);
+				table.setBankInRound(0);
+				table.setCurrentBet(0);
 			}
 //			log.log("HAPPY END winer is: "+
 //					winer.getName()+", many: "+winer.getScore());

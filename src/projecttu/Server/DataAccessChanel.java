@@ -25,10 +25,11 @@ public class DataAccessChanel {
 	}
 
 	public boolean put(OutputObject info) {
+		boolean flag = true;
 		if(!business.setInputData(info))
-			return false;
+			flag = false;
 		available.release();
-		return true;
+		return flag;
 	}
 	
 	

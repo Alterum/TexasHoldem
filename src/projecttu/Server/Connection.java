@@ -75,12 +75,14 @@ public class Connection implements Runnable {
 	private void gameProcess() {
 		try {
 			while(true) {
+				log.log("BEFORE start Game Process, wait data PLAY");
 				if(server.startGameProcess(
 						in.readLine()))
 					out.println("startPlay");
 				else
 					return;
 				
+				log.log("Process Data Exchange start");
 				processDataExchange();
 			}
 			
