@@ -75,12 +75,15 @@ public class BusinessProcess {
 				table.getActivePlayer(name).setStatus(OBSERVER);
 				table.removeActivePlayer(table.getActivePlayer(name));
 				table.setBankInRound(table.getBankInRound()+bankInRound.get(name));
-				bankInRound.remove(name);
+//				bankInRound.remove(name);
 			}
 			if(table.getActivePlayers().size() == 1) {
-				table.getActivePlayers().get(0).setScore(table.getBank());
-				currentRound = LASTROUND;
+				table.getActivePlayers().get(0).setScore(
+						table.getActivePlayers().get(0).getScore()+table.getBank());
+//				currentRound = LASTROUND;
 				table.getPlayer(name).setStatus(NEWGAME);
+				table.getActivePlayers().get(0).setStatus(NEWGAME);
+				return true;
 			}
 			
 //			return true;

@@ -1,0 +1,273 @@
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Player: name1
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Player hand: [Ljava.lang.String;@18d19b7
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Cards on table: [Ljava.lang.String;@93727d
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #0 4h
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #1 5s
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #2 Jc
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #3 Ks
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #4 9s
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #5 Ad
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #6 3h
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: PokerHands BestHand: [Ljava.lang.String;@4dce2e
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Player: name2
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Player hand: [Ljava.lang.String;@1b3e93
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Cards on table: [Ljava.lang.String;@93727d
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #0 8h
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #1 9h
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #2 Jc
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #3 Ks
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #4 9s
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #5 Ad
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: playerhand #6 3h
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: PokerHands BestHand: [Ljava.lang.String;@f5381f
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Best player Hand: name1
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Poker Hands max: [Ljava.lang.String;@137b62f
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Best player Hand: name2
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Poker Hands max: [Ljava.lang.String;@137b62f
+[ 2012/12/21 09:38:08 ] Thread[name2,5,main]: Player with best hand is
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: Player: name1
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@1ed35e0
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@6c20c8
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #0 5d
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #1 Kh
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #2 Th
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #3 2s
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #4 Kd
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #5 3c
+[ 2012/12/21 09:45:39 ] Thread[name1,5,main]: playerhand #6 9c
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@1301d48
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Player: name2
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@1d267b5
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@6c20c8
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #0 6h
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #1 Jh
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #2 Th
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #3 2s
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #4 Kd
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #5 3c
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: playerhand #6 9c
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@6e8791
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Best player Hand: name1
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Poker Hands max: 5d
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Poker Hands max: Kh
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Poker Hands max: Th
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Poker Hands max: 2s
+[ 2012/12/21 09:45:40 ] Thread[name1,5,main]: Poker Hands max: Kd
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Player: name1
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@12e3a2c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@1ed35e0
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #0 3c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #1 4h
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #2 Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #3 7d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #4 8d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #5 Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #6 6c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@1dfba0e
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Player: name2
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@1301d48
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@1ed35e0
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #0 2s
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #1 8c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #2 Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #3 7d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #4 8d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #5 Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: playerhand #6 6c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@82ffe6
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player Hand: name1
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 2s
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 8c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 8d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 3c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 4h
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 7d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player Hand: name2
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 2s
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 8c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: 8d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Poker Hands max: Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 2s
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 8c
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: Td
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: 8d
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Best player hand: Ad
+[ 2012/12/21 09:47:05 ] Thread[name1,5,main]: Player with best hand is
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Player: name2
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@1ed35e0
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@6c20c8
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #0 Ad
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #1 As
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #2 Tc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #3 Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #4 3d
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #5 Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #6 3c
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@1301d48
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Player: name1
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@1d267b5
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@6c20c8
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #0 Jd
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #1 2d
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #2 Tc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #3 Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #4 3d
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #5 Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: playerhand #6 3c
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@6e8791
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player Hand: name1
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Ad
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: As
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Tc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Jd
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: 3d
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: 3c
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player Hand: name2
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Ad
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: As
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Tc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Poker Hands max: Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Ad
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: As
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Tc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Kc
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Best player hand: Ks
+[ 2012/12/21 09:52:42 ] Thread[name1,5,main]: Player with best hand isname2
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Player: name1
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@24753d
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@18d19b7
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #0 5d
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #1 6s
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #2 Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #3 As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #4 8c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #5 Ks
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #6 6c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@6155e3
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Player: name32
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Player hand: [Ljava.lang.String;@d30e33
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Cards on table: [Ljava.lang.String;@18d19b7
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #0 Qh
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #1 7d
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #2 Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #3 As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #4 8c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #5 Ks
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: playerhand #6 6c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: PokerHands BestHand: [Ljava.lang.String;@49764b
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player Hand: name1
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: 6s
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: Ks
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: 6c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: 6s
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: Ks
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: 6c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player Hand: name32
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: 6s
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: Ks
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Poker Hands max: 6c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: Qh
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: 7d
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: Ac
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: As
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Best player hand: 8c
+[ 2012/12/21 10:05:48 ] Thread[name1,5,main]: Player with best hand isname1
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: GET PLAYER WITH BEST HAND
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player: name1
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player hand: [Ljava.lang.String;@1ee4296
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Cards on table: [Ljava.lang.String;@155b814
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #0 8d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #1 3c
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #2 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #3 Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #4 Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #5 Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #6 4h
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: PokerHands BestHand: [Ljava.lang.String;@a85af8
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player: name32
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player hand: [Ljava.lang.String;@12e6f00
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Cards on table: [Ljava.lang.String;@155b814
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #0 4d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #1 Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #2 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #3 Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #4 Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #5 Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #6 4h
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: PokerHands BestHand: [Ljava.lang.String;@179a727
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player: name1
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player hand: [Ljava.lang.String;@1ee4296
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Cards on table: [Ljava.lang.String;@155b814
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #0 8d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #1 3c
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #2 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #3 Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #4 Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #5 Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #6 4h
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: PokerHands BestHand: [Ljava.lang.String;@1cd1e4e
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player: name32
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player hand: [Ljava.lang.String;@12e6f00
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Cards on table: [Ljava.lang.String;@155b814
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #0 4d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #1 Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #2 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #3 Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #4 Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #5 Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: playerhand #6 4h
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: PokerHands BestHand: [Ljava.lang.String;@180ce47
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player Hand: name1
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 8d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 3c
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 8d
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 3c
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player Hand: name32
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Poker Hands max: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Tc
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: 5s
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qd
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Ts
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Best player hand: Qs
+[ 2012/12/21 10:07:32 ] Thread[name32,5,main]: Player with best hand isname32
