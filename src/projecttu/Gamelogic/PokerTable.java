@@ -233,8 +233,9 @@ public class PokerTable {
 		ArrayList<String[]> hands = 
 				deck.deal(activePlayers.size(), 2);
 		int index = 0;
-		for(Player pl : activePlayers)
+		for(Player pl : activePlayers) {
 			pl.setHand(hands.get(index++));
+		}
 		
 	}
 	

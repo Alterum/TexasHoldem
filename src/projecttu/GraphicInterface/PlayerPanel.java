@@ -110,7 +110,8 @@ public class PlayerPanel extends JPanel {
 		add(new JLabel("oppName1"), new GBC(0,1).setAnchor(GBC.EAST));
 		add(new JLabel("oppBank1"), new GBC(0,2).setAnchor(GBC.EAST));
 		add(new JLabel("oppBet1"), new GBC(0,3).setAnchor(GBC.EAST));
-		add(new JLabel("oppCards1"), new GBC(0,4).setAnchor(GBC.EAST));
+//		add(new JLabel("oppCards1"), new GBC(0,4).setAnchor(GBC.EAST));
+		add(new JLabel(""), new GBC(0,4).setAnchor(GBC.EAST));
 		add(new JLabel("playerName"), new GBC(0,5).setAnchor(GBC.EAST));
 		add(new JLabel("playerBank"), new GBC(0,6).setAnchor(GBC.EAST));
 		add(new JLabel("playerBet"), new GBC(0,7).setAnchor(GBC.EAST));
@@ -138,7 +139,8 @@ public class PlayerPanel extends JPanel {
 		add(labels.get("playerCards2"), new GBC(3,5, 1, 4).setWeight(100, 100));
 		
 		// 4 column
-		add(new JLabel("message"), new GBC(4, 0).setWeight(100, 0));
+//		add(new JLabel("message"), new GBC(4, 0).setWeight(100, 0));
+		add(new JLabel(""), new GBC(4, 0).setWeight(100, 0));
 		add(labels.get("cards3"), new GBC(4, 1, 1, 4).setWeight(100, 100));
 		add(menuButtons.get("call"), new GBC(4, 7).setWeight(100, 100));
 		add(menuButtons.get("newGame"), new GBC(4, 8).setWeight(100, 100));
@@ -159,7 +161,8 @@ public class PlayerPanel extends JPanel {
 		add(new JLabel("oppName2: "), new GBC(7,1));
 		add(new JLabel("oppBank2: "), new GBC(7,2));
 		add(new JLabel("oppBet2: "), new GBC(7,3));
-		add(new JLabel("oppCards2: "), new GBC(7,4));
+//		add(new JLabel("oppCards2: "), new GBC(7,4));
+		add(new JLabel(""), new GBC(7,4));
 		add(new JLabel("Bank in round: "), new GBC(7,6));
 		add(new JLabel("current round: "), new GBC(7,7));
 		
@@ -168,7 +171,7 @@ public class PlayerPanel extends JPanel {
 		add(labels.get("oppName2"), new GBC(8,1).setWeight(100, 0).setAnchor(GBC.WEST));
 		add(labels.get("oppBank2"), new GBC(8,2).setWeight(100, 0).setAnchor(GBC.WEST));
 		add(labels.get("oppBet2"), new GBC(8,3).setWeight(100, 0).setAnchor(GBC.WEST));
-		add(labels.get("oppCards2"), new GBC(8,4).setWeight(100, 0).setAnchor(GBC.WEST));
+//		add(labels.get("oppCards2"), new GBC(8,4).setWeight(100, 0).setAnchor(GBC.WEST));
 		add(labels.get("bankInRound"), new GBC(8,6).setWeight(100, 0).setAnchor(GBC.WEST));
 		add(labels.get("currentRound"), new GBC(8,7).setWeight(100, 0).setAnchor(GBC.WEST));
 	}

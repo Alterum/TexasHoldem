@@ -71,11 +71,27 @@ public class OutputDataHarvester {
 		
 		HashMap<String, String> map =
 				new HashMap<String, String>();
+		
+		setTitleInfo(map, round);
 		setPlayerInfo(name, map);
 		setOpponentsInfo(name, map);
 		setTableInfo(map, round);
 		
 		return map;
+	}
+	
+	private void setTitleInfo(HashMap<String, String> map, int round) {
+		if(round == 0)
+			map.put("message", "PERFLOP");
+		else if(round == 1)
+			map.put("message", "FLOP");
+		else if(round == 2)
+			map.put("message", "TURN");
+		else if(round == 3)
+			map.put("message", "RIVER");
+		else if(round == 4)
+			map.put("message", "Winner: "+table.getPlayerWithBestHand()
+					+" "+table.getBank());
 	}
 	
 	private void setTableInfo(HashMap<String, String> map, int currentRound) {
@@ -130,7 +146,8 @@ public class OutputDataHarvester {
 			if(player.getName() == name)
 				continue;
 			map.put("oppName"+index, player.getName());
-			map.put("oppCards"+index, player.getHand()[0]+" "+player.getHand()[1]);
+//			map.put("oppCards"+index, player.getHand()[0]+" "+player.getHand()[1]);
+			map.put("oppCards"+index, "");
 			map.put("oppBank"+index, Integer.toString(player.getScore()));
 			map.put("oppBet"+index, Integer.toString(player.getBet()));
 			index++;
