@@ -41,48 +41,6 @@ public class testProcess {
 		}	
 	}
 	
-//	private void createLabels(
-//			HashMap<String, JLabel> labels) {
-//		
-//		String[] nameLabels = {
-//				"message", "playerName", "playerBank", "playerStatus",
-//				"playerCards", "playerCards1", "playerCards2", "playerBet",
-//				"oppStatus1", "oppName1", "bankInRound","currentRound",
-//				"oppBank1", "oppCards1", "oppBet1", "oppStatus2",
-//				"oppName2", "oppBank2", "oppCards2", "oppBet2", "cards",
-//				"cards1","cards2","cards3","cards4","cards5", "bank",
-//				"currentBet", "round", "ring"};
-//		
-//		for(String key : nameLabels) {
-//			labels.put(key, new JLabel());
-//		}
-//	}
-	
-//	@Test
-//	public void prepareOutputObject() {
-//		PokerTable table = new PokerTable();
-//		ClientParser parser = new ClientParser();
-//		
-//		HashMap<String, JLabel> labels =
-//				new HashMap<String, JLabel>();
-//		
-//		createLabels(labels);
-//		
-//		
-//		prepareTableForGame(table);
-//		BusinessProcess bp = new BusinessProcess(table, new DBDriver());
-//		
-////		PlayerPanel pp = new PlayerPanel(new ServerListener("localhost", 10101));
-//		
-////		parser.requestNewGame();
-////		bp.setInputData((OutputToServer) parser.getOutputObject());
-////		parser.parserInputObject(bp.getOutputData("name0"));
-//		
-//		assertNotNull(bp);
-//		
-//		
-//		
-//	}
 	
 	@Test
 	public void OtpuToClientIfPlayerStatusIsNewGame() {

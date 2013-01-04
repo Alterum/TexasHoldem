@@ -94,11 +94,14 @@ public class PokerTable {
 	}
 	
 	private boolean removePlayerFromTable(Player player, int x) {
+		boolean flag=true;
 		if(x==1) {
-			removeFromArray(players.iterator(), player);
+			flag = removeFromArray(players.iterator(), player);
 			selectSmallAndBigBlinds();
 		}
-		return removeFromArray(activePlayers.iterator(), player);
+		if(flag)
+			return removeFromArray(activePlayers.iterator(), player);
+		return flag;
 	}
 	
 	private boolean removeFromArray(Iterator<Player> itr, Player pl) {

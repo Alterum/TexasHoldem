@@ -32,31 +32,84 @@ public class testClientServer {
 	}
 	
 	@Test
-	public void testSPReady() {
+	public void testSPisNewGame() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		assertFalse(sv.isNewGame());
+	}
+	
+	@Test
+	public void SPGetPlayerFromTheTable() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		Player player = new Player("name0");
+		sv.putPlayerAtTheTable(player);
+		
+		assertNotNull(sv.getPlayer("name0"));
+	}
+	
+	@Test
+	public void SPRemoveFromTheTable() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		Player player = new Player("name0");
+		sv.putPlayerAtTheTable(player);
+		
+		assertFalse(sv.getUpFromTheTable(sv.getPlayer("name0")));
+	}
+	
+	@Test
+	public void resetReadyPlayersToNewGame() {
 		ServerProcess sv = new ServerProcess(new DBDriver());
 		
 		sv.resetReadyPlayersToNewGame();
-		sv.resetReadyPlayers();
-		sv.ressetAllReadyToNextRound();
 		
 		assertFalse(sv.isAllReadyToNextRound());
-		assertFalse(sv.isAllReadyToNewGame());
+	}
+	
+	@Test
+	public void resetReadyPlayers() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		sv.resetReadyPlayers();
+		
+		assertFalse(sv.isAllReadyToNextRound());
+	}
+	
+	@Test
+	public void ressetAllReadyToNextRound() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		sv.ressetAllReadyToNextRound();
+		
 		assertFalse(sv.ready());
+	}
+	
+	@Test
+	public void isAllReadyToNextRound() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
 		
 		allPlayersReady(sv);
 		
 		assertTrue(sv.isAllReadyToNextRound());
-		assertTrue(sv.isAllReadyToNewGame());
-		assertTrue(sv.ready());
-		
-		assertFalse(sv.isNewGame());
-		
-		Player player = new Player("name0");
-		sv.putPlayerAtTheTable(player);
+	}
 	
-		assertNotNull(sv.getPlayer("name0"));
+	@Test
+	public void isAllReadyToNewGame() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		allPlayersReady(sv);
+		
+		assertTrue(sv.isAllReadyToNewGame());
+	}
+	
+	@Test
+	public void ready() {
+		ServerProcess sv = new ServerProcess(new DBDriver());
+		
+		allPlayersReady(sv);
 
-		assertFalse(sv.getUpFromTheTable(player));
+		assertTrue(sv.ready());
 	}
 	
 	private void allPlayersReady(ServerProcess sv) {
