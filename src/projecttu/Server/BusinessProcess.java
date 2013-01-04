@@ -10,7 +10,7 @@ import projecttu.Gamelogic.PokerTable;
 import projecttu.OutputObject.OutputObject;
 import projecttu.OutputObject.OutputToClient;
 import projecttu.OutputObject.OutputToServer;
-import projecttu.OutputObject.ServerParser;
+//import projecttu.OutputObject.ServerParser;
 
 public class BusinessProcess {
 	
@@ -71,12 +71,6 @@ public class BusinessProcess {
 		 */
 		if(status == OBSERVER) {
 			log.log("OBSERVER");
-			if(table.getActivePlayer(name) != null) {
-				table.getActivePlayer(name).setStatus(OBSERVER);
-				table.removeActivePlayer(table.getActivePlayer(name));
-				table.setBankInRound(table.getBankInRound()+bankInRound.get(name));
-//				bankInRound.remove(name);
-			}
 			if(table.getActivePlayers().size() == 1) {
 				table.getActivePlayers().get(0).setScore(
 						table.getActivePlayers().get(0).getScore()+table.getBank());
@@ -84,6 +78,12 @@ public class BusinessProcess {
 				table.getPlayer(name).setStatus(NEWGAME);
 				table.getActivePlayers().get(0).setStatus(NEWGAME);
 				return true;
+			}
+			if(table.getActivePlayer(name) != null) {
+				table.getActivePlayer(name).setStatus(OBSERVER);
+				table.removeActivePlayer(table.getActivePlayer(name));
+				table.setBankInRound(table.getBankInRound()+bankInRound.get(name));
+//				bankInRound.remove(name);
 			}
 			
 //			return true;
@@ -217,6 +217,10 @@ public class BusinessProcess {
 			else
 				log.log("WINER IS NUL!!!!");
 		}
+	}
+	
+	HashMap<String, Integer> getMap() {
+		return bankInRound;
 	}
 }
 	

@@ -150,45 +150,45 @@ public class PokerHands {
 		
 	}
 	
-	public static ArrayList<String[]> allmax(HashMap<String, String[]> deal) {
-		ArrayList<String[]> result = 
-				new ArrayList<String[]>();
-		int maxval = 0;
-        ArrayList<Integer> max = 
-        		new ArrayList<Integer>();
-	    for(String name : deal.keySet()) {
-//	        Integer xval = handRank(deal.get(name));
-	        
-	        ArrayList<Integer> arr = handRank(deal.get(name));
-
-	        Integer xval = arr.get(0);
-	        if(result.isEmpty() || xval > maxval) {
-	        	result.clear();
-	            result.add(deal.get(name));
-	            max = (ArrayList<Integer>) arr.clone();
-	            maxval = xval;
-	        }
-	        else if(maxval == xval) {
-//	        	System.out.println("!!!!!!!!!!!LENGTH ARR "+arr.size());
-//	        	System.out.println("!!!!!!!!!!!LENGTH MAX "+max.size());
-	        	for(int i=1; i<arr.size(); i++) {
-	        		if(arr.get(i) > max.get(i)) {
-	        			result.clear();
-	        			result.add(deal.get(name));
-	        			max = (ArrayList<Integer>) arr.clone();
-	        			break;
-	        		}
-	        		else if(arr.get(i) == max.get(i)) {
-	        			if(i == arr.size()-1)
-	        				result.add(deal.get(name));
-	        			continue;
-	        		}
-	        		else break;
-	        	}
-	        }
-	    }
-	    return result;
-	}
+//	public static ArrayList<String[]> allmax(HashMap<String, String[]> deal) {
+//		ArrayList<String[]> result = 
+//				new ArrayList<String[]>();
+//		int maxval = 0;
+//        ArrayList<Integer> max = 
+//        		new ArrayList<Integer>();
+//	    for(String name : deal.keySet()) {
+////	        Integer xval = handRank(deal.get(name));
+//	        
+//	        ArrayList<Integer> arr = handRank(deal.get(name));
+//
+//	        Integer xval = arr.get(0);
+//	        if(result.isEmpty() || xval > maxval) {
+//	        	result.clear();
+//	            result.add(deal.get(name));
+//	            max = (ArrayList<Integer>) arr.clone();
+//	            maxval = xval;
+//	        }
+//	        else if(maxval == xval) {
+////	        	System.out.println("!!!!!!!!!!!LENGTH ARR "+arr.size());
+////	        	System.out.println("!!!!!!!!!!!LENGTH MAX "+max.size());
+//	        	for(int i=1; i<arr.size(); i++) {
+//	        		if(arr.get(i) > max.get(i)) {
+//	        			result.clear();
+//	        			result.add(deal.get(name));
+//	        			max = (ArrayList<Integer>) arr.clone();
+//	        			break;
+//	        		}
+//	        		else if(arr.get(i) == max.get(i)) {
+//	        			if(i == arr.size()-1)
+//	        				result.add(deal.get(name));
+//	        			continue;
+//	        		}
+//	        		else break;
+//	        	}
+//	        }
+//	    }
+//	    return result;
+//	}
 	
 	public static ArrayList<String[]> max(ArrayList<String[]> deal) {
 		ArrayList<String[]> result = 

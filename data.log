@@ -145,3 +145,17 @@
 [ 2012/12/21 15:09:57 ] Thread[Thread-0,5,main]: Thread[name3,5,] is dead and was removed from Active connections
 [ 2012/12/21 15:10:11 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2012/12/21 15:12:30 ] Thread[Thread-0,5,main]: Thread[name3,5,] is dead and was removed from Active connections
+[ 2013/01/04 12:13:19 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 12:16:08 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:17:21 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 12:17:29 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:18:17 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:19:08 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:22:39 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:23:31 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 12:23:39 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=12345]
+[ 2013/01/04 13:33:35 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 13:35:56 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 13:41:54 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 13:43:56 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 13:46:50 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]

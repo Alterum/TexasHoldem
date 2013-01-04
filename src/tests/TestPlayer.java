@@ -16,6 +16,51 @@ public class TestPlayer {
 	}
 	
 	@Test
+	public void testPlayerToString() {
+		Player p = new Player("name");
+		
+		assertEquals(p.toString(), "name");
+	}
+	
+	@Test
+	public void testPlayerIncreaseScore() {
+		Player p = new Player("name");
+		
+		p.increaseScore(100);
+		
+		assertEquals(p.getScore(), 1100);
+	}
+	
+	@Test
+	public void testPlayerSetScore() {
+		Player p = new Player("name");
+		
+		p.setScore(100);
+		
+		assertEquals(p.getScore(), 100);
+	}
+	
+	@Test
+	public void testPlayerSetBet() {
+		Player p = new Player("name");
+		
+		p.setBet(100);
+		
+		assertEquals(p.getBet(), 100);
+	}
+	
+	@Test
+	public void testPlayerSetHand() {
+		Player p = new Player("name");
+		
+		String hand[] = {"s2", "J2"};
+		p.setHand(hand);
+		
+		assertEquals(p.getHand()[0], "s2");
+		assertEquals(p.getHand()[1], "J2");
+	}
+	
+	@Test
 	public void testPlayerStartScore() {
 		Player p = new Player("name");
 		

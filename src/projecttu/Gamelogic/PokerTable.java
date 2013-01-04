@@ -38,16 +38,25 @@ public class PokerTable {
 		// TODO Auto-generated method stub
 		if(activePlayers.size() < 2)
 			return;
-		if(small == activePlayers.size())
-			small = 0;
-		int big = small+1;
-		if(small == activePlayers.size()-1)
-			big = 0;
-		
+		setSmall();
+		int big = setBig();
 		smallBlind = activePlayers.get(small++);
 		bigBlind = activePlayers.get(big);
 	}
 	
+	private int setBig() {
+		int big = small+1;
+		if(small == activePlayers.size()-1)
+			big = 0;
+		return big;
+		
+	}
+
+	private void setSmall() {
+		if(small == activePlayers.size())
+			small = 0;	
+	}
+
 	public String[] getCardsOnTable() {
 		return cardsOnTable.get(0);
 	}
@@ -103,7 +112,7 @@ public class PokerTable {
 		return false;
 	}
 	
-	private void checkOnBigSmallBlind(Player player) {
+	public void ifPlayerIsBlindWillReset(Player player) {
 		if(smallBlind == player)
 			smallBlind = null;
 		else if(bigBlind == player)
@@ -149,64 +158,62 @@ public class PokerTable {
 	public ArrayList<String[]> getWinCombination() {
 		ArrayList<String[]> allHands = 
 				new ArrayList<String[]>();
-		for(Player player : players) {
-			String[] allHand = new String[7];
-			int index = 0;
-			for(String s : player.getHand())
-				allHand[index++] = s;
-			for(String s : cardsOnTable.get(0))
-				allHand[index++] = s;
-			allHands.add(
-					PokerHands.bestHand(allHand).get(0));
-		}
-		
-		// TEST
-		for(String[] str : PokerHands.max(allHands)) {
-			System.out.println("\n");
-			for(String s : str)
-				System.out.print(s+" ");
-		}
+		for(Player player : players)
+			preparePlayerHand(player, allHands);
 		
 		return PokerHands.max(allHands);
 	}
 	
 	public Player getPlayerWithBestHand() {
-		log.log("GET PLAYER WITH BEST HAND");
 		ArrayList<String[]> allHands = 
 				new ArrayList<String[]>();
 		HashMap<String, String[]> bestPlayersHand = 
 				new HashMap<String, String[]>();
+				
+		preparePlayerHands(bestPlayersHand, allHands);
+		String name = getPlayerNameWithBestHand(
+				bestPlayersHand, allHands);
+		
+		return getPlayer(name);
+	}
+	
+	private String[] preparePlayerHand(Player player, ArrayList<String[]> allHands) {
+		String[] allHand = new String[7];
+		int index = 0;
+		putCardsOfPlayerAndTableToArray(player, index, allHand);
+		allHands.add(
+				PokerHands.bestHand(allHand).get(0));
+		return allHand;
+		
+	}
+
+	private void putCardsOfPlayerAndTableToArray(
+			Player player, int index, String[] allHand) {
+		for(String s : player.getHand())
+			allHand[index++] = s;
+		for(String s : cardsOnTable.get(0))
+			allHand[index++] = s;
+		
+	}
+	
+	private void preparePlayerHands(
+			HashMap<String, String[]> bestPlayersHand, 
+			ArrayList<String[]> allHands) {
 		for(Player player : activePlayers) {
-			int index = 0;
-			log.log("Player: "+player.getName());
-			String[] playerhand = new String[7];
-			log.log("Player hand: "+player.getHand());
-			for(String s : player.getHand())
-				playerhand[index++] = s;
-			log.log("Cards on table: "+cardsOnTable.get(0));
-			for(String s : cardsOnTable.get(0))
-				playerhand[index++] = s;
-			
-			int g=0;
-			for(String str : playerhand)
-				log.log("playerhand #"+g+++" "+str);
-			
-			log.log("PokerHands BestHand: "+PokerHands.bestHand(playerhand).get(0));
-			
+			String[] playerhand = 
+					preparePlayerHand(player, allHands);
 			bestPlayersHand.put(player.getName(),
 					PokerHands.bestHand(playerhand).get(0));
-			allHands.add(PokerHands.bestHand(playerhand).get(0));
 		}
+		
+	}
+
+	private String getPlayerNameWithBestHand(
+			HashMap<String, String[]> bestPlayersHand, 
+			ArrayList<String[]> allHands) {
 		String name = "";
-		for(String key : bestPlayersHand.keySet()) {
-			log.log("Best player Hand: "+ key);
+		for(String key : bestPlayersHand.keySet())
 			for(String[] s : PokerHands.max(allHands)) {
-				
-				for(int o=0; o<s.length; o++)
-					log.log("Poker Hands max: "+ s[o]);
-				for(int o=0; o<bestPlayersHand.get(key).length; o++)
-					log.log("Best player hand: "+ bestPlayersHand.get(key)[o]);
-				
 				boolean flag = true;
 				for(int o=0; o<bestPlayersHand.get(key).length; o++)
 					if(!bestPlayersHand.get(key)[o].equals(s[o]))
@@ -216,19 +223,11 @@ public class PokerTable {
 					name = key;
 					break;
 				}
-//				if(bestPlayersHand.get(key).equals(s)) {
-//					name = key;
-//					break;
-//				}
 			}
-		}
-		
-		log.log("Player with best hand is"+name);
-		
-		return getPlayer(name);
+				
+		return name;
 	}
-	
-	
+
 	public void dealCardsToPlayers() {
 		ArrayList<String[]> hands = 
 				deck.deal(activePlayers.size(), 2);

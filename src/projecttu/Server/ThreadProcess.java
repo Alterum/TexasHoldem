@@ -10,10 +10,10 @@ public class ThreadProcess {
 	private DataAccessChanel data;
 	private Player player;
 	
-	ThreadProcess(ServerProcess process) {
+	public ThreadProcess(ServerProcess process) {
 		this.process = process;
 	}
-	
+
 	public String isPlayerNameReserved(String name) {
 		Player p;
 		synchronized(process) {
@@ -53,19 +53,18 @@ public class ThreadProcess {
 	private void waitingForOtherPlayers() {
 		synchronized(process) {
 			process.readyToPlay();
-			
-			System.out.println(Thread.currentThread()+": Before Wait waitingForOtherPlayers");
-			
-			try {
-				process.wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			
-			System.out.println(Thread.currentThread()+": After Wait waitingForOtherPlayers");
+//			waiting();
 		}
 	}
 	
+	private void waiting() {
+		try {
+			process.wait();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public OutputObject output() {
 		
 		return data.get(player.getName());

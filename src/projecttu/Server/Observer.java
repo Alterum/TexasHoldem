@@ -6,12 +6,13 @@ public class Observer implements Runnable {
 	private ServerProcess status;
 	
 	Observer(DBDriver db) {
-		try {
-			db.connectToDB();
-			status = new ServerProcess(db);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		status = new ServerProcess(db);
+//		try {
+////			db.connectToDB();
+//			status = new ServerProcess(db);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	void start() {
