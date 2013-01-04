@@ -53,8 +53,8 @@ public class Observer implements Runnable {
 		return status;
 	}
 
-	public void newGame() {
-		status.newTable();	
+	public boolean newGame() {
+		return status.newTable();	
 	}
 	
 	public boolean isMaxConnInCurTable() {

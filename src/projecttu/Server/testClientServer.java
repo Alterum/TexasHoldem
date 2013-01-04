@@ -126,34 +126,75 @@ public class testClientServer {
 	public void testObserver() {
 		Observer ob = new Observer(new DBDriver());
 		
-		ob.newGame();
+//		ob.newGame();
 		ServerProcess sv = ob.getStatus();
+		
 		assertFalse(ob.isMaxConnInCurTable());
-		
-		
-//		ob.start();
-//		ob.run();
-		
-		
 	}
 	
-	@Test
-	public void testThreadProcess() {
+	public ThreadProcess getThreadProcess() {
 		Observer ob = new Observer(new DBDriver());
-		ob.newGame();
 		ServerProcess sv = ob.getStatus();
 		sv.putPlayerAtTheTable(new Player("p0"));
 		ThreadProcess tp = new ThreadProcess(sv);
-		
-		tp.isPlayerNameReserved("p0");
-		tp.isPlayerNameReserved("p1");
+		return tp;
+	}
+	
+	@Test
+	public void TPStartGameProcessWithResponseStart() {
+		ThreadProcess tp = getThreadProcess();
 		
 		tp.prepareGameProcess("p1");
-		tp.startGameProcess("Start");
-		tp.startGameProcess("start");
-		tp.startGameProcess("observer");
-
 		
+		assertTrue(tp.startGameProcess("start"));	
+	}
+	
+	@Test
+	public void TPStartGameProcessWithNotValidResponse() {
+		ThreadProcess tp = getThreadProcess();
+		
+		tp.prepareGameProcess("p1");
+		
+		assertFalse(tp.startGameProcess("Start"));	
+	}
+	
+	@Test
+	public void TPStartGameProcessWithResponseObserver() {
+		ThreadProcess tp = getThreadProcess();
+		
+		tp.prepareGameProcess("p1");
+		
+		assertTrue(tp.startGameProcess("observer"));	
+	}
+	
+	@Test
+	public void TPPlayerNameReserved() {
+		ThreadProcess tp = getThreadProcess();
+		
+		assertNull(tp.isPlayerNameReserved("p0"));
+	}
+	
+	@Test
+	public void TPPlayerNameNotReserved() {
+		ThreadProcess tp = getThreadProcess();
+		
+		assertNotNull(tp.isPlayerNameReserved("p1"));
+	}
+	
+	@Test
+	public void startNewGameIfAllNotReady() {
+		Observer ob = new Observer(new DBDriver());
+		
+		assertFalse(ob.newGame());
+	}
+	
+	@Test
+	public void startNewGameIfAllReady() {
+		Observer ob = new Observer(new DBDriver());
+		
+		allPlayersReady(ob.getStatus());
+		
+		assertTrue(ob.newGame());
 	}
 	
 	@Test

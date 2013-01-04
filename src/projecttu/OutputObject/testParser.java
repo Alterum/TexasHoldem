@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.HashMap;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import org.junit.Test;
@@ -12,6 +13,7 @@ import projecttu.Gamelogic.Player;
 import projecttu.Gamelogic.PokerTable;
 import projecttu.Server.BusinessProcess;
 import projecttu.Server.DBDriver;
+import projecttu.Server.OutputDataHarvester;
 
 public class testParser {
 
@@ -30,8 +32,20 @@ public class testParser {
 		}	
 	}
 	
-	private void createLabels(
-			HashMap<String, JLabel> labels) {
+	public HashMap<String, JButton> creatButtons() {
+		HashMap<String, JButton> menuButtons = 
+				new HashMap<String, JButton>();
+		String[] menuBttnsNames =
+			{"play", "call", "raise", "fold", "check", "newGame"};
+		for(String key : menuBttnsNames) {
+			menuButtons.put(key, new JButton(key));
+		}
+		return menuButtons;
+	}
+	
+	public HashMap<String, JLabel> createLabels() {
+		HashMap<String, JLabel> labels =
+				new HashMap<String, JLabel>();
 		
 		String[] nameLabels = {
 				"message", "playerName", "playerBank", "playerStatus",
@@ -45,6 +59,7 @@ public class testParser {
 		for(String key : nameLabels) {
 			labels.put(key, new JLabel());
 		}
+		return labels;
 	}
 	
 	@Test
@@ -52,20 +67,25 @@ public class testParser {
 		PokerTable table = new PokerTable();
 		ClientParser parser = new ClientParser();
 		
-		HashMap<String, JLabel> labels =
-				new HashMap<String, JLabel>();
+		HashMap<String, JButton> menuButtons =
+				creatButtons();
 		
-		createLabels(labels);
+		HashMap<String, JLabel> labels = 
+				createLabels();
 		
+		parser.setChangingComponents(labels, menuButtons);
+		
+		parser.requestNewGame();
+		parser.requestRaise(100);
+		parser.requestFold();
+		
+		parser.isRequest();
+		parser.isNewGame();
 		
 		prepareTableForGame(table);
-		BusinessProcess bp = new BusinessProcess(table, new DBDriver());
-		
-//		PlayerPanel pp = new PlayerPanel(new ServerListener("localhost", 10101));
-		
-//		parser.requestNewGame();
-//		bp.setInputData((OutputToServer) parser.getOutputObject());
-//		parser.parserInputObject(bp.getOutputData("name0"));
+		BusinessProcess bp = new BusinessProcess(table, null);
+		assertNotNull(bp.getOutputData("name0"));
+
 		
 		assertNotNull(bp);
 		

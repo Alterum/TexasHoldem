@@ -159,3 +159,5 @@
 [ 2013/01/04 13:41:54 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2013/01/04 13:43:56 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
 [ 2013/01/04 13:46:50 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 14:30:31 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]
+[ 2013/01/04 15:36:36 ] Thread[main,5,main]: GameServer start: ServerSocket[addr=0.0.0.0/0.0.0.0,port=0,localport=8907]

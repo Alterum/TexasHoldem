@@ -99,11 +99,13 @@ public class ServerProcess {
 		return table;
 	}
 	
-	void newTable() {
+	boolean newTable() {
 		if(readyPlayers == allPlayers) {
 			setNewTable();
 			readyPlayers = 0;
+			return true;
 		}
+		return false;
 	}
 
 	public DataAccessChanel getAccessChanel() {
